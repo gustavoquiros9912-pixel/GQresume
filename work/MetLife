@@ -13,12 +13,12 @@
 <meta property="og:description" content="Making complex patient interactions into user-friendly experiences.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
-<link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="../src/css/layout.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 
 <main class="study">
 
-  <a class="study__back" href="/index.html#work">← back to work</a>
+  <a class="study__back" href="../index.html#work">← back to work</a>
 
   <header id="overview">
 
@@ -59,7 +59,7 @@
       </div>
 
       <figure class="shot">
-        <img src="/work/images/MetLife1.jpg" alt="MetLife CSS Mockup">
+        <img src="./images/MetLife1.jpg" alt="MetLife CSS Mockup">
       </figure>
     </div>
 

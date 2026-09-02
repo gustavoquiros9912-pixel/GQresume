@@ -13,12 +13,12 @@
 <meta property="og:description" content="Ensuring the correct transition of every product, interface and customer-facing material was aligned with PIP's brand under a tight deadline.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
-<link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="../src/css/layout.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 
 <main class="study">
 
-  <a class="study__back" href="/index.html#work">← back to work</a>
+  <a class="study__back" href="../index.html#work">← back to work</a>
 
   <header id="overview">
 
@@ -61,7 +61,7 @@
       </div>
 
       <figure class="shot">
-        <img src="/work/images/PIP1.jpeg" alt="PIP Global Safety Migration Mockup">
+        <img src="./images/PIP1.jpeg" alt="PIP Global Safety Migration Mockup">
       </figure>
     </div>
 
@@ -159,7 +159,7 @@
           <li>Strong foundation for future product launches under the new brand</li>
         </ul>
         <p class="confidential">Specific metrics and results are confidential.</p>
-        <p class="confidentialb"><a href="/work/pip.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
+        <p class="confidentialb"><a href="./pip.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
       </section>
 
       <section class="block" id="reflection">

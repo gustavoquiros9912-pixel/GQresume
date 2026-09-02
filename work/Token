@@ -13,12 +13,12 @@
 <meta property="og:description" content="Case study: Guided Creative direction, ads and marketing assets to unify digital and brand experiences across Token Agency's client projects.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
-<link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="../src/css/layout.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 
 <main class="study">
 
-  <a class="study__back" href="/index.html#work">← back to work</a>
+  <a class="study__back" href="../index.html#work">← back to work</a>
 
   <header id="overview">
 
@@ -61,7 +61,7 @@
       </div>
 
       <figure class="shot">
-        <img src="/work/images/token2.png" alt="Token Agency UX and Marketing Work">
+        <img src="./images/token2.png" alt="Token Agency UX and Marketing Work">
       </figure>
     </div>
 
@@ -158,7 +158,7 @@
           <li>Consistent branding across ads, marketing and digital platforms</li>
         </ul>
         <p class="confidential">Specific metrics and results are confidential.</p>
-              <p class="confidentialb"><a href="/work/metlife.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
+              <p class="confidentialb"><a href="./token.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
 
       </section>
 
