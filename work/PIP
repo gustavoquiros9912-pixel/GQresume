@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PIP Global Safety — Gustavo Quiros</title>
+<meta name="description" content="Case study: Ensuring the correct transition of every product, interface and customer-facing material was aligned with PIP's brand under a tight deadline.">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gustavoquiros.com/work/PIP">
+<meta property="og:title" content="PIP Global Safety — Gustavo Quiros">
+<meta property="og:description" content="Ensuring the correct transition of every product, interface and customer-facing material was aligned with PIP's brand under a tight deadline.">
+<meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
+
+<link rel="stylesheet" href="/src/css/layout.css">
+</head>
+
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <ol class="nav__stops">
+    <li class="nav__stop">
+      <a href="#overview"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">overview</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#challenge"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">challenge</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#approach"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">approach</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#impact"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">impact</span></a>
+    </li>
+  </ol>
+</nav>
+
+<main class="study">
+
+  <a class="study__back" href="/index.html#work">← back to work</a>
+
+  <header id="overview">
+
+    <div class="study__intro">
+      <div>
+        <h1 class="study__title">PIP Global Safety</h1>
+        <p class="study__kicker">Global Product Migration & Rebranding</p>
+
+        <p class="study__lede">
+          PIP Global Safety acquired Honeywell’s safety division and needed to migrate thousands of products, documents and assets into their new global brand.
+          I worked as the <b>Lead UI/UX & Product Designer</b>, initially overseeing the migration for the Americas and later expanding to Europe and Asia.
+        </p>
+        <p class="study__lede">
+          My role was to ensure every product, interface and customer-facing material aligned with PIP’s brand guidelines under a tight deadline.
+        </p>
+      </div>
+
+      <figure class="shot">
+        <img src="/work/images/PIP1.jpeg" alt="PIP Global Safety Migration Mockup">
+      </figure>
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt class="facts__key">Role</dt>
+        <dd class="facts__value">Lead UI/UX & Product Designer</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Duration</dt>
+        <dd class="facts__value">1 year</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Platforms</dt>
+        <dd class="facts__value">Web portals, packaging, documentation systems</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Markets</dt>
+        <dd class="facts__value">Americas, Europe, Asia</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Scope</dt>
+        <dd class="facts__value">Migration of product catalogs, packaging, documents, labels, interfaces and manuals into PIP’s global brand system</dd>
+      </div>
+    </dl>
+  </header>
+
+  <section class="split_margin">
+    <div class="split">
+      <section class="block" id="challenge">
+        <p class="block__label">01 — the challenge</p>
+        <h2 class="block__title">Global migration under pressure</h2>
+        <ul class="points">
+          <li><b>Scale and speed.</b> Thousands of assets needed migration within a year.</li>
+          <li><b>Brand consistency.</b> Packaging, documents and interfaces had to strictly follow guidelines.</li>
+          <li><b>Regional complexity.</b> Regulatory and cultural differences across continents added challenges.</li>
+        </ul>
+        <p class="takeaway">The goal was to deliver <b>speed, accuracy and cohesion</b across global markets.</p>
+      </section>
+
+      <section class="block" id="role">
+        <p class="block__label">02 — my role</p>
+        <h2 class="block__title">Leading across continents</h2>
+        <p>I began with the Americas portfolio and later expanded to Europe and Asia.</p>
+        <ul class="points">
+          <li>UX and product design for digital interfaces</li>
+          <li>Packaging and label redesigns following brand guidelines</li>
+          <li>Document and manual migration into new templates</li>
+          <li>Collaboration with global stakeholders across design, product and compliance</li>
+          <li>Ensuring consistency across diverse regulatory environments</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="block" id="approach">
+      <p class="block__label">03 — approach</p>
+      <h2 class="block__title">Principles that guided the work</h2>
+      <p class="takeaway">Each principle below is the one that decided how its problem got solved.</p>
+
+      <div class="trio">
+        <article class="item">
+          <p class="item__index">01</p>
+          <h3 class="item__title">Managing scale at speed</h3>
+          <p class="item__principle">Operational clarity</p>
+          <p><b>Problem.</b> Thousands of assets needed migration within a year.</p>
+          <p><b>Solution.</b> Established structured workflows, prioritized high‑impact products and created reusable templates.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">02</p>
+          <h3 class="item__title">Ensuring brand consistency</h3>
+          <p class="item__principle">Design systems discipline</p>
+          <p><b>Problem.</b> Different regions risked fragmented branding.</p>
+          <p><b>Solution.</b> Applied strict brand guidelines, standardized packaging and aligned digital interfaces globally.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">03</p>
+          <h3 class="item__title">Supporting diverse markets</h3>
+          <p class="item__principle">Global adaptability</p>
+          <p><b>Problem.</b> Regulatory and cultural differences complicated migration.</p>
+          <p><b>Solution.</b> Partnered with regional teams, adapted documentation and localized interfaces while maintaining brand cohesion.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="split">
+      <section class="block" id="impact">
+        <p class="block__label">04 — impact</p>
+        <h2 class="block__title">What was delivered</h2>
+        <ul class="points">
+          <li>Successful migration of thousands of products and documents within deadline</li>
+          <li>Unified packaging, labels and manuals under PIP’s brand identity</li>
+          <li>Consistent digital interfaces across Americas, Europe and Asia</li>
+          <li>Strong foundation for future product launches under the new brand</li>
+        </ul>
+        <p class="confidential">Specific metrics and results are confidential.</p>
+        <p class="confidentialb"><a href="/work/pip.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
+      </section>
+
+      <section class="block" id="reflection">
+        <p class="block__label">05 — reflection</p>
+        <h2 class="block__title">Designing for empathy and scale</h2>
+        <p>
+          This project sharpened my ability to:
+        </p>
+        <ul class="points">
+          <li>Lead large‑scale migrations under tight deadlines</li>
+          <li>Balance global consistency with local adaptability</li>
+          <li>Apply design systems discipline beyond digital products</li>
+          <li>Collaborate across continents to deliver cohesive brand experiences</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__name">Gustavo Quiros</p>
+    <ul class="footer__links">
+      <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin ↗</a></li>
+      <li><a href="mailto:gustavoquiros9912@gmail.com">email ↗</a></li>
+      <li><a href="https://drive.google.com/file/d/1jGbSwcmIh5kwb17pi2kDqcnGJS1rPHre/view" target="_blank" rel="noopener">resume ↗</a></li>
+    </ul>
+    <p class="footer__note">San Diego, California — open to lead and staff design roles.</p>
+    <p class="footer__copy">© 2026 Gustavo Quiros.</p>
+  </div>
+</footer>
+
+<script>
+// Marks the nav stop for whichever section is in view. Measured in viewport
+// coordinates so it doesn't care what element is doing the scrolling.
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  document.body.classList.add('has-js');
+
+  const stops = [...nav.querySelectorAll('.nav__stop')]
+    .map((stop) => {
+      const link = stop.querySelector('a[href^="#"]');
+      const section = link && document.querySelector(link.hash);
+      return section ? { stop, link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!stops.length) return;
+
+  const spy = () => {
+    const line = nav.getBoundingClientRect().bottom + 1;
+    let current = stops[0];
+
+    stops.forEach((entry) => {
+      if (entry.section.getBoundingClientRect().top <= line) current = entry;
+    });
+
+    stops.forEach(({ stop, link }) => {
+      const isCurrent = stop === current.stop;
+      stop.classList.toggle('is-current', isCurrent);
+      if (isCurrent) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; spy(); });
+  };
+
+  document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+  addEventListener('resize', onScroll, { passive: true });
+  spy();
+});
+</script>
+
+</body>
+</html>

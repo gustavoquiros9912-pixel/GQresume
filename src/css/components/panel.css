@@ -1,0 +1,52 @@
+@import '../tokens.css';
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+}
+
+.panel--ticket {
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.ticket-instruction {
+  margin: 0;
+  padding: var(--instruction-pad-top) var(--panel-gap) 0;
+  color: var(--blue-light);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 1;
+  transition: opacity var(--instruction-fade) var(--ease-out);
+}
+
+.ticket-instruction.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ticket-panel__stage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex: 1;
+  min-height: 0;
+  padding-bottom: var(--ticket-stage-pad-bottom);
+}
+
+.panel--illustration {
+  padding: 0;
+}
+
+.panel--illustration.is-asleep {
+  filter: grayscale(1) saturate(0.12) brightness(1.04);
+  transition: filter var(--panel-wake-duration) var(--ease-out);
+}
+
+.panel--illustration.is-awake {
+  filter: grayscale(0) saturate(1) brightness(1);
+}

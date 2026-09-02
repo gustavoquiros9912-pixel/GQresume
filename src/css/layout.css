@@ -1,0 +1,1022 @@
+:root {
+  --shade: #191919;
+  --shade-deep: #101010;
+  --accent: #ea4e65;
+  --paper: #ffffff;
+
+  --line: rgba(255, 255, 255, 0.08);
+  --text-soft: rgba(255, 255, 255, 0.55);
+  --text-faint: rgba(255, 255, 255, 0.3);
+
+  --serif: 'Noto Serif JP', Georgia, serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+
+  --gutter: 44px;
+  --gutter-sm: 24px;
+  --nav-height: 78px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--shade);
+  color: #fff;
+  font-family: var(--mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* the sticky nav would otherwise cover the top of a jumped-to section */
+#intro,
+#work {
+  scroll-margin-top: var(--nav-height);
+}
+
+/* ─── Nav ─────────────────────────────────────────────
+   Two stops on a rail. The current stop is worked out from :target,
+   so no script is involved. */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 30px 0 10px;
+  border-bottom: 1px solid var(--line);
+  background: var(--shade);
+}
+
+.nav__stops {
+  position: relative;
+  display: flex;
+  padding: 0 28px 0 var(--gutter);
+}
+
+.nav__stops::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.nav__stop {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__stop a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.nav__marker {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: var(--shade);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav__stop a:hover .nav__marker {
+  border-color: var(--accent);
+  transform: scale(1.15);
+}
+
+.nav__label {
+  font-size: 12px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease;
+}
+
+/* the current stop, however it gets decided */
+.nav__stop.is-current .nav__marker {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(234, 78, 101, 0.2);
+}
+
+.nav__stop.is-current .nav__label {
+  color: #fff;
+}
+
+/* Without nav.js, :target decides: home reads as current until the work
+   section is the target. nav.js sets .has-js on <body> and takes over with
+   real scroll-spy, so these fallbacks stand down. */
+body:not(.has-js) .nav__stop--intro .nav__marker,
+body:not(.has-js):has(#work:target) .nav__stop--work .nav__marker {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(234, 78, 101, 0.2);
+}
+
+body:not(.has-js) .nav__stop--intro .nav__label,
+body:not(.has-js):has(#work:target) .nav__stop--work .nav__label {
+  color: #fff;
+}
+
+body:not(.has-js):has(#work:target) .nav__stop--intro .nav__marker {
+  background: var(--shade);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+}
+
+body:not(.has-js):has(#work:target) .nav__stop--intro .nav__label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ─── Intro ──────────────────────────────────────────── */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 56px var(--gutter) 44px;
+}
+
+.intro__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.intro__links a {
+  display: block;
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.intro__links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.intro__name {
+  margin-bottom: 16px;
+  font-family: var(--serif);
+  font-size: clamp(38px, 7vw, 64px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.intro__bio {
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-soft);
+}
+
+/* ─── Ledger (experience, education, certifications) ─── */
+
+.ledger__title {
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(234, 78, 101, 0.35);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.ledger__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ledger__row:last-child {
+  border-bottom: none;
+}
+
+.ledger__org {
+  margin-bottom: 3px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ledger__detail {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.ledger__date {
+  flex-shrink: 0;
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--text-faint);
+}
+
+/* ─── Scroll cue ─────────────────────────────────────── */
+
+.cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  font-size: 8.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cue__rule {
+  width: 1px;
+  height: 32px;
+  background: var(--accent);
+  transform-origin: top;
+  animation: cue-stretch 1.6s ease-in-out infinite;
+}
+
+@keyframes cue-stretch {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+  50%      { transform: scaleY(1) translateY(4px); opacity: 1; }
+}
+
+/* ─── Work ─────────────────────────────────────────────
+   Full width: the heading sits above the cards rather than in a side column. */
+
+.work {
+  padding: 56px var(--gutter) 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.work__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 32px;
+}
+
+.work__count {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.work__title {
+  font-family: var(--serif);
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.work__title_highlight {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+/* auto-fit rather than auto-fill: empty tracks collapse, so the cards
+   stretch to fill the row instead of leaving a gap on the right */
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 20px;
+  align-items: start;
+  padding-bottom: 32px;
+}
+
+/* ─── Case card ──────────────────────────────────────── */
+
+.case {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: var(--paper);
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.case:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* fixed ratio keeps every card the same height */
+.case__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: rgba(25, 25, 25, 0.06);
+}
+
+.case__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.case:hover .case__media img {
+  transform: scale(1.03);
+}
+
+/* the write-up, revealed over the image on hover */
+.case__more {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 34px;
+  background: rgba(25, 25, 25, 0.94);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.case:hover .case__more {
+  opacity: 1;
+}
+
+.case__more-kicker {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.case__more-text {
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.case__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  color: #fff;
+}
+
+.case__facts b {
+  display: inline-block;
+  min-width: 44px;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.case__label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  max-width: calc(100% - 32px);
+  display: block;
+  padding: 10px 14px;
+  border: 1.5px solid var(--accent);
+  background: var(--shade);
+  transition: opacity 0.25s ease;
+}
+
+/* out of the way while the write-up is showing */
+.case:hover .case__label {
+  opacity: 0;
+}
+
+.case__index {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.case__name {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* the label sizes to its content, so the blurb needs its own measure —
+   without it the card stretches wide to fit the sentence on two lines */
+.case__blurb {
+  display: block;
+  max-width: 34ch;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.case__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  padding: 2px 6px;
+  border: 1px solid rgba(234, 78, 101, 0.45);
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(234, 78, 101, 0.9);
+}
+
+/* ─── Work strip ─────────────────────────────────────── */
+
+.work__strip {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 18px var(--gutter);
+  border-top: 1px solid var(--line);
+  background: var(--shade-deep);
+}
+
+.work__strip-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.work__strip-links {
+  display: flex;
+  gap: 20px;
+}
+
+.work__strip-links a {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.work__strip-links a:hover {
+  color: var(--accent);
+}
+
+.work__strip-top {
+  margin-left: auto;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.work__strip-top:hover {
+  color: var(--accent);
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+
+.footer {
+  border-top: 1px solid var(--line);
+  background: var(--shade-deep);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  column-gap: 40px;
+  row-gap: 12px;
+  padding: 44px var(--gutter) 36px;
+}
+
+.footer__name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-self: end;
+}
+
+.footer__links a {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: var(--accent);
+}
+
+.footer__note {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.footer__copy {
+  justify-self: end;
+  align-self: end;
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.22);
+}
+
+/* ─── Narrow ─────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  :root { --nav-height: 70px; }
+
+  .nav__stops { padding-left: var(--gutter-sm); }
+
+  .intro { padding: 40px var(--gutter-sm) 36px; }
+
+  .work { padding: 44px var(--gutter-sm) 0; }
+
+  .work__head { padding-bottom: 24px; }
+
+  .work__strip {
+    flex-wrap: wrap;
+    margin: 0 calc(var(--gutter-sm) * -1);
+    padding: 18px var(--gutter-sm);
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr;
+    padding: 32px var(--gutter-sm) 28px;
+  }
+
+  .footer__links,
+  .footer__copy {
+    justify-self: start;
+  }
+}
+
+/* touch: no hover, so show the write-up rather than hide it behind one */
+@media (hover: none) {
+  .case__media { aspect-ratio: auto; }
+  .case__media img { aspect-ratio: 16 / 10; }
+  .case__more {
+    position: static;
+    opacity: 1;
+    background: var(--shade);
+  }
+  .case__label {
+    position: static;
+    max-width: none;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--shade);
+  }
+  .case:hover .case__label { opacity: 1; }
+  .case { background: var(--shade); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cue__rule { animation: none; }
+  .case,
+  .case__media img,
+  .case__more,
+  .case__label { transition: none; }
+}
+
+/* ─── Highlighted work ──────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════
+   Case study rules. Replaces the block previously appended
+   to site.css — the tokens, reset, .nav and .footer already
+   in the file cover the rest.
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── Strip ───────────────────────────────────────────────
+   Shared by the home page and the case studies. Replaces the
+   old .work__strip rules, which can be deleted. */
+
+.strip {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 18px var(--gutter);
+  border-top: 1px solid var(--line);
+  background: var(--shade-deep);
+}
+
+.strip__label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.strip__links {
+  display: flex;
+  gap: 20px;
+}
+
+.strip__links a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.strip__links a:hover {
+  color: var(--accent);
+}
+
+.strip__top {
+  margin-left: auto;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.strip__top:hover {
+  color: var(--accent);
+}
+
+/* ─── Study shell ─────────────────────────────────────── */
+
+.study {
+  padding: 48px var(--gutter) 0;
+}
+
+.study__back {
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.study__back:hover {
+  color: var(--accent);
+}
+
+.study__title {
+  font-family: var(--serif);
+  font-size: clamp(38px, 7vw, 64px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.study__kicker {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* title and lede on the left, the image on the right */
+.study__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 56px;
+}
+
+.study__lede {
+  max-width: 60ch;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.study__lede + .study__lede {
+  margin-top: 14px;
+}
+
+.study__lede b {
+  color: #fff;
+}
+
+/* facts strip under the title */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px 32px;
+  margin-top: 48px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(234, 78, 101, 0.35);
+  border-bottom: 1px solid var(--line);
+}
+
+.facts__key {
+  margin-bottom: 4px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.facts__value {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+/* the one image on the page */
+.shot {
+  overflow: hidden;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  line-height: 0;
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Sections ────────────────────────────────────────── */
+
+.block {
+  padding-top: 72px;
+  scroll-margin-top: var(--nav-height);
+}
+
+#overview {
+  scroll-margin-top: var(--nav-height);
+}
+
+.block__label {
+  margin-bottom: 12px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.block__title {
+  margin-bottom: 20px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.4vw, 36px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.block p {
+  max-width: 70ch;
+  margin-bottom: 14px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.block p:last-child {
+  margin-bottom: 0;
+}
+
+.block b {
+  color: #fff;
+}
+
+/* two sections side by side */
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 48px;
+  align-items: start;
+}
+.split_margin {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.split .block {
+  padding-top: 0;
+}
+
+.split + .split,
+.split + .block,
+.block + .split {
+  margin-top: 72px;
+}
+
+/* three cards across, full width, all the same height */
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.item {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.item__index {
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.item__title {
+  margin-bottom: 10px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.item p {
+  max-width: none;
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.item p:last-child {
+  margin-bottom: 0;
+}
+
+/* "Problem." / "Solution." lead-ins */
+.item p b {
+  color: #fff;
+}
+
+/* the principle the card's solution came from */
+.item__principle {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ─── Lists ───────────────────────────────────────────── */
+
+.points {
+  max-width: 70ch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.points li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.points li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 6px;
+  height: 1.5px;
+  background: var(--accent);
+}
+
+.points b {
+  color: #fff;
+}
+
+/* tighter inside a card */
+.item .points {
+  gap: 8px;
+}
+
+.item .points li {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.takeaway {
+  max-width: 70ch;
+  margin: 0 0 28px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--accent);
+  background: rgba(234, 78, 101, 0.06);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 700;
+}
+
+.confidential {
+  max-width: 70ch;
+  margin-top: 22px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+.confidentialb {
+  color: #ea4e65 !important;
+}
+
+/* ─── Narrow ──────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .strip {
+    flex-wrap: wrap;
+    margin: 0 calc(var(--gutter-sm) * -1);
+    padding: 18px var(--gutter-sm);
+  }
+
+  .study { padding: 36px var(--gutter-sm) 0; }
+
+  .study__intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .study__lede { max-width: 70ch; }
+
+  .block { padding-top: 56px; }
+
+  .split + .split,
+  .split + .block,
+  .block + .split { margin-top: 56px; }
+
+  .trio { grid-template-columns: 1fr; }
+}

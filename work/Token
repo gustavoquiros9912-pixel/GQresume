@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Token Agency — Gustavo Quiros</title>
+<meta name="description" content="Case study: Guided Creative direction, ads and marketing assets to unify digital and brand experiences across Token Agency's client projects.">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gustavoquiros.com/work/Token">
+<meta property="og:title" content="Token Agency — Gustavo Quiros">
+<meta property="og:description" content="Case study: Guided Creative direction, ads and marketing assets to unify digital and brand experiences across Token Agency's client projects.">
+<meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
+
+<link rel="stylesheet" href="/src/css/layout.css">
+</head>
+
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <ol class="nav__stops">
+    <li class="nav__stop">
+      <a href="#overview"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">overview</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#challenge"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">challenge</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#approach"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">approach</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#impact"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">impact</span></a>
+    </li>
+  </ol>
+</nav>
+
+<main class="study">
+
+  <a class="study__back" href="/index.html#work">← back to work</a>
+
+  <header id="overview">
+
+    <div class="study__intro">
+      <div>
+        <h1 class="study__title">Token Agency</h1>
+        <p class="study__kicker">UX Strategy, Branding & Marketing Design</p>
+
+        <p class="study__lede">
+          At Token Agency, I led UX strategy across websites, digital products and customer-facing experiences.
+          My role extended beyond product design into <b>branding, marketing campaigns and graphic design</b>, ensuring cohesive customer journeys across all touchpoints.
+        </p>
+        <p class="study__lede">
+          I directed user research, usability testing and journey mapping to identify pain points, while also guiding creative direction, ads and marketing assets to unify digital and brand experiences.
+        </p>
+      </div>
+
+      <figure class="shot">
+        <img src="/work/images/token2.png" alt="Token Agency UX and Marketing Work">
+      </figure>
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt class="facts__key">Role</dt>
+        <dd class="facts__value">Lead UI/UX Designer | Creative Lead</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Duration</dt>
+        <dd class="facts__value">2017 – 2022</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Platforms</dt>
+        <dd class="facts__value">Websites, digital products, marketing campaigns</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Markets</dt>
+        <dd class="facts__value">Client projects across multiple industries</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Scope</dt>
+        <dd class="facts__value">UX strategy, user research, branding, marketing, ads, graphic design</dd>
+      </div>
+    </dl>
+  </header>
+
+  <section class="split_margin">
+    <div class="split">
+      <section class="block" id="challenge">
+        <p class="block__label">01 — the challenge</p>
+        <h2 class="block__title">Unifying product and marketing experiences</h2>
+        <ul class="points">
+          <li><b>Fragmented journeys.</b> Websites, products and campaigns lacked cohesion.</li>
+          <li><b>Unclear pain points.</b> Needed research and testing to identify user frustrations.</li>
+          <li><b>Brand consistency.</b> Ads and marketing assets had to align with digital experiences.</li>
+        </ul>
+        <p class="takeaway">The goal was to deliver <b>integrated, research-driven and brand-consistent experiences</b>.</p>
+      </section>
+
+      <section class="block" id="role">
+        <p class="block__label">02 — my role</p>
+        <h2 class="block__title">Sole creative lead across products and campaigns</h2>
+        <p>I directed UX, branding and marketing design across client-facing platforms.</p>
+        <ul class="points">
+          <li>Led UX strategy across websites and digital products</li>
+          <li>Conducted user research, usability testing and journey mapping</li>
+          <li>Guided branding and creative direction initiatives</li>
+          <li>Designed marketing campaigns, ads and graphic assets</li>
+          <li>Ensured cohesive customer experiences across touchpoints</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="block" id="approach">
+      <p class="block__label">03 — approach</p>
+      <h2 class="block__title">Principles that guided solutions</h2>
+      <p class="takeaway">Each principle below shaped how challenges were solved.</p>
+
+      <div class="trio">
+        <article class="item">
+          <p class="item__index">01</p>
+          <h3 class="item__title">Research-driven design</h3>
+          <p class="item__principle">User-centered insights</p>
+          <p><b>Problem.</b> Pain points were unclear without structured research.</p>
+          <p><b>Solution.</b> Applied usability testing, journey mapping and iterative improvements.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">02</p>
+          <h3 class="item__title">Cohesive branding & campaigns</h3>
+          <p class="item__principle">Creative alignment</p>
+          <p><b>Problem.</b> Marketing assets risked inconsistency with product experiences.</p>
+          <p><b>Solution.</b> Unified branding across ads, campaigns and digital platforms.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">03</p>
+          <h3 class="item__title">Integrated customer journeys</h3>
+          <p class="item__principle">Experience cohesion</p>
+          <p><b>Problem.</b> Customer-facing experiences felt fragmented.</p>
+          <p><b>Solution.</b> Designed unified flows and improved usability across websites, products and marketing campaigns.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="split">
+      <section class="block" id="impact">
+        <p class="block__label">04 — impact</p>
+        <h2 class="block__title">What was delivered</h2>
+        <ul class="points">
+          <li>Unified customer experiences across websites, products and campaigns</li>
+          <li>Improved usability through research and testing</li>
+          <li>Consistent branding across ads, marketing and digital platforms</li>
+        </ul>
+        <p class="confidential">Specific metrics and results are confidential.</p>
+              <p class="confidentialb"><a href="/work/metlife.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
+
+      </section>
+
+      <section class="block" id="reflection">
+        <p class="block__label">05 — reflection</p>
+        <h2 class="block__title">What I took from it</h2>
+        <p>
+          This project reinforced the importance of <b>research, branding and marketing integration</b> in customer-facing design. It sharpened my ability to:
+        </p>
+        <ul class="points">
+          <li>Lead UX strategy across diverse projects</li>
+          <li>Translate research insights into design improvements</li>
+          <li>Balance creative direction with marketing and usability needs</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__name">Gustavo Quiros</p>
+    <ul class="footer__links">
+      <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin ↗</a></li>
+      <li><a href="mailto:gustavoquiros9912@gmail.com">email ↗</a></li>
+      <li><a href="https://drive.google.com/file/d/1jGbSwcmIh5kwb17pi2kDqcnGJS1rPHre/view" target="_blank" rel="noopener">resume ↗</a></li>
+    </ul>
+    <p class="footer__note">San Diego, California — open to lead and staff design roles.</p>
+    <p class="footer__copy">© 2026 Gustavo Quiros.</p>
+  </div>
+</footer>
+
+
+<script>
+// Marks the nav stop for whichever section is in view. Measured in viewport
+// coordinates so it doesn't care what element is doing the scrolling.
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  document.body.classList.add('has-js');
+
+  const stops = [...nav.querySelectorAll('.nav__stop')]
+    .map((stop) => {
+      const link = stop.querySelector('a[href^="#"]');
+      const section = link && document.querySelector(link.hash);
+      return section ? { stop, link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!stops.length) return;
+
+  const spy = () => {
+    const line = nav.getBoundingClientRect().bottom + 1;
+    let current = stops[0];
+
+    stops.forEach((entry) => {
+      if (entry.section.getBoundingClientRect().top <= line) current = entry;
+    });
+
+    stops.forEach(({ stop, link }) => {
+      const isCurrent = stop === current.stop;
+      stop.classList.toggle('is-current', isCurrent);
+      if (isCurrent) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; spy(); });
+  };
+
+  document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+  addEventListener('resize', onScroll, { passive: true });
+  spy();
+});
+</script>
+
+</body>
+</html>

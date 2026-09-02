@@ -1,0 +1,25 @@
+@import '../tokens.css';
+
+.caption {
+  position: absolute;
+  margin: 0;
+  padding: var(--caption-pad-y) var(--caption-pad-x);
+  border: var(--caption-border);
+  border-radius: var(--panel-radius);
+  background: var(--white);
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.caption--bl {
+  bottom: var(--caption-inset);
+  left: var(--caption-inset);
+}
+
+.caption--br {
+  bottom: var(--caption-inset);
+  right: var(--caption-inset);
+}

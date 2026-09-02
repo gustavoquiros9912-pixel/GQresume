@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>BJC Health — Gustavo Quiros</title>
+<meta name="description" content="Case study: Streamline the internal web platform and maintain the public-facing website.">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gustavoquiros.com/work/BJC">
+<meta property="og:title" content="BJC Health — Gustavo Quiros">
+<meta property="og:description" content="Streamline the internal web platform and maintain the public-facing website.">
+<meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
+
+<link rel="stylesheet" href="/src/css/layout.css">
+</head>
+
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <ol class="nav__stops">
+    <li class="nav__stop">
+      <a href="#overview"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">overview</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#challenge"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">challenge</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#approach"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">approach</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#impact"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">impact</span></a>
+    </li>
+  </ol>
+</nav>
+
+<main class="study">
+
+  <a class="study__back" href="/index.html#work">← back to work</a>
+
+  <header id="overview">
+
+    <div class="study__intro">
+      <div>
+        <h1 class="study__title">BJC Health</h1>
+        <p class="study__kicker">Internal Web Platform & Website Maintenance</p>
+
+        <p class="study__lede">
+          BJC Health required ongoing website maintenance and the development of a confidential internal-use platform.
+          I worked as the <b>Lead Designer</b> from 2022–2023, focusing on web interfaces, complete structural architecture and user flows.
+        </p>
+        <p class="study__lede">
+          My role was to design and streamline the internal platform’s usability while ensuring the external website remained consistent and reliable.
+        </p>
+      </div>
+
+      <figure class="shot">
+        <img src="/work/images/BJC1.png" alt="BJC Health Internal Platform Mockup">
+      </figure>
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt class="facts__key">Role</dt>
+        <dd class="facts__value">Lead Designer | Web Interfaces</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Duration</dt>
+        <dd class="facts__value">2022 – 2023</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Platforms</dt>
+        <dd class="facts__value">Responsive Web</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Markets</dt>
+        <dd class="facts__value">Internal platform (confidential), public-facing website</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Scope</dt>
+        <dd class="facts__value">Website maintenance, internal web platform design, architecture and user flows</dd>
+      </div>
+    </dl>
+  </header>
+
+  <section class="split_margin">
+    <div class="split">
+      <section class="block" id="challenge">
+        <p class="block__label">01 — the challenge</p>
+        <h2 class="block__title">Designing for confidentiality and usability</h2>
+        <ul class="points">
+          <li><b>Internal complexity.</b> The internal platform required secure, intuitive flows for staff use.</li>
+          <li><b>Structural clarity.</b> Architecture had to support multiple user types and workflows.</li>
+          <li><b>Consistency.</b> External website maintenance needed alignment with brand standards.</li>
+        </ul>
+        <p class="takeaway">The goal was to deliver <b>confidential, reliable and user-friendly web experiences</b>.</p>
+      </section>
+
+      <section class="block" id="role">
+        <p class="block__label">02 — my role</p>
+        <h2 class="block__title">Lead designer for internal systems</h2>
+        <p>I directed the design of the internal platform and supported external website maintenance.</p>
+        <ul class="points">
+          <li>Defined structural architecture for internal workflows</li>
+          <li>Designed user flows for multiple staff roles</li>
+          <li>Created responsive web interfaces</li>
+          <li>Maintained external website consistency</li>
+          <li>Collaborated with IT and compliance teams</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="block" id="approach">
+      <p class="block__label">03 — approach</p>
+      <h2 class="block__title">Principles that guided solutions</h2>
+      <p class="takeaway">Each principle below shaped how challenges were solved.</p>
+
+      <div class="trio">
+        <article class="item">
+          <p class="item__index">01</p>
+          <h3 class="item__title">Confidential workflows</h3>
+          <p class="item__principle">Security-first design</p>
+          <p><b>Problem.</b> Internal systems required strict confidentiality.</p>
+          <p><b>Solution.</b> Designed flows with access control, clear permissions and secure architecture.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">02</p>
+          <h3 class="item__title">Streamlined user flows</h3>
+          <p class="item__principle">Clarity in navigation</p>
+          <p><b>Problem.</b> Staff needed efficient workflows across complex tasks.</p>
+          <p><b>Solution.</b> Created intuitive flows, simplified navigation and reduced redundancy.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">03</p>
+          <h3 class="item__title">Maintaining brand consistency</h3>
+          <p class="item__principle">Unified standards</p>
+          <p><b>Problem.</b> External website updates risked inconsistency.</p>
+          <p><b>Solution.</b> Applied brand guidelines rigorously across all updates and interfaces.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="split">
+      <section class="block" id="impact">
+        <p class="block__label">04 — impact</p>
+        <h2 class="block__title">What was delivered</h2>
+        <ul class="points">
+          <li>Confidential internal platform with secure workflows</li>
+          <li>Streamlined user flows for staff efficiency</li>
+          <li>Consistent external website aligned with brand standards</li>
+        </ul>
+        <p class="confidential">Specific details are confidential due to project sensitivity.</p>
+      </section>
+
+      <section class="block" id="reflection">
+        <p class="block__label">05 — reflection</p>
+        <h2 class="block__title">What I took from it</h2>
+        <p>
+          This project reinforced the importance of <b>confidentiality, clarity and consistency</b> in healthcare-related systems. It sharpened my ability to:
+        </p>
+        <ul class="points">
+          <li>Design secure internal platforms</li>
+          <li>Architect complex workflows with clarity</li>
+          <li>Balance internal usability with external brand consistency</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__name">Gustavo Quiros</p>
+    <ul class="footer__links">
+      <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin ↗</a></li>
+      <li><a href="mailto:gustavoquiros9912@gmail.com">email ↗</a></li>
+      <li><a href="https://drive.google.com/file/d/1jGbSwcmIh5kwb17pi2kDqcnGJS1rPHre/view" target="_blank" rel="noopener">resume ↗</a></li>
+    </ul>
+    <p class="footer__note">San Diego, California — open to lead and staff design roles.</p>
+    <p class="footer__copy">© 2026 Gustavo Quiros.</p>
+  </div>
+</footer>
+
+<script>
+// Marks the nav stop for whichever section is in view. Measured in viewport
+// coordinates so it doesn't care what element is doing the scrolling.
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  document.body.classList.add('has-js');
+
+  const stops = [...nav.querySelectorAll('.nav__stop')]
+    .map((stop) => {
+      const link = stop.querySelector('a[href^="#"]');
+      const section = link && document.querySelector(link.hash);
+      return section ? { stop, link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!stops.length) return;
+
+  const spy = () => {
+    const line = nav.getBoundingClientRect().bottom + 1;
+    let current = stops[0];
+
+    stops.forEach((entry) => {
+      if (entry.section.getBoundingClientRect().top <= line) current = entry;
+    });
+
+    stops.forEach(({ stop, link }) => {
+      const isCurrent = stop === current.stop;
+      stop.classList.toggle('is-current', isCurrent);
+      if (isCurrent) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; spy(); });
+  };
+
+  document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+  addEventListener('resize', onScroll, { passive: true });
+  spy();
+});
+</script>
+
+</body>
+</html>

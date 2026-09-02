@@ -1,0 +1,113 @@
+:root {
+  /* colors */
+  --blue:        #1a52d4;
+  --blue-dark:   #153fb0;
+  --ink:         #1a2744;
+  --cream:       #f5f0e6;
+  --stamp:       #c8001e;
+  --white:       #ffffff;
+  --blue-light:  #4a7ae8;
+  --blue-faint:  rgba(255, 255, 255, 0.45);
+  --blue-ghost:  rgba(255, 255, 255, 0.12);
+  --ink-muted:   rgba(26, 39, 68, 0.55);
+  --left-caption-color: rgba(255, 255, 255, 0.85);
+  --left-facts-color:   rgba(255, 255, 255, 0.7);
+  --left-contact-color: rgba(255, 255, 255, 0.5);
+  --left-contact-rule:  rgba(255, 255, 255, 0.22);
+
+  /* typography */
+  --font-display: 'Noto Serif JP', serif;
+  --font-mono:    'Space Mono', monospace;
+  --font-hand:    'Caveat', cursive;
+  --text-xs:      0.5625rem;
+  --text-sm:      0.6875rem;
+  --text-base:    0.8125rem;
+  --text-lg:      1rem;
+  --text-display: 3.5rem;
+  --weight-light: 300;
+  --weight-bold:  700;
+  --tracking-wide: 0.06em;
+  --leading-tight: 1.15;
+  --leading-normal: 1.5;
+
+  /* layout */
+  --panel-radius:         6px;
+  --panel-gap:            12px;
+  --panel-border:         1.5px solid var(--blue-ghost);
+  --left-col:             200px;
+  --left-col-pad:         24px 20px 24px 28px;
+  --left-col-pad-left:    28px;
+  --left-col-pad-top:     24px;
+  --left-col-pad-bottom:  24px;
+  --left-name-size:       clamp(36px, 3.8vw, 60px);
+  --left-name-tracking:   -0.02em;
+  --left-caption-size:    0.8125rem;
+  --left-caption-leading: 1.65;
+  --left-facts-size:      0.75rem;
+  --left-facts-leading:   1.9;
+  --left-contact-size:    0.6875rem;
+  --left-contact-leading: 1.9;
+  --left-contact-pad-top: 14px;
+  --left-block-gap:       20px;
+  --right-col-pad-right:  44px;
+  --page-pad-bottom:      0;
+  --nav-padding:          20px 44px 0 200px;
+  --nav-pad-top:          20px;
+  --panels-pad-top:       16px;
+  --panel-col-narrow:     0.85fr;
+  --panel-col-wide:       1fr;
+  --panel-top-height:     320px;
+  --panel-bottom-height:  290px;
+  --instruction-pad-top:  16px;
+  --ticket-stage-pad-bottom: 20px;
+  --caption-inset:        14px;
+  --rule-weight:          1px;
+
+  /* nav */
+  --nav-dot:       17px;
+  --nav-dot-glow:  28px;
+  --nav-line:      2px;
+  --nav-height:    52px;
+  --nav-label-gap: 14px;
+
+  /* ticket */
+  --ticket-width:    210px;
+  --ticket-stub:     28px;
+  --ticket-border:   1.5px solid var(--blue);
+  --ticket-pad:      10px;
+  --ticket-gap:      4px;
+  --ticket-gap-lg:   6px;
+  --ticket-row-gap:  6px;
+  --ticket-shadow:   0 4px 16px rgba(26, 82, 212, 0.15);
+  --scan-beam-soft:  rgba(74, 122, 232, 0.18);
+  --scan-beam-mid:   rgba(74, 122, 232, 0.35);
+  --stamp-border:    3px solid var(--stamp);
+  --stamp-pad-x:     10px;
+  --stamp-pad-y:     4px;
+  --stamp-ring-shadow: 0 0 0 1px rgba(200, 0, 30, 0.15), inset 0 0 0 1px rgba(200, 0, 30, 0.1);
+  --ticket-notch-w:  12px;
+  --ticket-notch-h:  6px;
+  --ticket-dash:     2px dashed var(--blue);
+
+  /* caption */
+  --caption-pad-x: 10px;
+  --caption-pad-y: 6px;
+  --caption-border: 1.5px solid var(--blue);
+
+  /* animation */
+  --stamp-duration:      0.32s;
+  --instruction-fade:    0.3s;
+  --panel-wake-duration: 0.6s;
+  --type-delay-1:        200ms;
+  --type-delay-2:        2200ms;
+  --scan-duration:       0.85s;
+  --scan-h:              calc(100cqh - var(--scan-line-h));
+  --scan-line-h:         4px;
+  --scan-ease:           cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:            cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-stamp:          cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  /* ink splatter */
+  --ink-size:    7px;
+  --stamp-drop:  24px;
+}

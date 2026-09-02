@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Gustavo Quiros — UX & Product Design Lead</title>
+<meta name="description" content="UX and product design lead in San Diego. Ten years of design strategy, customer experience and design systems work for enterprise products.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gustavoquiros.com/">
+<meta property="og:title" content="Gustavo Quiros — UX & Product Design Lead">
+<meta property="og:description" content="Design strategy, customer experience and design systems for enterprise products.">
+<meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gustavo Quiros — UX & Product Design Lead">
+<meta name="twitter:description" content="Design strategy, customer experience and design systems for enterprise products.">
+<meta name="twitter:image" content="https://www.gustavoquiros.com/og-image.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="/src/css/layout.css">
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('has-js');
+
+  const stops = [...document.querySelectorAll('a[href^="#"]')]
+    .map((link) => {
+      const section = link.hash.length > 1 && document.querySelector(link.hash);
+      if (!section) return null;
+      return { link, section, stop: link.closest('li') || link };
+    })
+    .filter(Boolean);
+
+  console.log('nav stops found:', stops.length, stops.map((s) => s.link.hash));
+  if (!stops.length) return;
+
+  const header = document.querySelector('nav');
+
+  const spy = () => {
+    const line = (header ? header.getBoundingClientRect().bottom : 0) + 1;
+    let current = stops[0];
+
+    stops.forEach((entry) => {
+      if (entry.section.getBoundingClientRect().top <= line) current = entry;
+    });
+
+    stops.forEach(({ stop, link }) => {
+      const isCurrent = stop === current.stop;
+      stop.classList.toggle('is-current', isCurrent);
+      link.classList.toggle('is-current', isCurrent);
+      if (isCurrent) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; spy(); });
+  };
+
+  document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+  addEventListener('resize', onScroll, { passive: true });
+  spy();
+});
+</script>
+
+
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <ol class="nav__stops">
+    <li class="nav__stop nav__stop--intro">
+      <a href="#intro">
+        <span class="nav__marker" aria-hidden="true"></span>
+        <span class="nav__label">home</span>
+      </a>
+    </li>
+    <li class="nav__stop nav__stop--work">
+      <a href="#work">
+        <span class="nav__marker" aria-hidden="true"></span>
+        <span class="nav__label">work</span>
+      </a>
+    </li>
+  </ol>
+</nav>
+
+<header class="intro" id="intro">
+  <ul class="intro__links">
+    <li><a href="https://drive.google.com/file/d/1jGbSwcmIh5kwb17pi2kDqcnGJS1rPHre/view" target="_blank" rel="noopener">resume ↗</a></li>
+    <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin ↗</a></li>
+    <li><a href="mailto:gustavoquiros9912@gmail.com">email ↗</a></li>
+  </ul>
+
+  <div class="intro__head">
+    <h1 class="intro__name">Gustavo Quiros</h1>
+    <p class="intro__bio">
+      UX & Product Design Lead | Design Strategy | Customer Experience | Design Systems <br>
+US Citizen | San Diego, California
+    </p>
+  </div>
+
+  <section class="ledger">
+    <h2 class="ledger__title">Experience (9+ years)</h2>
+    <ul>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Tata Consultancy Services</p>
+          <p class="ledger__detail">UX/CX Lead | Senior UI/UX Designer</p>
+        </div>
+        <p class="ledger__date">July 2022 – July 2026</p>
+      </li>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Curae Health</p>
+          <p class="ledger__detail">Senior UI/UX Designer, contract</p>
+        </div>
+        <p class="ledger__date">Jan 2022 – Aug 2026</p>
+      </li>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Token Agency</p>
+          <p class="ledger__detail">Lead UI/UX Designer, creative lead</p>
+        </div>
+        <p class="ledger__date">Aug 2017 – Jan 2022</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="ledger">
+    <h2 class="ledger__title">Education</h2>
+    <ul>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Universitat Politècnica de Catalunya</p>
+          <p class="ledger__detail">Master's, customer experience</p>
+        </div>
+        <p class="ledger__date">Apr 2023</p>
+      </li>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Universidad Autónoma de Guadalajara</p>
+          <p class="ledger__detail">Bachelor's, design engineering</p>
+        </div>
+        <p class="ledger__date">Dec 2021</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="ledger">
+    <h2 class="ledger__title">Certifications</h2>
+    <ul>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Google</p>
+          <p class="ledger__detail">UX Design Professional Certificate</p>
+        </div>
+        <p class="ledger__date">2022</p>
+      </li>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Microsoft</p>
+          <p class="ledger__detail">Azure, Azure AI and project management</p>
+        </div>
+        <p class="ledger__date">2023</p>
+      </li>
+      <li class="ledger__row">
+        <div>
+          <p class="ledger__org">Adobe Creative Cloud</p>
+          <p class="ledger__detail">Illustrator, Photoshop, Premiere Pro, InDesign</p>
+        </div>
+        <p class="ledger__date">2025</p>
+      </li>
+    </ul>
+  </section>
+
+  
+</header>
+
+<main class="work" id="work">
+  <div class="work__head">
+    <h2 class="work__title">Highlights in<br><h2 class="work__title_highlight">Design & Development</h2></h2>
+  </div>
+
+  <div class="work__grid">
+
+    <a class="case" href="/work/pip">
+      <!-- ─── PIP GLOBAL SAFETY ──────────────────────────────────────────── -->
+
+      <span class="case__media">
+        <img src="/work/images/pip1.jpeg" alt="Brand and product work from Token Agency client projects">
+        <span class="case__more">
+          <span class="case__more-kicker">Case study</span>
+          <span class="case__more-text">
+            One year leading global product migration and rebranding, transforming Honeywell's safety division into PIP's unified brand across Americas, Europe and Asia.
+          </span>
+          <span class="case__facts">
+            <span><b>Role</b> Lead UI/UX Designer | Product Designer</span>
+            <span><b>Years</b> 2025 – 2026</span>
+          </span>
+        </span>
+      </span>
+      <span class="case__label">
+        <span class="case__index">01</span>
+        <span class="case__name">Orchestrating global product migration</span>
+        <span class="case__blurb">Design leadership across packaging, documents and interfaces, ensuring brand cohesion under tight deadlines.</span>
+        <span class="case__tags">
+          <span class="tag">Product Migration</span>
+          <span class="tag">UX Design</span>
+          <span class="tag">Brand Guidelines</span>
+          <span class="tag">Global Operations</span>
+          <span class="tag">Packaging & Labeling</span>
+        </span>
+      </span>
+    </a>
+
+
+    <a class="case" href="/work/metlife">
+      <!-- ─── METLIFE ──────────────────────────────────────────── -->
+
+      <span class="case__media">
+        <img src="/work/images/metlife1.jpg" alt="MetLife CSS mockup">
+        <span class="case__more">
+          <span class="case__more-kicker">Case study</span>
+          <span class="case__more-text">
+            Four years leading CX/UX strategy, design systems and user research, turning complex insurance processes into clear, intuitive digital experiences across mobile and web platforms for three international markets.
+          </span>
+          <span class="case__facts">
+            <span><b>Role</b> UX/CX Lead | Senior UI/UX Designer</span>
+            <span><b>Years</b> 2022 – 2025</span>
+          </span>
+        </span>
+      </span>
+      <span class="case__label">
+        <span class="case__index">02</span>
+        <span class="case__name">Driving cross-market insurance transformation</span>
+        <span class="case__blurb">Design leadership across mobile and web portals, aligning international products while simplifying complex workflows.</span>
+        <span class="case__tags">
+          <span class="tag">UI/UX</span>
+          <span class="tag">UX/CX Strategy</span>
+          <span class="tag">Design Systems</span>
+          <span class="tag">Interaction flows</span>
+          <span class="tag">Global Alignment</span>
+        </span>
+      </span>
+    </a>
+
+<a class="case" href="/work/curae-health">
+  <!-- ─── CURAE HEALTH ──────────────────────────────────────────── -->
+
+      <span class="case__media">
+        <img src="/work/images/curae1.png" alt="Patient billing screens from the Curae Health platform">
+        <span class="case__more">
+          <span class="case__more-kicker">Case study</span>
+          <span class="case__more-text">
+            Led the design of healthcare financial experiences, simplifying
+            complex patient and operational workflows into scalable, intuitive
+            patterns alongside product and engineering.
+          </span>
+          <span class="case__facts">
+            <span><b>Role</b> Senior UI/UX Designer</span>
+            <span><b>Years</b> 2022 – 2026</span>
+          </span>
+        </span>
+      </span>
+      <span class="case__label">
+        <span class="case__index">03</span>
+        <span class="case__name">Making healthcare billing make sense</span>
+        <span class="case__blurb">Simplifying patient and operational financial workflows for a healthcare platform.</span>
+        <span class="case__tags">
+          <span class="tag">UI/UX</span>
+          <span class="tag">Design systems</span>
+          <span class="tag">Healthcare</span>
+        </span>
+      </span>
+    </a>
+
+
+    <a class="case" href="/work/bjc">
+<!-- BJC HEALTHCARE -->
+
+      <span class="case__media">
+  <img src="/work/images/bjc1.png" alt="Internal platform and website work for BJC Health">
+  <span class="case__more">
+    <span class="case__more-kicker">Case study</span>
+    <span class="case__more-text">
+      One year leading internal platform design and website maintenance, creating secure web interfaces, structural architecture, and user flows for confidential healthcare operations.
+    </span>
+    <span class="case__facts">
+      <span><b>Role</b> Lead Designer | Web Interfaces</span>
+      <span><b>Years</b> 2022 – 2023</span>
+    </span>
+  </span>
+</span>
+<span class="case__label">
+  <span class="case__index">05</span>
+  <span class="case__name">Designing confidential healthcare systems</span>
+  <span class="case__blurb">Internal-use platform architecture and user flows, alongside public website maintenance.</span>
+  <span class="case__tags">
+    <span class="tag">UX Design</span>
+    <span class="tag">Information Architecture</span>
+    <span class="tag">User Flows</span>
+    <span class="tag">Healthcare Systems</span>
+    <span class="tag">Confidential Projects</span>
+  </span>
+</span>
+
+    </a>
+
+    <a class="case" href="/work/token">
+<!-- TOKEN AGENCY -->
+
+      <span class="case__media">
+        <img src="/work/images/token1.png" alt="Brand and product work from Token Agency client projects">
+        <span class="case__more">
+          <span class="case__more-kicker">Case study</span>
+          <span class="case__more-text">
+            Five years leading UX strategy, user research and creative
+            direction, turning client business goals into cohesive digital
+            experiences across interfaces and products.
+          </span>
+          <span class="case__facts">
+            <span><b>Role</b> Lead UI/UX Designer | Creative Lead</span>
+            <span><b>Years</b> 2017 – 2022</span>
+          </span>
+        </span>
+      </span>
+      <span class="case__label">
+        <span class="case__index">05</span>
+        <span class="case__name">Leading design strategy across client projects</span>
+        <span class="case__blurb">Research, journey mapping and creative direction for websites, products and campaigns.</span>
+        <span class="case__tags">
+          <span class="tag">UI/UX</span>
+          <span class="tag">Research</span>
+          <span class="tag">Brand</span>
+          <span class="tag">Marketing</span>
+          <span class="tag">Graphic Design</span>
+        </span>
+      </span>
+    </a>
+
+
+    <a class="case">
+  <span class="case__media">
+    <img src="/work/images/coming-soon.jpg" alt="Placeholder image for upcoming case study">
+    <span class="case__more">
+      <span class="case__more-kicker">Case study</span>
+      <span class="case__more-text">
+        This case study could be our next project together — showcasing my abilities in UX strategy, branding, marketing, and design systems. Let’s connect to collaborate.
+      </span>
+      <span class="case__facts">
+        <span><b>Role</b> Lead Designer | UX/CX Specialist</span>
+        </span>
+      </span>
+    </span>
+  </span>
+
+  <span class="case__label">
+    <span class="case__index">07</span>
+    <span class="case__name">Coming Soon — Collaborate with Me</span>
+    <span class="case__blurb">Future project placeholder highlighting my abilities in UX, branding, marketing, and design systems.</span>
+    <span class="case__tags">
+      <span class="tag">UX Strategy</span>
+      <span class="tag">Branding</span>
+      <span class="tag">Marketing</span>
+      <span class="tag">Design Systems</span>
+      <span class="tag">Collaboration</span>
+    </span>
+  </span>
+</a>
+
+
+
+    
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__name">Gustavo Quiros</p>
+    <ul class="footer__links">
+      <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin ↗</a></li>
+      <li><a href="mailto:gustavoquiros9912@gmail.com">email ↗</a></li>
+      <li><a href="https://drive.google.com/file/d/1jGbSwcmIh5kwb17pi2kDqcnGJS1rPHre/view" target="_blank" rel="noopener">resume ↗</a></li>
+    </ul>
+    <p class="footer__note">San Diego, California — open to lead and staff design roles.</p>
+    <p class="footer__copy">© 2026 Gustavo Quiros.</p>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Curae Health — Gustavo Quiros</title>
+<meta name="description" content="Case study: shaping the public-facing product experience across Curae Health and its Curae platform as the sole senior UI/UX designer.">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.gustavoquiros.com/work/aquina-health">
+<meta property="og:title" content="Curae Health — Gustavo Quiros">
+<meta property="og:description" content="Making healthcare finance understandable and approachable across a parent platform and its core product.">
+<meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
+
+<link rel="stylesheet" href="/src/css/layout.css">
+</head>
+
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <ol class="nav__stops">
+    <li class="nav__stop">
+      <a href="#overview"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">overview</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#challenge"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">challenge</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#approach"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">approach</span></a>
+    </li>
+    <li class="nav__stop">
+      <a href="#impact"><span class="nav__marker" aria-hidden="true"></span><span class="nav__label">impact</span></a>
+    </li>
+  </ol>
+</nav>
+
+<main class="study">
+
+  <a class="study__back" href="/index.html#work">← back to work</a>
+
+  <header id="overview">
+
+    <div class="study__intro">
+      <div>
+        <h1 class="study__title">Curae Health</h1>
+        <p class="study__kicker">Healthcare financial platform &amp; Curae product experience</p>
+
+        <p class="study__lede">
+          Curae Health is a healthcare financial technology company providing
+          liquidity, payment acceleration and revenue solutions for healthcare
+          organizations and their clients.
+        </p>
+        <p class="study__lede">
+          I worked as the <b>sole senior UI/UX and graphic designer</b>, shaping
+          the <b>public-facing product experience</b> across Curae Health and
+          its Curae platform, alongside the marketing and sales assets that
+          supported it.
+        </p>
+      </div>
+
+      <figure class="shot">
+        <img src="/work/images/curae1.png" alt="Curae Health and Curae marketing pages and dashboard shown across desktop and laptop screens">
+      </figure>
+    </div>
+
+    <dl class="facts">
+      <div>
+        <dt class="facts__key">Role</dt>
+        <dd class="facts__value">Senior UI/UX Designer</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Duration</dt>
+        <dd class="facts__value">1+ years</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Platforms</dt>
+        <dd class="facts__value">Responsive web</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Market</dt>
+        <dd class="facts__value">United States</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Scope</dt>
+        <dd class="facts__value">Parent platform and Curae product experience</dd>
+      </div>
+    </dl>
+  </header>
+<section class="split_margin">
+  <div class="split">
+    <section class="block" id="challenge">
+      <p class="block__label">01 — the challenge</p>
+      <h2 class="block__title">Complex finance, high stakes</h2>
+      <ul class="points">
+        <li><b>Complex financial concepts.</b> Healthcare payments and working capital are difficult to understand.</li>
+        <li><b>Product ecosystem clarity.</b> Two portals needed to feel unified rather than fragmented.</li>
+        <li><b>High trust requirements.</b> Users have to feel confident before they'll run healthcare operations through a portal.</li>
+      </ul>
+      <p class="takeaway">The goal was to make healthcare finance understandable and approachable.</p>
+    </section>
+
+    <section class="block" id="role">
+      <p class="block__label">02 — my role</p>
+      <h2 class="block__title">Sole designer across both products</h2>
+      <p>As the senior designer, I owned and supported work across Curae Health and Curae:</p>
+      <ul class="points">
+        <li>UX strategy and design</li>
+        <li>Information architecture</li>
+        <li>UI design for responsive web</li>
+        <li>Graphic components</li>
+        <li>Marketing and sales resources</li>
+        <li>Collaboration with product, engineering and business stakeholders</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="block" id="approach">
+    <p class="block__label">03 — approach</p>
+    <h2 class="block__title">Three principles, three problems they settled</h2>
+    <p class="takeaway">Each principle below is the one that decided how its problem got solved.</p>
+
+    <div class="trio">
+
+      <article class="item">
+        <p class="item__index">01</p>
+        <h3 class="item__title">Explaining complex healthcare finance</h3>
+        <p class="item__principle">User-centered communication</p>
+        <p><b>Problem.</b> Users struggled to understand how Aquina's solutions actually worked.</p>
+        <p><b>Solution.</b> Led with clear value propositions, prioritized progressive disclosure, and arranged content around real use cases.</p>
+      </article>
+
+      <article class="item">
+        <p class="item__index">02</p>
+        <h3 class="item__title">Parent and product ecosystem clarity</h3>
+        <p class="item__principle">Scalability</p>
+        <p><b>Problem.</b> Both companies needed to feel connected while serving different stages of the user journey.</p>
+        <p><b>Solution.</b> Defined Curae Health as the parent platform, positioned Curae as the core product, and shared layouts and components across both.</p>
+      </article>
+
+      <article class="item">
+        <p class="item__index">03</p>
+        <h3 class="item__title">Designing for trust in healthcare fintech</h3>
+        <p class="item__principle">Trust through consistency</p>
+        <p><b>Problem.</b> Financial decisions in healthcare require confidence and transparency.</p>
+        <p><b>Solution.</b> A clean, professional visual hierarchy, plain language over financial jargon, and intuitive interactions that reduce uncertainty.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="split">
+    <section class="block" id="impact">
+      <p class="block__label">04 — impact</p>
+      <h2 class="block__title">What was delivered</h2>
+      <ul class="points">
+        <li>Clearer communication of complex products</li>
+        <li>Stronger cohesion between both experiences</li>
+        <li>A consistent visual language across channels</li>
+      </ul>
+      <p class="confidential">Specific metrics and results are confidential.</p>
+    </section>
+
+    <section class="block" id="reflection">
+      <p class="block__label">05 — reflection</p>
+      <h2 class="block__title">What I took from it</h2>
+      <p>
+        Designing across a <b>parent and child ecosystem</b> reinforced how much
+        clarity, consistency and trust depend on each other. The work sharpened
+        my ability to translate complex concepts into understandable
+        experiences while balancing business and user needs.
+      </p>
+    </section>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__name">Gustavo Quiros</p>
+    <ul class="footer__links">
+      <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin ↗</a></li>
+      <li><a href="mailto:gustavoquiros9912@gmail.com">email ↗</a></li>
+      <li><a href="https://drive.google.com/file/d/1jGbSwcmIh5kwb17pi2kDqcnGJS1rPHre/view" target="_blank" rel="noopener">resume ↗</a></li>
+    </ul>
+    <p class="footer__note">San Diego, California — open to lead and staff design roles.</p>
+    <p class="footer__copy">© 2026 Gustavo Quiros.</p>
+  </div>
+</footer>
+
+<script>
+// Marks the nav stop for whichever section is in view. Measured in viewport
+// coordinates so it doesn't care what element is doing the scrolling.
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  document.body.classList.add('has-js');
+
+  const stops = [...nav.querySelectorAll('.nav__stop')]
+    .map((stop) => {
+      const link = stop.querySelector('a[href^="#"]');
+      const section = link && document.querySelector(link.hash);
+      return section ? { stop, link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!stops.length) return;
+
+  const spy = () => {
+    const line = nav.getBoundingClientRect().bottom + 1;
+    let current = stops[0];
+
+    stops.forEach((entry) => {
+      if (entry.section.getBoundingClientRect().top <= line) current = entry;
+    });
+
+    stops.forEach(({ stop, link }) => {
+      const isCurrent = stop === current.stop;
+      stop.classList.toggle('is-current', isCurrent);
+      if (isCurrent) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; spy(); });
+  };
+
+  document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+  addEventListener('resize', onScroll, { passive: true });
+  spy();
+});
+</script>
+
+</body>
+</html>

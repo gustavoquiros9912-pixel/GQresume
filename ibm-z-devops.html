@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IBM Z DevX — MCP Design Guidelines — Gustavo Quiros</title>
+<link rel="icon" type="image/png" href="/updatedfavicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Space+Mono:wght@400;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/src/css/cursor.css">
+<link rel="stylesheet" href="/src/css/avatar-bubble.css"/>
+<link rel="stylesheet" href="/src/css/mobile-gate.css"/>
+<style>
+*, *::before, *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  cursor: none !important;
+}
+:root {
+  --blue:  #1a52d4;
+  --blue-dark: #153fb0;
+  --ink:   #1a2744;
+  --white: #ffffff;
+  --stamp: #c8001e;
+  --font-display: 'Noto Serif JP', serif;
+  --font-mono:    'Space Mono', monospace;
+  --font-hand:    'Caveat', cursive;
+}
+html, body { height: 100%; overflow: hidden; background: var(--blue); }
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+}
+
+/* ── CURSOR ── */
+.cur-dot {
+  position: fixed; width: 7px; height: 7px;
+  border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 1.5px rgba(26,82,212,0.3);
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  top: -100px; left: -100px;
+}
+.cur-ring {
+  position: fixed; width: 26px; height: 26px;
+  border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.55);
+  background: transparent; pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  top: -100px; left: -100px;
+  opacity: 0;
+  transition: opacity 0.2s, width 0.25s cubic-bezier(0.34,1.56,0.64,1),
+              height 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+.cur-ring.show { opacity: 1; width: 32px; height: 32px; }
+
+/* ── PAGE BODY ── */
+.page-body {
+  flex: 1; min-height: 0;
+  display: grid;
+  grid-template-columns: 200px 56px 1fr;
+  overflow: hidden;
+}
+
+/* ── LEFT COLUMN — sticky, same as rest of site ── */
+.left-col {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 36px 20px 28px 44px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.left-avatar {
+  width: 64px; height: 64px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 14px;
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+.left-avatar:hover { transform: translateY(-3px) scale(1.05); }
+.avatar-link { display: inline-block; text-decoration: none; }
+.left-name { font-family: 'Noto Serif JP', serif; font-size: 40px; font-weight: 300; color: #fff; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 18px; white-space: normal; }
+.left-caption {
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.left-facts {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.95;
+}
+.left-facts__item { margin-bottom: 10px; }
+.left-facts__handle {
+  display: block; color: #fff; font-weight: 700;
+  letter-spacing: 0.04em; text-decoration: none;
+}
+.left-facts__handle:hover { text-decoration: underline; }
+.left-facts__role { display: block; color: rgba(255,255,255,0.55); margin-top: 1px; }
+/* ── SIDEBAR WALKING CHARACTER ──
+   Mirrors the shared .sidebar-walk block from layout.css. Inlined rather than
+   linking layout.css, because layout.css defines .page-body as a 2-column grid
+   and this page needs the 3-column (sidebar / track nav / content) variant. */
+.sidebar-walk {
+  margin-top: 20px;
+  width: 100%;
+  height: 140px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.cityscape-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.cityscape-track {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 100%;
+  animation: cityScroll 18s linear infinite;
+  width: 200%;
+  transform-origin: bottom left;
+  transform: scale(2.7);
+}
+.city-block {
+  flex-shrink: 0;
+  width: 50%;
+  height: 85px;
+  display: block;
+  object-fit: contain;
+}
+@keyframes cityScroll {
+  0%   { transform: scale(3.5) translateX(0%) translateY(20px); }
+  100% { transform: scale(3.5) translateX(-50%) translateY(20px); }
+}
+.walk-animation {
+  position: absolute;
+  bottom: -8px;
+  left: 40%;
+  transform: translateX(-50%) scale(1.9);
+  transform-origin: bottom center;
+  height: 90px;
+  width: auto;
+  z-index: 2;
+}
+.left-contact {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 10px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.9;
+}
+.left-contact a {
+  color: rgba(255,255,255,0.38);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.left-contact a:hover { color: rgba(255,255,255,0.8); }
+
+/* ── TRACK NAV — vertical train-stop nav, one column of its own ── */
+.cs-track-nav {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.cs-track-nav__rail {
+  position: relative;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.cs-track-nav__line {
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 1.5px;
+  background: rgba(255,255,255,0.22);
+  transform: translateX(-50%);
+}
+.cs-track-nav__fill {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 1.5px;
+  background: #fff;
+  transform: translateX(-50%);
+  transition: height 0.4s ease;
+  height: 0%;
+}
+.cs-track-nav__stop {
+  position: relative;
+  z-index: 1;
+}
+.cs-track-nav__stop a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.cs-track-nav__dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.cs-track-nav__stop:hover .cs-track-nav__dot {
+  border-color: rgba(255,255,255,0.8);
+  transform: scale(1.15);
+}
+.cs-track-nav__stop.is-active .cs-track-nav__dot {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
+}
+.cs-track-nav__label {
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.cs-track-nav__stop:hover .cs-track-nav__label,
+.cs-track-nav__stop.is-active .cs-track-nav__label {
+  opacity: 1;
+  color: #fff;
+}
+
+/* ── RIGHT: case study content ── */
+.right-scroll {
+  height: 100%; overflow-y: auto; overflow-x: hidden;
+}
+.right-scroll::-webkit-scrollbar { width: 3px; }
+.right-scroll::-webkit-scrollbar-track { background: transparent; }
+.right-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+.cs-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 44px 0;
+}
+
+.cs-back {
+  display: inline-block;
+  font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  transition: color 0.2s;
+  margin-bottom: 32px;
+}
+.cs-back:hover { color: #fff; }
+
+/* ticket-style project meta */
+.cs-ticket {
+  background: #fff;
+  border: 1.5px solid var(--blue);
+  border-radius: 6px;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  margin-bottom: 36px;
+}
+.cs-ticket__row { display: flex; flex-direction: column; gap: 3px; }
+.cs-ticket__label {
+  font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(26,82,212,0.45);
+}
+.cs-ticket__value {
+  font-size: 12px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.cs-title {
+  font-family: var(--font-display);
+  font-size: 44px; font-weight: 300;
+  color: #fff; line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.cs-desc {
+  font-size: 14px; color: rgba(255,255,255,0.7);
+  line-height: 1.75; max-width: 480px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+}
+.cs-tags {
+  display: flex; flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 56px;
+}
+.cs-tag {
+  font-size: 8px; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+}
+
+/* content sections */
+.cs-section {
+  padding-bottom: 72px;
+  scroll-margin-top: 40px;
+}
+.cs-section__label {
+  font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+}
+.cs-section__title {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 400;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.cs-section p {
+  font-size: 14px; line-height: 1.85;
+  color: rgba(255,255,255,0.75);
+  max-width: 520px;
+  margin-bottom: 16px;
+}
+.cs-section p:last-child { margin-bottom: 0; }
+
+/* illustration break — manga panel style, reuse the site's white-panel language */
+.cs-panel {
+  background: #fff;
+  border-radius: 6px;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+  margin: 24px 0;
+}
+.cs-panel img { display: block; width: 100%; height: auto; }
+.cs-panel-placeholder {
+  aspect-ratio: 16 / 10;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(26,82,212,0.04);
+}
+.cs-panel-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(26,82,212,0.3);
+}
+
+/* outcome stats */
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+.cs-stat {
+  border-left: 2px solid var(--stamp);
+  padding-left: 12px;
+}
+.cs-stat__num {
+  font-family: var(--font-display);
+  font-size: 30px; font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.cs-stat__label {
+  font-size: 10px; letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+/* footer — reuses the site's "next stop" pattern */
+.cs-footer {
+  background: var(--blue-dark);
+  padding: 18px 44px;
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cs-footer__label {
+  font-size: 9px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-family: var(--font-mono);
+}
+.cs-footer__links { display: flex; gap: 20px; margin-left: auto; }
+.cs-footer__link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cs-footer__link:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- cursors -->
+<div class="cur-dot" id="cur-dot"></div>
+<div class="cur-ring" id="cur-ring"></div>
+
+<div class="page-body">
+
+  <aside class="left-col">
+    <a href="/index.html" class="avatar-link">
+      <img src="/updatedpfpicon.png" alt="Gustavo Quiros" class="left-avatar"/>
+    </a>
+    <div class="left-name">Gustavo<br>Quiros</div>
+    <div class="left-caption">"I care about design that feels fun!"</div>
+    <div class="left-facts">
+      <div class="left-facts__item">
+        <a href="https://www.duke.edu" target="_blank" rel="noopener" class="left-facts__handle">@DUKE</a>
+        <span class="left-facts__role">CS & Visual Media</span>
+      </div>
+      <div class="left-facts__item">
+        <a href="https://www.ibm.com" target="_blank" rel="noopener" class="left-facts__handle">prev @IBM</a>
+        <span class="left-facts__role">Design Intern</span>
+      </div>
+    </div>
+
+    <div class="sidebar-walk">
+      <div class="cityscape-wrap">
+        <div class="cityscape-track">
+          <!-- city artwork — appears twice for seamless loop -->
+          <img class="city-block" src="/city-buildings.png" alt="" />
+          <img class="city-block" src="/city-buildings.png" alt="" />
+        </div>
+      </div>
+      <img src="/walking-updated.gif" alt="walking character" class="walk-animation"/>
+    </div>
+
+    <div class="left-contact">
+        <a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin</a> · <a href="/resume.pdf" target="_blank">resume</a><br>
+      gustavoquiros9912@gmail.com
+    </div>
+  </aside>
+
+  <!-- section nav — vertical train-stop track -->
+  <nav class="cs-track-nav" aria-label="Case study sections">
+    <div class="cs-track-nav__rail">
+      <div class="cs-track-nav__line" aria-hidden="true"></div>
+      <div class="cs-track-nav__fill" id="cs-track-fill" aria-hidden="true"></div>
+      <div class="cs-track-nav__stop" data-target="context">
+        <a href="#context"><span class="cs-track-nav__dot"></span><span class="cs-track-nav__label">context</span></a>
+      </div>
+      <div class="cs-track-nav__stop" data-target="problem">
+        <a href="#problem"><span class="cs-track-nav__dot"></span><span class="cs-track-nav__label">problem</span></a>
+      </div>
+      <div class="cs-track-nav__stop" data-target="process">
+        <a href="#process"><span class="cs-track-nav__dot"></span><span class="cs-track-nav__label">process</span></a>
+      </div>
+      <div class="cs-track-nav__stop" data-target="solution">
+        <a href="#solution"><span class="cs-track-nav__dot"></span><span class="cs-track-nav__label">solution</span></a>
+      </div>
+      <div class="cs-track-nav__stop" data-target="outcome">
+        <a href="#outcome"><span class="cs-track-nav__dot"></span><span class="cs-track-nav__label">outcome</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="right-scroll" id="cs-scroll">
+    <div class="cs-container">
+
+      <a href="/index.html#work" class="cs-back">← back to work</a>
+
+      <!-- ticket-style project meta -->
+      <div class="cs-ticket">
+        <div class="cs-ticket__row">
+          <span class="cs-ticket__label">role</span>
+          <span class="cs-ticket__value">Z DevX UX Design Intern</span>
+        </div>
+        <div class="cs-ticket__row">
+          <span class="cs-ticket__label">timeline</span>
+          <span class="cs-ticket__value">May – August 2026 (3 months)</span>
+        </div>
+        <div class="cs-ticket__row">
+          <span class="cs-ticket__label">tools</span>
+          <span class="cs-ticket__value">Mural, Box, Microsoft Copilot, IBM Bob, Git/GitHub</span>
+        </div>
+        <div class="cs-ticket__row">
+          <span class="cs-ticket__label">team</span>
+          <span class="cs-ticket__value">Solo authorship, with review from lead architects and design peers</span>
+        </div>
+      </div>
+
+      <h1 class="cs-title">IBM Z DevX — MCP Design Guidelines</h1>
+      <p class="cs-desc">IBM's Z DevOps ecosystem — Zowe, the RSE API, IBM's internal coding assistant "Bob," Copilot integrations — had no shared standard for how AI agent tools should be named, described, or parameterized. I was individually tasked with defining that standard from the ground up: researching how leading AI companies structure tool design, then converting the result into guidelines the whole org could actually use.</p>
+      <div class="cs-tags">
+        <span class="cs-tag">2026</span>
+        <span class="cs-tag">Design Systems</span>
+        <span class="cs-tag">AI Tooling</span>
+        <span class="cs-tag">Documentation</span>
+      </div>
+
+      <section id="context" class="cs-section">
+        <div class="cs-section__label">01 — context</div>
+        <h2 class="cs-section__title">Built by whoever got there first</h2>
+        <p>Z DevX builds developer tooling for IBM's Z (mainframe) ecosystem, including AI coding assistants that plug into tools like Zowe and the RSE API. As more of these tools shipped, there was no shared design standard behind them — each was named, described, and parameterized differently, by whoever built it. That inconsistency showed up as real confusion among developers, architects, and designers, stalled work, and inefficient token usage as AI agents struggled to parse ambiguous tool signals.</p>
+      </section>
+
+      <section id="problem" class="cs-section">
+        <div class="cs-section__label">02 — problem</div>
+        <h2 class="cs-section__title">Ambiguous signals, by default</h2>
+        <p>Without shared conventions, tool naming, descriptions, and parameter design were left to individual judgment — which meant AI agents calling these tools (IBM's Bob, Copilot integrations) had inconsistent, sometimes ambiguous signals to work from. Every new tool made the inconsistency worse, and there was no reference to point new tool authors to.</p>
+      </section>
+
+      <section id="process" class="cs-section">
+        <div class="cs-section__label">03 — process</div>
+        <h2 class="cs-section__title">Three decisions, one standard</h2>
+        <p>I ran a gap analysis comparing Z DevX's existing tools against published best practices from leading AI companies, then wrote a full guideline covering naming, tool descriptions, parameters, context and token management, modes, tool grouping, security, and localization — the first standard of its kind for the team.</p>
+        <p><strong>Decision 1 — an information architecture, not just a style guide.</strong> Beyond naming conventions, I designed an IA that organizes tools into modes and skills, so an AI agent isn't handed every tool at once — reducing decision-making complexity and preventing redundant, overlapping tool options from overwhelming the model.</p>
+        <p><strong>Decision 2 — converting the guideline into something enforceable.</strong> A written guideline that lives in a doc gets skimmed once and forgotten. I condensed it into a company-wide skill library — a SKILL.md — so the standard is something tools can actually be checked against, not just read.</p>
+        <p><strong>Decision 3 — iterating with the people who'd actually use it.</strong> Partnered with lead architects and design peers to pressure-test the standard, translating ambiguous requirements around context size, accessibility, and localization into something concrete enough for cross-team reuse.</p>
+      </section>
+
+      <section id="solution" class="cs-section">
+        <div class="cs-section__label">04 — solution</div>
+        <h2 class="cs-section__title">Nine sections, one shared standard</h2>
+        <p>The end result: a 9-section MCP design guideline (naming → descriptions → parameters → context/token management → modes → tool grouping → security → localization) and the SKILL.md it's built into, now the reference for how AI agent tools get designed across Z DevX.</p>
+      </section>
+
+      <section id="outcome" class="cs-section">
+        <div class="cs-section__label">05 — outcome</div>
+        <h2 class="cs-section__title">What moved</h2>
+        <p>Adoption drove two measurable shifts: a 30% increase in the team's AI tool usage, and a 50% improvement in token efficiency from the guideline's context-management standards. The guideline was adopted as Z DevX's standard for new MCP tools going forward — and the Bob team has since started building their own tools against it, extending adoption beyond the group that originally commissioned the standard.</p>
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <div class="cs-stat__num">30%</div>
+            <div class="cs-stat__label">increase in AI tool usage</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat__num">50%</div>
+            <div class="cs-stat__label">improvement in token efficiency</div>
+          </div>
+          <div class="cs-stat">
+            <div class="cs-stat__num">9</div>
+            <div class="cs-stat__label">guideline sections (naming through localization)</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="cs-footer">
+      <div class="cs-footer__label">next stop →</div>
+      <div class="cs-footer__links">
+        <a href="/work/coming-soon.html" class="cs-footer__link">next project</a>
+        <a href="/index.html#work" class="cs-footer__link">all work</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // cursor
+  const dot  = document.getElementById('cur-dot');
+  const ring = document.getElementById('cur-ring');
+  let mx=-100,my=-100,rx=-100,ry=-100;
+  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+  document.querySelectorAll('a, .cs-tag')
+    .forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('show'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('show'));
+    });
+  (function loop() {
+    dot.style.left=mx+'px'; dot.style.top=my+'px';
+    rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  })();
+</script>
+
+<script>
+  // section scrollspy — drives the vertical track nav's active dot + fill line.
+  // root is explicitly the actual scroll container, not the window — a past
+  // bug on this site came from forgetting that .right-scroll scrolls
+  // internally rather than the page itself.
+  (function () {
+    const scrollEl = document.getElementById('cs-scroll');
+    const stops = Array.from(document.querySelectorAll('.cs-track-nav__stop'));
+    const fill = document.getElementById('cs-track-fill');
+    const sections = stops.map(s => document.getElementById(s.dataset.target)).filter(Boolean);
+    if (!scrollEl || !stops.length || !sections.length) return;
+
+    function setActive(index) {
+      stops.forEach((s, i) => s.classList.toggle('is-active', i === index));
+      const pct = stops.length > 1 ? (index / (stops.length - 1)) * 100 : 0;
+      fill.style.height = pct + '%';
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const idx = sections.indexOf(entry.target);
+          if (idx !== -1) setActive(idx);
+        });
+      },
+      {
+        root: scrollEl,
+        threshold: 0.4,
+      }
+    );
+    sections.forEach((sec) => observer.observe(sec));
+  })();
+</script>
+
+<script type="module" src="/src/main.js"></script>
+<script type="module" src="/src/js/mobile-gate.js"></script>
+<script type="module" src="/src/js/cursor.js"></script>
+<script type="module" src="/src/js/avatar-bubble.js"></script>
+</body>
+</html>
