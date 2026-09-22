@@ -22,6 +22,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 <link rel="stylesheet" href="./src/css/layout.css">
+
+<!-- Person structured data for SEO / AI search surfaces -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gustavo Quiros",
+  "jobTitle": "UX & Product Design Lead",
+  "url": "https://www.gustavoquiros.com/",
+  "image": "https://www.gustavoquiros.com/og-image.png",
+  "email": "mailto:gustavoquiros9912@gmail.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/gustavoquiros15/"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Diego",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Universitat Politècnica de Catalunya"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad Autónoma de Guadalajara"
+    }
+  ],
+  "knowsAbout": [
+    "UX Design",
+    "Design Strategy",
+    "Customer Experience",
+    "Design Systems"
+  ]
+}
+</script>
 </head>
 
 <script>
@@ -36,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .filter(Boolean);
 
-  console.log('nav stops found:', stops.length, stops.map((s) => s.link.hash));
   if (!stops.length) return;
 
   const header = document.querySelector('nav');
@@ -201,7 +238,7 @@ US Citizen | San Diego, California
       <!-- ─── PIP GLOBAL SAFETY ──────────────────────────────────────────── -->
 
       <span class="case__media">
-        <img src="./work/images/pip1.jpeg" alt="Brand and product work from Token Agency client projects">
+        <img src="./work/images/pip1.jpeg" alt="PIP Global Safety product migration and rebranding screens">
         <span class="case__more">
           <span class="case__more-kicker">Case study</span>
           <span class="case__more-text">
@@ -306,7 +343,7 @@ US Citizen | San Diego, California
   </span>
 </span>
 <span class="case__label">
-  <span class="case__index">05</span>
+  <span class="case__index">04</span>
   <span class="case__name">Designing confidential healthcare systems</span>
   <span class="case__blurb">Internal-use platform architecture and user flows, alongside public website maintenance.</span>
   <span class="case__tags">
@@ -353,13 +390,13 @@ US Citizen | San Diego, California
     </a>
 
 
-    <a class="case">
+    <a class="case" href="mailto:gustavoquiros9912@gmail.com">
   <span class="case__media">
     <img src="./work/images/coming-soon.jpg" alt="Placeholder image for upcoming case study">
     <span class="case__more">
       <span class="case__more-kicker">Case study</span>
       <span class="case__more-text">
-        This case study could be our next project together — showcasing my abilities in UX strategy, branding, marketing, and design systems. Let’s connect to collaborate.
+        This case study could be our next project together — showcasing my abilities in UX strategy, branding, marketing, and design systems. Let's connect to collaborate.
       </span>
       <span class="case__facts">
         <span><b>Role</b> Lead Designer | UX/CX Specialist</span>
@@ -369,7 +406,7 @@ US Citizen | San Diego, California
   </span>
 
   <span class="case__label">
-    <span class="case__index">07</span>
+    <span class="case__index">06</span>
     <span class="case__name">Coming Soon — Collaborate with Me</span>
     <span class="case__blurb">Future project placeholder highlighting my abilities in UX, branding, marketing, and design systems.</span>
     <span class="case__tags">
