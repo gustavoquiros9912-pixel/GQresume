@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Curae Health — Gustavo Quiros</title>
-<meta name="description" content="Case study: shaping the public-facing product experience across Curae Health and its Curae platform as the sole senior UI/UX designer.">
+<meta name="description" content="Case study: sole senior UI/UX designer across Curae Health and its Curae platform: marketing sites, client portal, patient billing and payment flows, and sales collateral.">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.gustavoquiros.com/work/aquina-health">
+<meta property="og:url" content="https://gustavoquiros.com/curae-health.html">
 <meta property="og:title" content="Curae Health — Gustavo Quiros">
-<meta property="og:description" content="Making healthcare finance understandable and approachable across a parent platform and its core product.">
+<meta property="og:description" content="Making healthcare finance understandable across a parent platform, its core product and the patient billing experience.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -19,6 +19,109 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+
+<!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
+<style>
+  .item p + p { margin-top: 10px; }
+
+  /* headline facts */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 24px 0 28px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stats__value {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--accent);
+  }
+  .stats__label {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+
+  /* visuals */
+  .visuals__title { margin-top: 72px; }
+  .visual { margin: 32px 0 0; }
+  .visual + .visual { margin-top: 48px; }
+  .visual > figcaption {
+    margin-top: 12px;
+    max-width: 75ch;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .visual > figcaption b { color: var(--accent); font-weight: 700; }
+
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .screens--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .screens--wide { grid-template-columns: 2fr 1fr; }
+  .screens figure { margin: 0; }
+  .screens figcaption {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  /* surfaces map */
+  .surfaces {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+  }
+  .surfaces li {
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .surfaces__who {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .surfaces__name {
+    margin-top: 10px;
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+  .surfaces__job {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 960px) {
+    .surfaces { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 860px) {
+    .screens, .screens--two, .screens--wide { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .surfaces { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 
 <body>
@@ -49,18 +152,13 @@
     <div class="study__intro">
       <div>
         <h1 class="study__title">Curae Health</h1>
-        <p class="study__kicker">Healthcare financial platform &amp; Curae product experience</p>
+        <p class="study__kicker">Healthcare Financial Platform & Curae Product Experience</p>
 
         <p class="study__lede">
-          Curae Health is a healthcare financial technology company providing
-          liquidity, payment acceleration and revenue solutions for healthcare
-          organizations and their clients.
+          Curae Health is a healthcare financial technology company that provides liquidity, payment acceleration and revenue solutions to healthcare organizations and their clients. Its core product, <b>Curae</b>, sits under the Curae Health parent brand.
         </p>
         <p class="study__lede">
-          I worked as the <b>sole senior UI/UX and graphic designer</b>, shaping
-          the <b>public-facing product experience</b> across Curae Health and
-          its Curae platform, alongside the marketing and sales assets that
-          supported it.
+          As the <b>sole senior UI/UX and graphic designer</b>, I design the whole experience: the marketing sites that explain the offering, the portal clients work in, the billing and payment flows patients see, and the sales materials that support all of it.
         </p>
       </div>
 
@@ -72,11 +170,11 @@
     <dl class="facts">
       <div>
         <dt class="facts__key">Role</dt>
-        <dd class="facts__value">Senior UI/UX Designer</dd>
+        <dd class="facts__value">Senior UI/UX & Graphic Designer (sole designer), contract</dd>
       </div>
       <div>
-        <dt class="facts__key">Duration</dt>
-        <dd class="facts__value">4+ years</dd>
+        <dt class="facts__key">Timeline</dt>
+        <dd class="facts__value">2022–present</dd>
       </div>
       <div>
         <dt class="facts__key">Platforms</dt>
@@ -88,100 +186,212 @@
       </div>
       <div>
         <dt class="facts__key">Scope</dt>
-        <dd class="facts__value">Parent platform and Curae product experience</dd>
+        <dd class="facts__value">Marketing sites, client portal, patient billing and payments, sales collateral</dd>
       </div>
     </dl>
   </header>
-<section class="split_margin">
-  <div class="split">
-    <section class="block" id="challenge">
-      <p class="block__label">01 — the challenge</p>
-      <h2 class="block__title">Complex finance, high stakes</h2>
-      <ul class="points">
-        <li><b>Complex financial concepts.</b> Healthcare payments and working capital are difficult to understand.</li>
-        <li><b>Product ecosystem clarity.</b> Two portals needed to feel unified rather than fragmented.</li>
-        <li><b>High trust requirements.</b> Users have to feel confident before they'll run healthcare operations through a portal.</li>
-      </ul>
-      <p class="takeaway">The goal was to make healthcare finance understandable and approachable.</p>
+
+  <section class="split_margin">
+    <div class="split">
+      <section class="block" id="challenge">
+        <p class="block__label">01 — the challenge</p>
+        <h2 class="block__title">Complex finance, high stakes</h2>
+        <ul class="points">
+          <li><b>Hard-to-explain products.</b> Healthcare payments, liquidity and working capital are hard concepts, even for the people buying them.</li>
+          <li><b>Two brands, one journey.</b> Curae Health and Curae serve different stages of the customer journey but had to feel like one company.</li>
+          <li><b>Money and health together.</b> Whether it’s a healthcare organization managing revenue or a patient paying a bill, people need to trust what they see before they act.</li>
+          <li><b>One designer.</b> Every surface, from the website to the portal to a sales one-pager, came through the same person, so consistency had to be designed in, not policed.</li>
+        </ul>
+        <p class="takeaway">The goal: make healthcare finance <b>understandable, approachable and trustworthy</b> at every touchpoint.</p>
+      </section>
+
+      <section class="block" id="role">
+        <p class="block__label">02 — my role</p>
+        <h2 class="block__title">Sole designer across both brands</h2>
+        <p>I own design end to end for Curae Health and Curae, working with product, engineering and business stakeholders.</p>
+        <ul class="points">
+          <li>UX strategy and information architecture</li>
+          <li>Marketing websites for both brands</li>
+          <li>Client portal and dashboard UI</li>
+          <li>Patient billing and payment flows</li>
+          <li>Shared UI components and graphic elements</li>
+          <li>Sales and marketing collateral</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="block" id="approach">
+      <p class="block__label">03 — approach</p>
+      <h2 class="block__title">Three decisions that shaped the work</h2>
+      <p class="takeaway">Each audience needed something different: buyers needed to understand the value, clients needed to get work done and patients needed to pay with confidence. The work was <b>making one experience serve all three</b>.</p>
+
+      <div class="trio">
+        <article class="item">
+          <p class="item__index">01</p>
+          <h3 class="item__title">Lead with value, reveal the detail</h3>
+          <p class="item__principle">User-centered communication</p>
+          <p><b>Decision.</b> Pages open with a clear value proposition and are built around real use cases. The financial mechanics come next, revealed step by step instead of all at once.</p>
+          <p><b>Why.</b> Visitors need to see quickly whether Curae is relevant to them. The detail matters once they’re interested.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">02</p>
+          <h3 class="item__title">One parent, one product, shared parts</h3>
+          <p class="item__principle">Scalability</p>
+          <p><b>Decision.</b> I positioned Curae Health as the parent platform and Curae as the core product, and built both from the same layouts and components.</p>
+          <p><b>Result.</b> The two brands read as one company, and new pages and features start from existing pieces instead of a blank canvas.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">03</p>
+          <h3 class="item__title">Design for confidence</h3>
+          <p class="item__principle">Trust through consistency</p>
+          <p><b>Decision.</b> A clean, predictable visual hierarchy, plain language instead of financial jargon, and interactions that behave the same everywhere.</p>
+          <p><b>Where it matters most.</b> In billing and payments, where people need to know exactly what they owe, what they’re paying and what happens next.</p>
+        </article>
+      </div>
+
+      <!-- ───────── Visuals ───────── -->
+
+      <h3 class="block__title visuals__title">Four surfaces, one experience</h3>
+
+      <figure class="visual">
+        <ul class="surfaces">
+          <li>
+            <p class="surfaces__who">For buyers</p>
+            <p class="surfaces__name">Marketing sites</p>
+            <p class="surfaces__job">Explain what Curae Health and Curae do and why it matters.</p>
+          </li>
+          <li>
+            <p class="surfaces__who">For clients</p>
+            <p class="surfaces__name">Client portal</p>
+            <p class="surfaces__job">Where healthcare organizations manage their work day to day.</p>
+          </li>
+          <li>
+            <p class="surfaces__who">For patients</p>
+            <p class="surfaces__name">Billing & payments</p>
+            <p class="surfaces__job">Understand a bill and pay it with confidence.</p>
+          </li>
+          <li>
+            <p class="surfaces__who">For sales</p>
+            <p class="surfaces__name">Collateral</p>
+            <p class="surfaces__job">Carry the same story and visual language into every conversation.</p>
+          </li>
+        </ul>
+        <figcaption><b>Scope.</b> Every touchpoint, designed by one person on one shared visual system.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Marketing sites</h3>
+
+      <figure class="visual">
+        <div class="screens screens--wide">
+          <figure>
+            <div class="shot"><img src="./work/images/curae/curae-site-home.png" loading="lazy" alt="Curae marketing site home page on desktop, opening with the value proposition"></div>
+            <figcaption>Home · desktop</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/curae/curae-site-mobile.png" loading="lazy" alt="Curae marketing site home page on mobile"></div>
+            <figcaption>Home · mobile</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Value first.</b> Each page opens with what Curae does for you, then explains how.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Client portal</h3>
+
+      <figure class="visual">
+        <div class="shot"><img src="./work/images/curae/curae-portal-dashboard.png" loading="lazy" alt="Curae client portal dashboard on desktop"></div>
+        <figcaption><b>Dashboard.</b> The same hierarchy and plain language as the public sites, applied to day-to-day work. Shown with demo data.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Patient billing & payments</h3>
+
+      <figure class="visual">
+        <div class="screens">
+          <figure>
+            <div class="shot"><img src="./work/images/curae/curae-billing-statement.png" loading="lazy" alt="Patient billing screen showing the balance due"></div>
+            <figcaption>1 · Understand the bill</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/curae/curae-billing-payment.png" loading="lazy" alt="Patient payment screen"></div>
+            <figcaption>2 · Pay</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/curae/curae-billing-confirm.png" loading="lazy" alt="Payment confirmation screen"></div>
+            <figcaption>3 · Confirmation</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>No surprises.</b> What you owe, what you’re paying and what happens next, in plain language at every step. Shown with demo data.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Shared system & collateral</h3>
+
+      <figure class="visual">
+        <div class="shot"><img src="./work/images/curae/curae-components.png" loading="lazy" alt="Shared UI components used across the Curae Health and Curae experiences"></div>
+        <figcaption><b>Shared parts.</b> The same layouts and components power both brands’ sites and the product.</figcaption>
+      </figure>
+
+      <figure class="visual">
+        <div class="screens screens--two">
+          <figure>
+            <div class="shot"><img src="./work/images/curae/curae-collateral-1.png" loading="lazy" alt="Curae sales collateral piece"></div>
+            <figcaption>Sales collateral</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/curae/curae-collateral-2.png" loading="lazy" alt="Curae marketing collateral piece"></div>
+            <figcaption>Marketing collateral</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Beyond the screen.</b> Sales and marketing materials use the same story and visual language as the product.</figcaption>
+      </figure>
     </section>
 
-    <section class="block" id="role">
-      <p class="block__label">02 — my role</p>
-      <h2 class="block__title">Sole designer across both products</h2>
-      <p>As the senior designer, I owned and supported work across Curae Health and Curae:</p>
-      <ul class="points">
-        <li>UX strategy and design</li>
-        <li>Information architecture</li>
-        <li>UI design for responsive web</li>
-        <li>Graphic components</li>
-        <li>Marketing and sales resources</li>
-        <li>Collaboration with product, engineering and business stakeholders</li>
-      </ul>
-    </section>
-  </div>
+    <div class="split">
+      <section class="block" id="impact">
+        <p class="block__label">04 — impact</p>
+        <h2 class="block__title">What changed</h2>
 
-  <section class="block" id="approach">
-    <p class="block__label">03 — approach</p>
-    <h2 class="block__title">Three principles, three problems they settled</h2>
-    <p class="takeaway">Each principle below is the one that decided how its problem got solved.</p>
+        <div class="stats">
+          <div>
+            <p class="stats__value">1</p>
+            <p class="stats__label">designer across the entire experience</p>
+          </div>
+          <div>
+            <p class="stats__value">2</p>
+            <p class="stats__label">brands, Curae Health and Curae, on one visual system</p>
+          </div>
+          <div>
+            <p class="stats__value">4</p>
+            <p class="stats__label">surfaces: marketing sites, client portal, patient billing and sales collateral</p>
+          </div>
+          <div>
+            <p class="stats__value">3</p>
+            <p class="stats__label">audiences: buyers, healthcare clients and patients</p>
+          </div>
+        </div>
 
-    <div class="trio">
+        <ul class="points">
+          <li>Complex financial products explained in plain language, from the first page to the final payment</li>
+          <li>Curae Health and Curae presented as one connected company</li>
+          <li>Billing and payment flows written in plain language</li>
+          <li>A consistent visual language across web, product and sales materials</li>
+        </ul>
+        <p class="confidential">Business metrics are confidential.</p>
+      </section>
 
-      <article class="item">
-        <p class="item__index">01</p>
-        <h3 class="item__title">Explaining complex healthcare finance</h3>
-        <p class="item__principle">User-centered communication</p>
-        <p><b>Problem.</b> Users struggled to understand how Aquina's solutions actually worked.</p>
-        <p><b>Solution.</b> Led with clear value propositions, prioritized progressive disclosure, and arranged content around real use cases.</p>
-      </article>
-
-      <article class="item">
-        <p class="item__index">02</p>
-        <h3 class="item__title">Parent and product ecosystem clarity</h3>
-        <p class="item__principle">Scalability</p>
-        <p><b>Problem.</b> Both companies needed to feel connected while serving different stages of the user journey.</p>
-        <p><b>Solution.</b> Defined Curae Health as the parent platform, positioned Curae as the core product, and shared layouts and components across both.</p>
-      </article>
-
-      <article class="item">
-        <p class="item__index">03</p>
-        <h3 class="item__title">Designing for trust in healthcare fintech</h3>
-        <p class="item__principle">Trust through consistency</p>
-        <p><b>Problem.</b> Financial decisions in healthcare require confidence and transparency.</p>
-        <p><b>Solution.</b> A clean, professional visual hierarchy, plain language over financial jargon, and intuitive interactions that reduce uncertainty.</p>
-      </article>
-
+      <section class="block" id="reflection">
+        <p class="block__label">05 — reflection</p>
+        <h2 class="block__title">What I took from it</h2>
+        <ul class="points">
+          <li><b>Clarity, consistency and trust depend on each other.</b> In healthcare finance, a confusing screen doesn’t just slow people down. It makes them doubt the numbers.</li>
+          <li><b>Being the only designer means designing the system first.</b> Shared layouts and components are what let one person keep four surfaces consistent.</li>
+          <li><b>The same story has to hold everywhere.</b> When the sales deck, the website and the payment screen say the same thing the same way, people trust all three more.</li>
+        </ul>
+      </section>
     </div>
   </section>
 
-  <div class="split">
-    <section class="block" id="impact">
-      <p class="block__label">04 — impact</p>
-      <h2 class="block__title">What was delivered</h2>
-      <ul class="points">
-        <li>Clearer communication of complex products</li>
-        <li>Stronger cohesion between both experiences</li>
-        <li>A consistent visual language across channels</li>
-      </ul>
-      <p class="confidential">Specific metrics and results are confidential.</p>
-    </section>
-
-    <section class="block" id="reflection">
-      <p class="block__label">05 — reflection</p>
-      <h2 class="block__title">What I took from it</h2>
-      <p>
-        Designing across a <b>parent and child ecosystem</b> reinforced how much
-        clarity, consistency and trust depend on each other. The work sharpened
-        my ability to translate complex concepts into understandable
-        experiences while balancing business and user needs.
-      </p>
-    </section>
-  </div>
-
-</section>
-
 </main>
-
 <footer class="footer">
   <div class="footer__inner">
     <p class="footer__name">Gustavo Quiros</p>
