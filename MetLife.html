@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>MetLife — Gustavo Quiros</title>
-<meta name="description" content="Case study: Design leadership across mobile and web portals for international MetLife instances.">
+<meta name="description" content="Case study: leading UX/CX for MetLife's Client Self-Service app and Client Web Portal in Mexico and the Agent Web Portal in the US and Colombia, built on a shared design system.">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.gustavoquiros.com/work/metlife">
+<meta property="og:url" content="https://gustavoquiros.com/MetLife.html">
 <meta property="og:title" content="MetLife — Gustavo Quiros">
-<meta property="og:description" content="Making complex patient interactions into user-friendly experiences.">
+<meta property="og:description" content="Making insurance understandable across a mobile app and web portals in three markets, on one shared design system.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -19,6 +19,154 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+
+<style>
+  .item p + p { margin-top: 10px; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 24px 0 28px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stats__value {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--accent);
+  }
+  .stats__label {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+
+  /* visuals */
+  .visuals__title { margin-top: 72px; }
+  .visual { margin: 32px 0 0; }
+  .visual + .visual { margin-top: 48px; }
+  .visual > figcaption {
+    margin-top: 12px;
+    max-width: 75ch;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .visual > figcaption b { color: var(--accent); font-weight: 700; }
+  .panel {
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .panel__label {
+    margin-bottom: 14px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .screens--two { grid-template-columns: 2fr 1fr; }
+  .screens figure { margin: 0; }
+  .screens figcaption {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .tokens {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+  }
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+  }
+  .swatch__chip {
+    height: 44px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .swatch__name {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .swatch__hex {
+    font-size: 10px;
+    color: var(--text-soft);
+  }
+  .typescale { list-style: none; padding: 0; }
+  .typescale li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .typescale li span:last-child { color: var(--text-soft); text-align: right; }
+  .typescale__note {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-soft);
+  }
+
+  .copy {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .copy__card {
+    padding: 20px;
+    border-left: 2px solid var(--accent);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .copy__term {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .copy__es {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .copy__en {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 860px) {
+    .screens, .screens--two, .tokens, .copy { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .panel { padding: 18px; }
+  }
+</style>
 </head>
 
 <body>
@@ -49,140 +197,252 @@
     <div class="study__intro">
       <div>
         <h1 class="study__title">MetLife</h1>
-        <p class="study__kicker">Client Self-Sevice App & International Web Portals</p>
+        <p class="study__kicker">Client Self-Service App & International Web Portals</p>
 
         <p class="study__lede">
-            MetLife is a global leader in insurance and financial services, needed to modernize its digital ecosystem across multiple regions. I led the design of the <b>Client Self-Service mobile app (CSS) & Client Web Portal (CWP)</b> for Mexico, the <b>Agent Web Portal (AWP)</b> for the United States & Colombia.</p>
+          MetLife, a global leader in insurance and financial services, needed to modernize how customers and agents manage policies across several markets. I led design for the <b>Client Self-Service app (CSS)</b> and <b>Client Web Portal (CWP)</b> in Mexico, and the <b>Agent Web Portal (AWP)</b> in the United States and Colombia.
+        </p>
         <p class="study__lede">
-          My role as the <b>UX/CX Lead</b> was to simplify complex insurance workflows, unify experiences across platforms and establish scalable design systems that could adapt to different markets and regulatory environments.
+          As <b>UX/CX Lead</b>, my focus was making insurance understandable: turning dense policy, payment and claims information into screens people could act on, and building one design system that could flex across products, platforms and markets.
         </p>
       </div>
 
       <figure class="shot">
-        <img src="./work/images/MetLife1.jpg" alt="MetLife CSS Mockup">
+        <img src="./work/images/MetLife1.jpg" alt="MetLife Client Self-Service app on two iPhones showing the home screen with a personalized greeting and the user’s policies">
       </figure>
     </div>
 
     <dl class="facts">
       <div>
         <dt class="facts__key">Role</dt>
-        <dd class="facts__value">UX/CX Lead |Senior UI/UX Designer</dd>
+        <dd class="facts__value">UX/CX Lead · Senior UI/UX Designer</dd>
       </div>
       <div>
-        <dt class="facts__key">Duration</dt>
-        <dd class="facts__value">4+ years</dd>
+        <dt class="facts__key">Timeline</dt>
+        <dd class="facts__value">2022–2025</dd>
       </div>
       <div>
         <dt class="facts__key">Platforms</dt>
-        <dd class="facts__value">iOS, Android and Responsive web</dd>
+        <dd class="facts__value">iOS, Android and responsive web</dd>
       </div>
       <div>
-        <dt class="facts__key">Market</dt>
-        <dd class="facts__value">United States, Mexico, Colombia</dd>
+        <dt class="facts__key">Markets</dt>
+        <dd class="facts__value">Mexico, United States, Colombia</dd>
       </div>
       <div>
-        <dt class="facts__key">Scope</dt>
-        <dd class="facts__value">Client Self-Service App, Client Web Portal (Mexico), Agent Web Portal (United States, Colombia)</dd>
+        <dt class="facts__key">Products</dt>
+        <dd class="facts__value">CSS app and CWP (Mexico), AWP (United States, Colombia)</dd>
       </div>
     </dl>
   </header>
-<section class="split_margin">
-  <div class="split">
-    <section class="block" id="challenge">
-      <p class="block__label">01 — the challenge</p>
-      <h2 class="block__title">Insurance made usable, everywhere</h2>
-      <ul class="points">
-        <li><b>Dense policy information.</b> Insurance terminology and financial concepts were difficult for users to understand.</li>
-        <li><b>Critical user flows.</b> Payments, claims and medical processes carried high stakes and required clarity.</li>
-        <li><b>Fragmented experiences.</b> Mobile and web platforms needed alignment without losing local relevance.</li>
-       <li><b>Future scalability</b> Design systems had to support ongoing product evolution across multiple markets.</li>
 
+  <section class="split_margin">
+    <div class="split">
+      <section class="block" id="challenge">
+        <p class="block__label">01 — the challenge</p>
+        <h2 class="block__title">Insurance people can actually understand</h2>
+        <ul class="points">
+          <li><b>Dense information.</b> Coverage, premiums and policy status were written in insurance terms most customers don’t use.</li>
+          <li><b>High-stakes tasks.</b> Payments, claims and medical processes leave little room for confusion.</li>
+          <li><b>Disconnected experiences.</b> The app and the web portals had to feel like one MetLife without losing what each market needed locally.</li>
+          <li><b>Room to grow.</b> Whatever we built had to support new products and markets without starting over.</li>
+        </ul>
+        <p class="takeaway">The goal: make insurance <b>clear, approachable and consistent</b> on every platform and in every market.</p>
+      </section>
 
-      </ul>
-      <p class="takeaway">The goal was to make insurance <b>clear, approachable and consistent across platforms and regions.</b>.</p>
+      <section class="block" id="role">
+        <p class="block__label">02 — my role</p>
+        <h2 class="block__title">Lead designer across three products</h2>
+        <p>I owned and supported design across CSS, CWP and AWP, working with product, engineering, legal and quality teams.</p>
+        <ul class="points">
+          <li>UX/CX strategy and end-to-end design</li>
+          <li>Information architecture for complex insurance data</li>
+          <li>UI design for mobile apps and responsive web</li>
+          <li>Building and maintaining the shared design system</li>
+          <li>Iterating on designs based on usability testing and feedback</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="block" id="approach">
+      <p class="block__label">03 — approach</p>
+      <h2 class="block__title">Three decisions that shaped the work</h2>
+      <p class="takeaway">The product was already full of information. The job was deciding <b>what to show first, how to explain it and how to keep it consistent</b>.</p>
+
+      <div class="trio">
+        <article class="item">
+          <p class="item__index">01</p>
+          <h3 class="item__title">Explain it where it appears</h3>
+          <p class="item__principle">Progressive disclosure</p>
+          <p><b>Decision.</b> Instead of sending people to a glossary or an agent, each policy screen leads with the essentials and puts plain-language help right next to the term, through tooltips and status tags.</p>
+          <p><b>Example.</b> “Premium” comes with a one-line explanation, and a policy that’s no longer active says what that means and what to do next.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">02</p>
+          <h3 class="item__title">One system, local flows</h3>
+          <p class="item__principle">Scalable systems</p>
+          <p><b>Decision.</b> I built a shared foundation of named color tokens, a two-typeface type scale and components with defined default, hover, focus and error states. Each product and market built its own flows on top of it.</p>
+          <p><b>Result.</b> The app and portals look and behave like one MetLife, while each market keeps the flows it needs.</p>
+        </article>
+
+        <article class="item">
+          <p class="item__index">03</p>
+          <h3 class="item__title">Calm the high-stakes moments</h3>
+          <p class="item__principle">Empathy through clarity</p>
+          <p><b>Decision.</b> Payments, claims and medical processes are broken into steps, explained before they start and closed with a clear confirmation.</p>
+          <p><b>Detail.</b> Error states are part of the system, with their own colors and inline messages, so problems are flagged gently and the fix is shown right there.</p>
+        </article>
+      </div>
+
+      <!-- ───────── Visuals ───────── -->
+
+      <h3 class="block__title visuals__title">The Client Self-Service app</h3>
+
+      <figure class="visual">
+        <div class="screens">
+          <figure>
+            <div class="shot"><img src="./work/images/metlife/metlife-app-home.png" loading="lazy" alt="CSS app home screen with a personalized greeting and a summary of the user’s policies"></div>
+            <figcaption>Home · my policies</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/metlife/metlife-app-policy.png" loading="lazy" alt="CSS app policy detail screen with coverage, premium and policy status"></div>
+            <figcaption>Policy detail</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/metlife/metlife-app-payments.png" loading="lazy" alt="CSS app payments screen"></div>
+            <figcaption>Payments</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Mobile.</b> The most important information on each policy comes first, with details one tap away.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Plain language, built in</h3>
+
+      <figure class="visual">
+        <div class="copy">
+          <div class="copy__card">
+            <p class="copy__term">Tooltip · Premium</p>
+            <p class="copy__es" lang="es">“Es el monto que pagas por esta protección, también se le conoce como prima del seguro.”</p>
+            <p class="copy__en">“It’s the amount you pay for this protection, also known as the insurance premium.”</p>
+          </div>
+          <div class="copy__card">
+            <p class="copy__term">Status tag · “No activa” (not active)</p>
+            <p class="copy__es" lang="es">“Tu póliza se encuentra cancelada o siniestrada, podrás visualizarla por 12 meses posterior a su fecha de cancelación. Si tienes dudas, acércate con tu agente.”</p>
+            <p class="copy__en">“Your policy has been cancelled or has had a claim paid out. You can still view it for 12 months after cancellation. If you have questions, contact your agent.”</p>
+          </div>
+        </div>
+        <div class="shot" style="margin-top:24px"><img src="./work/images/metlife/metlife-status-tooltips.png" loading="lazy" alt="Client Web Portal policy status tags in active and not active states, each with an open tooltip"></div>
+        <figcaption><b>Client Web Portal.</b> Status tags and tooltips answer the question right where it comes up, in the customer’s language.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Inside the design system</h3>
+
+      <figure class="visual">
+        <div class="panel">
+          <div class="tokens">
+            <div>
+              <p class="panel__label">Color tokens</p>
+              <ul class="swatches">
+                <li><div class="swatch__chip" style="background:#0090DA"></div><p class="swatch__name">MetLife Blue 1</p><p class="swatch__hex">#0090DA</p></li>
+                <li><div class="swatch__chip" style="background:#007ABC"></div><p class="swatch__name">MetLife Blue 2</p><p class="swatch__hex">#007ABC</p></li>
+                <li><div class="swatch__chip" style="background:#0061A0"></div><p class="swatch__name">Dark Blue</p><p class="swatch__hex">#0061A0</p></li>
+                <li><div class="swatch__chip" style="background:#A4CE4E"></div><p class="swatch__name">Green</p><p class="swatch__hex">#A4CE4E</p></li>
+                <li><div class="swatch__chip" style="background:#00ACA0"></div><p class="swatch__name">Teal</p><p class="swatch__hex">#00ACA0</p></li>
+                <li><div class="swatch__chip" style="background:#5F259F"></div><p class="swatch__name">Purple</p><p class="swatch__hex">#5F259F</p></li>
+                <li><div class="swatch__chip" style="background:#D80A5B"></div><p class="swatch__name">Berry</p><p class="swatch__hex">#D80A5B</p></li>
+                <li><div class="swatch__chip" style="background:#FFC600"></div><p class="swatch__name">Yellow</p><p class="swatch__hex">#FFC600</p></li>
+                <li><div class="swatch__chip" style="background:#333333"></div><p class="swatch__name">Darkest Gray</p><p class="swatch__hex">#333333</p></li>
+                <li><div class="swatch__chip" style="background:#75787B"></div><p class="swatch__name">Dark Gray</p><p class="swatch__hex">#75787B</p></li>
+                <li><div class="swatch__chip" style="background:#DD2224"></div><p class="swatch__name">Error · Primary</p><p class="swatch__hex">#DD2224</p></li>
+                <li><div class="swatch__chip" style="background:#FCE8E8"></div><p class="swatch__name">Error · Fields</p><p class="swatch__hex">#FCE8E8</p></li>
+              </ul>
+            </div>
+            <div>
+              <p class="panel__label">Type scale</p>
+              <ul class="typescale">
+                <li><span>MetLife Circular Medium</span><span>28 / 36 · titles</span></li>
+                <li><span>MetLife Circular Bold</span><span>20 / 28 · subtitles</span></li>
+                <li><span>MetLife Circular Bold</span><span>18 / 26 · subtitle links</span></li>
+                <li><span>Noto Sans Regular</span><span>16 / 24 · body</span></li>
+                <li><span>Noto Sans</span><span>14 / 21 · links</span></li>
+                <li><span>Noto Sans Bold, uppercase</span><span>12 / 18 · labels</span></li>
+              </ul>
+              <p class="typescale__note">MetLife Circular carries the brand in headings. Noto Sans handles reading. Body and link styles use a 150% line height for readability.</p>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Foundations.</b> A selection of the named tokens and type styles from the system’s library, alongside gradients, icons, forms, cards, sliders and bottom navigation.</figcaption>
+      </figure>
+
+      <figure class="visual">
+        <div class="shot"><img src="./work/images/metlife/metlife-ds-overview.png" loading="lazy" alt="Overview of the CSS design system library showing colors, typography and components"></div>
+        <figcaption><b>Library.</b> Components with their default, hover, focus and error states, shared across the app and portals.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">The Client Web Portal</h3>
+
+      <figure class="visual">
+        <div class="screens screens--two">
+          <figure>
+            <div class="shot"><img src="./work/images/metlife/metlife-cwp-desktop.png" loading="lazy" alt="Client Web Portal documents page on desktop"></div>
+            <figcaption>Documents · desktop</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/metlife/metlife-cwp-mobile.png" loading="lazy" alt="Client Web Portal documents page on mobile"></div>
+            <figcaption>Documents · mobile</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Responsive web.</b> The same components and hierarchy on desktop and mobile.</figcaption>
+      </figure>
     </section>
 
-    <section class="block" id="role">
-      <p class="block__label">02 — my role</p>
-      <h2 class="block__title">Lead designer across three ecosystems</h2>
-      <p>I owned and supported design across CSS, CWP and AWP</p>
-      <ul class="points">
-        <li>UX/CX strategy and design</li>
-        <li>Information architecture for complex insurance data</li>
-        <li>UI design for mobile and responsive web</li>
-        <li>Creation and maintenance of interconnected design systems</li>
-        <li>Iterative improvements based on usability testing and feedback</li>
-        <li>Collaboration with product, engineering, legal and quality teams.</li>
-      </ul>
-    </section>
-  </div>
+    <div class="split">
+      <section class="block" id="impact">
+        <p class="block__label">04 — impact</p>
+        <h2 class="block__title">What changed</h2>
 
-  <section class="block" id="approach">
-    <p class="block__label">03 — approach</p>
-    <h2 class="block__title">Principles that shaped solutions</h2>
-    <p class="takeaway">Each principle below is the one that decided how its problem got solved.</p>
+        <div class="stats">
+          <div>
+            <p class="stats__value">3</p>
+            <p class="stats__label">products: a customer app, a customer portal and an agent portal</p>
+          </div>
+          <div>
+            <p class="stats__value">3</p>
+            <p class="stats__label">markets: Mexico, United States and Colombia</p>
+          </div>
+          <div>
+            <p class="stats__value">16</p>
+            <p class="stats__label">named color tokens in the shared library</p>
+          </div>
+          <div>
+            <p class="stats__value">1</p>
+            <p class="stats__label">design system across iOS, Android and web</p>
+          </div>
+        </div>
 
-    <div class="trio">
+        <ul class="points">
+          <li>Policy, payment and coverage information explained in plain language, in context</li>
+          <li>Mobile and web experiences that look and behave like one MetLife</li>
+          <li>A consistent visual language across Mexico, the US and Colombia</li>
+          <li>A design system ready to support future MetLife products</li>
+        </ul>
+        <p class="confidential">Usage metrics are confidential.</p>
+      </section>
 
-      <article class="item">
-        <p class="item__index">01</p>
-        <h3 class="item__title">Simplifying insurance data</h3>
-        <p class="item__principle">Progressive Disclosure</p>
-        <p><b>Problem.</b> Users struggled to understand their coverage, payments and benefits.</p>
-        <p><b>Solution.</b> Modular sections, contextual help and visual hierarchy simplified comprehension.</p>
-      </article>
-
-      <article class="item">
-        <p class="item__index">02</p>
-        <h3 class="item__title">Unifying international portals</h3>
-        <p class="item__principle">Scalable systems</p>
-        <p><b>Problem.</b> Different markets required unique flows but needed a unified brand experience.</p>
-        <p><b>Solution.</b> Built interconnected design systems with reusable components and shared interaction patterns.</p>
-      </article>
-
-      <article class="item">
-        <p class="item__index">03</p>
-        <h3 class="item__title">Reducing stress in sensitive flows</h3>
-        <p class="item__principle">Empathy through clarity</p>
-        <p><b>Problem.</b> Financial and medical processes caused anxiety and uncertainty.</p>
-        <p><b>Solution.</b> Step by step flows, upfront explanations, clean confirmations and instructional content reduced ambiguity.</p>
-      </article>
-
+      <section class="block" id="reflection">
+        <p class="block__label">05 — reflection</p>
+        <h2 class="block__title">What I took from it</h2>
+        <ul class="points">
+          <li><b>Clarity is a design decision.</b> In insurance, the most useful screen is often the one that explains a single word well.</li>
+          <li><b>Systems earn trust across markets.</b> Shared tokens and components let each market move on its own without the brand drifting.</li>
+          <li><b>Regulated doesn’t have to mean rigid.</b> Working closely with legal and quality teams made it possible to meet strict requirements and still write for people.</li>
+        </ul>
+      </section>
     </div>
   </section>
 
-  <div class="split">
-    <section class="block" id="impact">
-      <p class="block__label">04 — impact</p>
-      <h2 class="block__title">What was delivered</h2>
-      <ul class="points">
-        <li>Clearer communication of complex insurance products</li>
-        <li>Stronger cohesion between mobile and web experiences</li>
-        <li>A consistent visual language across Mexico, US and Colombia</li>
-        <li>Scalable design systems supporting future MetLife products</li>
-      </ul>
-      <p class="confidential">Specific metrics and results are confidential.</p>
-      <p class="confidentialb"><a href="/work/metlife.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
-    </section>
-
-    <section class="block" id="reflection">
-      <p class="block__label">05 — reflection</p>
-      <h2 class="block__title">What I took from it</h2>
-      <p>
-        Working across multiple international portals reinforced how much <b>clarity, consistency and empathy</b> matter in complex, regulated industries. This project sharpened my ability to
-      </p>
-      <ul class="points">
-        <li>Translate dense complex concepts into approachable experiences</li>
-        <li>Balance strict business requirements with user needs</li>
-        <li>Build scalable design foundations for global ecosystems</li>
-      </ul>
-    </section>
-  </div>
-
-</section>
-
 </main>
-
 <footer class="footer">
   <div class="footer__inner">
     <p class="footer__name">Gustavo Quiros</p>
