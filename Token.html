@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Token Agency — Gustavo Quiros</title>
-<meta name="description" content="Case study: Guided Creative direction, ads and marketing assets to unify digital and brand experiences across Token Agency's client projects.">
+<meta name="description" content="Case study: sole designer and creative lead at Token Agency, leading UX strategy, research, branding and marketing design for clients in finance, education and industrial sectors.">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.gustavoquiros.com/work/Token">
+<meta property="og:url" content="https://gustavoquiros.com/Token.html">
 <meta property="og:title" content="Token Agency — Gustavo Quiros">
-<meta property="og:description" content="Case study: Guided Creative direction, ads and marketing assets to unify digital and brand experiences across Token Agency's client projects.">
+<meta property="og:description" content="One designer connecting research, websites, branding and campaigns into a single customer journey for agency clients.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -19,6 +19,102 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+
+<style>
+  .item p + p { margin-top: 10px; }
+
+  .visuals__title { margin-top: 72px; }
+  .visual { margin: 32px 0 0; }
+  .visual + .visual { margin-top: 48px; }
+  .visual > figcaption {
+    margin-top: 12px;
+    max-width: 75ch;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .visual > figcaption b { color: var(--accent); font-weight: 700; }
+
+  /* journey strip */
+  .journey {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    counter-reset: step;
+  }
+  .journey li {
+    position: relative;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    counter-increment: step;
+  }
+  .journey li::before {
+    content: "0" counter(step);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+  .journey li:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -11px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--accent);
+  }
+  .journey__name {
+    margin-top: 10px;
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+  .journey__job {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-soft);
+  }
+
+  /* screens and gallery */
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+  }
+  .screens figure, .gallery figure { margin: 0; }
+  .screens figcaption, .gallery figcaption {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 960px) {
+    .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 860px) {
+    .screens, .journey { grid-template-columns: 1fr; }
+    .journey li::after { display: none; }
+  }
+  @media (max-width: 520px) {
+    .journey, .gallery { grid-template-columns: 1fr; }
+    .journey li::after { display: none; }
+  }
+</style>
 </head>
 
 <body>
@@ -52,39 +148,38 @@
         <p class="study__kicker">UX Strategy, Branding & Marketing Design</p>
 
         <p class="study__lede">
-          At Token Agency, I led UX strategy across websites, digital products and customer-facing experiences.
-          My role extended beyond product design into <b>branding, marketing campaigns and graphic design</b>, ensuring cohesive customer journeys across all touchpoints.
+          At Token Agency, I was the <b>sole designer and creative lead</b> on client projects in <b>finance, education and industrial</b> sectors. I covered the full range: websites and digital products, brand identity, campaigns, ads and graphic design.
         </p>
         <p class="study__lede">
-          I directed user research, usability testing and journey mapping to identify pain points, while also guiding creative direction, ads and marketing assets to unify digital and brand experiences.
+          Being the only designer meant I saw every touchpoint a client’s customers would see. My job was to use research to find where those journeys broke down, then make every piece, from the first ad to the final product screen, tell the same story.
         </p>
       </div>
 
       <figure class="shot">
-        <img src="./work/images/token2.png" alt="Token Agency UX and Marketing Work">
+        <img src="./work/images/token2.png" alt="Token Agency website on desktop and mobile with the headline “We are the token towards your success”">
       </figure>
     </div>
 
     <dl class="facts">
       <div>
         <dt class="facts__key">Role</dt>
-        <dd class="facts__value">Lead UI/UX Designer | Creative Lead</dd>
+        <dd class="facts__value">Lead UI/UX Designer · Creative Lead (sole designer)</dd>
       </div>
       <div>
         <dt class="facts__key">Duration</dt>
-        <dd class="facts__value">5+ Years</dd>
+        <dd class="facts__value">5+ years</dd>
+      </div>
+      <div>
+        <dt class="facts__key">Industries</dt>
+        <dd class="facts__value">Finance, education, industrial</dd>
       </div>
       <div>
         <dt class="facts__key">Platforms</dt>
         <dd class="facts__value">Websites, digital products, marketing campaigns</dd>
       </div>
       <div>
-        <dt class="facts__key">Markets</dt>
-        <dd class="facts__value">Client projects across multiple industries</dd>
-      </div>
-      <div>
         <dt class="facts__key">Scope</dt>
-        <dd class="facts__value">UX strategy, user research, branding, marketing, ads, graphic design</dd>
+        <dd class="facts__value">UX strategy, user research, branding, campaigns, ads, graphic design</dd>
       </div>
     </dl>
   </header>
@@ -93,59 +188,130 @@
     <div class="split">
       <section class="block" id="challenge">
         <p class="block__label">01 — the challenge</p>
-        <h2 class="block__title">Unifying product and marketing experiences</h2>
+        <h2 class="block__title">Marketing and product, out of sync</h2>
         <ul class="points">
-          <li><b>Fragmented journeys.</b> Websites, products and campaigns lacked cohesion.</li>
-          <li><b>Unclear pain points.</b> Needed research and testing to identify user frustrations.</li>
-          <li><b>Brand consistency.</b> Ads and marketing assets had to align with digital experiences.</li>
+          <li><b>Fragmented journeys.</b> Clients often arrived with websites, products and campaigns that had been built separately and didn’t feel connected.</li>
+          <li><b>Unclear pain points.</b> It wasn’t clear where customers were struggling without research and testing.</li>
+          <li><b>Brand drift.</b> Ads and marketing assets didn’t always match the digital experience they led to.</li>
+          <li><b>Very different clients.</b> Finance, education and industrial audiences each needed their own tone and priorities.</li>
         </ul>
-        <p class="takeaway">The goal was to deliver <b>integrated, research-driven and brand-consistent experiences</b>.</p>
+        <p class="takeaway">The goal: give each client <b>one connected, research-backed and on-brand experience</b> from first impression to product.</p>
       </section>
 
       <section class="block" id="role">
         <p class="block__label">02 — my role</p>
-        <h2 class="block__title">Sole creative lead across products and campaigns</h2>
-        <p>I directed UX, branding and marketing design across client-facing platforms.</p>
+        <h2 class="block__title">Sole designer and creative lead</h2>
+        <p>I owned UX, branding and marketing design for client projects, from research to final assets.</p>
         <ul class="points">
-          <li>Led UX strategy across websites and digital products</li>
-          <li>Conducted user research, usability testing and journey mapping</li>
-          <li>Guided branding and creative direction initiatives</li>
-          <li>Designed marketing campaigns, ads and graphic assets</li>
-          <li>Ensured cohesive customer experiences across touchpoints</li>
+          <li>Led UX strategy for websites and digital products</li>
+          <li>Ran user research, usability testing and journey mapping</li>
+          <li>Set creative direction and brand identity</li>
+          <li>Designed campaigns, ads and graphic assets</li>
+          <li>Kept the customer experience consistent across every touchpoint</li>
         </ul>
       </section>
     </div>
 
     <section class="block" id="approach">
       <p class="block__label">03 — approach</p>
-      <h2 class="block__title">Principles that guided solutions</h2>
-      <p class="takeaway">Each principle below shaped how challenges were solved.</p>
+      <h2 class="block__title">Three decisions that shaped the work</h2>
+      <p class="takeaway">Because one person designed the ad, the landing page and the product, I could <b>treat them as one journey</b>.</p>
 
       <div class="trio">
         <article class="item">
           <p class="item__index">01</p>
-          <h3 class="item__title">Research-driven design</h3>
+          <h3 class="item__title">Start with research</h3>
           <p class="item__principle">User-centered insights</p>
-          <p><b>Problem.</b> Pain points were unclear without structured research.</p>
-          <p><b>Solution.</b> Applied usability testing, journey mapping and iterative improvements.</p>
+          <p><b>Decision.</b> Early in each project, I used usability testing and journey mapping to find where customers struggled, then iterated on what we learned.</p>
+          <p><b>Why.</b> Research pointed the work at real problems instead of assumptions.</p>
         </article>
 
         <article class="item">
           <p class="item__index">02</p>
-          <h3 class="item__title">Cohesive branding & campaigns</h3>
+          <h3 class="item__title">One brand, from ad to product</h3>
           <p class="item__principle">Creative alignment</p>
-          <p><b>Problem.</b> Marketing assets risked inconsistency with product experiences.</p>
-          <p><b>Solution.</b> Unified branding across ads, campaigns and digital platforms.</p>
+          <p><b>Decision.</b> I applied the same brand language across ads, campaigns, websites and digital products, so marketing and product looked and sounded like one company.</p>
+          <p><b>Why.</b> When an ad and the site it leads to don’t match, the experience feels disconnected.</p>
         </article>
 
         <article class="item">
           <p class="item__index">03</p>
-          <h3 class="item__title">Integrated customer journeys</h3>
+          <h3 class="item__title">Design the whole journey</h3>
           <p class="item__principle">Experience cohesion</p>
-          <p><b>Problem.</b> Customer-facing experiences felt fragmented.</p>
-          <p><b>Solution.</b> Designed unified flows and improved usability across websites, products and marketing campaigns.</p>
+          <p><b>Decision.</b> I designed flows that connected campaigns to websites and products, and improved usability at each step instead of polishing pieces in isolation.</p>
+          <p><b>Why.</b> Customers experience a brand as one path, not a set of separate deliverables.</p>
         </article>
       </div>
+
+      <!-- ───────── Visuals ───────── -->
+
+      <h3 class="block__title visuals__title">One journey, designed end to end</h3>
+
+      <figure class="visual">
+        <ol class="journey">
+          <li>
+            <p class="journey__name">Campaigns & ads</p>
+            <p class="journey__job">The first impression of the brand.</p>
+          </li>
+          <li>
+            <p class="journey__name">Website</p>
+            <p class="journey__job">Explains the offer, organized around what customers need.</p>
+          </li>
+          <li>
+            <p class="journey__name">Digital product</p>
+            <p class="journey__job">Where the experience has to deliver.</p>
+          </li>
+        </ol>
+        <figcaption><b>Every step, one designer.</b> Research showed where the journey broke down. Branding and UX kept it connected.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Websites</h3>
+
+      <figure class="visual">
+        <div class="screens">
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-web-1.png" loading="lazy" alt="Client website designed at Token Agency"></div>
+            <figcaption>Client website</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-web-2.png" loading="lazy" alt="Another client website designed at Token Agency"></div>
+            <figcaption>Client website</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Web.</b> Sites organized around what customers came to do.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Campaigns & brand</h3>
+
+      <figure class="visual">
+        <div class="gallery">
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-mkt-1.png" loading="lazy" alt="Marketing campaign piece designed at Token Agency"></div>
+            <figcaption>Campaign</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-mkt-2.png" loading="lazy" alt="Marketing campaign piece designed at Token Agency"></div>
+            <figcaption>Campaign</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-mkt-3.png" loading="lazy" alt="Digital ad designed at Token Agency"></div>
+            <figcaption>Digital ad</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-mkt-4.png" loading="lazy" alt="Marketing asset designed at Token Agency"></div>
+            <figcaption>Marketing asset</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-mkt-5.png" loading="lazy" alt="Brand design piece created at Token Agency"></div>
+            <figcaption>Brand</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/token/token-mkt-6.png" loading="lazy" alt="Graphic design piece created at Token Agency"></div>
+            <figcaption>Graphic design</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Marketing.</b> Campaigns, ads and brand work across finance, education and industrial clients, all speaking the same language as the digital experiences they led to.</figcaption>
+      </figure>
     </section>
 
     <div class="split">
@@ -153,32 +319,27 @@
         <p class="block__label">04 — impact</p>
         <h2 class="block__title">What was delivered</h2>
         <ul class="points">
-          <li>Unified customer experiences across websites, products and campaigns</li>
-          <li>Improved usability through research and testing</li>
+          <li>Connected customer experiences across websites, products and campaigns</li>
+          <li>Usability improvements grounded in research and testing</li>
           <li>Consistent branding across ads, marketing and digital platforms</li>
-        </ul>
-        <p class="confidential">Specific metrics and results are confidential.</p>
-              <p class="confidentialb"><a href="./token.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
-
+                  </ul>
+        <p class="confidential">Client metrics are confidential.</p>
+        <p class="confidentialb"><a href="./token.pdf" target="_blank" rel="noopener">See more work (PDF) ↗</a></p>
       </section>
 
       <section class="block" id="reflection">
         <p class="block__label">05 — reflection</p>
         <h2 class="block__title">What I took from it</h2>
-        <p>
-          This project reinforced the importance of <b>research, branding and marketing integration</b> in customer-facing design. It sharpened my ability to:
-        </p>
         <ul class="points">
-          <li>Lead UX strategy across diverse projects</li>
-          <li>Translate research insights into design improvements</li>
-          <li>Balance creative direction with marketing and usability needs</li>
+          <li><b>UX and marketing are the same conversation.</b> Treating the ad and the product as two halves of one experience is what made the work feel cohesive.</li>
+          <li><b>Research keeps design honest.</b> Testing and journey maps point the work at real problems.</li>
+          <li><b>Range is a skill.</b> Moving between finance, education and industrial clients taught me to adapt tone and priorities without losing craft.</li>
         </ul>
       </section>
     </div>
   </section>
 
 </main>
-
 <footer class="footer">
   <div class="footer__inner">
     <p class="footer__name">Gustavo Quiros</p>
@@ -191,7 +352,6 @@
     <p class="footer__copy">© 2026 Gustavo Quiros.</p>
   </div>
 </footer>
-
 
 <script>
 // Marks the nav stop for whichever section is in view. Measured in viewport
