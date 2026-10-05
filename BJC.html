@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>BJC Health — Gustavo Quiros</title>
-<meta name="description" content="Case study: Streamline the internal web platform and maintain the public-facing website.">
+<meta name="description" content="Case study: lead designer, through Hedy &amp; Hopp, on a confidential internal platform for the BJC HealthCare / Washington University School of Medicine Healthcare Innovation Lab and design for BJC's public website.">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.gustavoquiros.com/work/BJC">
+<meta property="og:url" content="https://gustavoquiros.com/BJC.html">
 <meta property="og:title" content="BJC Health — Gustavo Quiros">
-<meta property="og:description" content="Streamline the internal web platform and maintain the public-facing website.">
+<meta property="og:description" content="Designing a confidential internal platform for a healthcare innovation lab, and keeping a major health system's public website consistent.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -19,6 +19,102 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+
+
+<style>
+  .item p + p { margin-top: 10px; }
+
+  .visuals__title { margin-top: 72px; }
+  .visual { margin: 32px 0 0; }
+  .visual + .visual { margin-top: 48px; }
+  .visual > figcaption {
+    margin-top: 12px;
+    max-width: 75ch;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .visual > figcaption b { color: var(--accent); font-weight: 700; }
+
+  /* two tracks */
+  .tracks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .track {
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .track--private {
+    background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 10px, transparent 10px 20px);
+  }
+  .track__who {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .track__name {
+    margin-top: 10px;
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+  .track__for {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-soft);
+  }
+  .track__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+  }
+  .track__chips li {
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .track__note {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-soft);
+  }
+
+  /* screens */
+  .screens {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .screens figure { margin: 0; }
+  .screens figcaption {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 860px) {
+    .tracks, .screens { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .track { padding: 20px; }
+  }
+</style>
 </head>
 
 <body>
@@ -49,42 +145,41 @@
     <div class="study__intro">
       <div>
         <h1 class="study__title">BJC Health</h1>
-        <p class="study__kicker">Internal Web Platform & Website Maintenance</p>
+        <p class="study__kicker">Internal Web Platform & Website Design</p>
 
         <p class="study__lede">
-          BJC Health required ongoing website maintenance and the development of a confidential internal-use platform.
-          I worked as the <b>Lead Designer</b> from 2022–2023, focusing on web interfaces, complete structural architecture and user flows.
+          Through the agency <b>Hedy & Hopp</b>, I was Lead Designer on two streams of work for BJC, the St. Louis–based health system. The first was a <b>confidential internal platform</b> for the BJC HealthCare / Washington University School of Medicine <b>Healthcare Innovation Lab</b>. The second was design for BJC’s <b>public website</b>.
         </p>
         <p class="study__lede">
-          My role was to design and streamline the internal platform’s usability while ensuring the external website remained consistent and reliable.
+          On the platform, I defined the structure and the user flows for each staff role. On the website, I designed new pages and templates and kept every update consistent, accessible and on brand.
         </p>
       </div>
 
       <figure class="shot">
-        <img src="./work/images/bjc1.png" alt="BJC Health Internal Platform Mockup">
+        <img src="./work/images/bjc1.png" alt="BJC HealthCare public website home page shown on a laptop">
       </figure>
     </div>
 
     <dl class="facts">
       <div>
         <dt class="facts__key">Role</dt>
-        <dd class="facts__value">Lead Designer | Web Interfaces</dd>
+        <dd class="facts__value">Lead Designer, contract (via Hedy & Hopp)</dd>
       </div>
       <div>
-        <dt class="facts__key">Duration</dt>
-        <dd class="facts__value">2022 – 2023</dd>
+        <dt class="facts__key">Timeline</dt>
+        <dd class="facts__value">2022–2023</dd>
       </div>
       <div>
         <dt class="facts__key">Platforms</dt>
-        <dd class="facts__value">Responsive Web</dd>
+        <dd class="facts__value">Responsive web</dd>
       </div>
       <div>
-        <dt class="facts__key">Markets</dt>
-        <dd class="facts__value">Internal platform (confidential), public-facing website</dd>
+        <dt class="facts__key">Partners</dt>
+        <dd class="facts__value">BJC IT and compliance teams</dd>
       </div>
       <div>
         <dt class="facts__key">Scope</dt>
-        <dd class="facts__value">Website maintenance, internal web platform design, architecture and user flows</dd>
+        <dd class="facts__value">Internal platform architecture and flows, public website pages, templates and components</dd>
       </div>
     </dl>
   </header>
@@ -93,59 +188,114 @@
     <div class="split">
       <section class="block" id="challenge">
         <p class="block__label">01 — the challenge</p>
-        <h2 class="block__title">Designing for confidentiality and usability</h2>
+        <h2 class="block__title">Confidential on the inside, consistent on the outside</h2>
         <ul class="points">
-          <li><b>Internal complexity.</b> The internal platform required secure, intuitive flows for staff use.</li>
-          <li><b>Structural clarity.</b> Architecture had to support multiple user types and workflows.</li>
-          <li><b>Consistency.</b> External website maintenance needed alignment with brand standards.</li>
+          <li><b>Sensitive by default.</b> The Innovation Lab platform was for internal use only, so who could see and do what had to be built into the structure, not added later.</li>
+          <li><b>Many roles, many workflows.</b> Different staff roles needed different paths through the same platform without getting lost.</li>
+          <li><b>A public site that keeps changing.</b> New pages and regular updates put brand consistency and accessibility at risk.</li>
         </ul>
-        <p class="takeaway">The goal was to deliver <b>confidential, reliable and user-friendly web experiences</b>.</p>
+        <p class="takeaway">The goal: <b>secure, clear tools for staff</b> and <b>a reliable, consistent website for the public</b>.</p>
       </section>
 
       <section class="block" id="role">
         <p class="block__label">02 — my role</p>
-        <h2 class="block__title">Lead designer for internal systems</h2>
-        <p>I directed the design of the internal platform and supported external website maintenance.</p>
+        <h2 class="block__title">Lead designer on both streams</h2>
+        <p>I led design of the internal platform and designed for the public website, working with BJC’s IT and compliance teams.</p>
         <ul class="points">
-          <li>Defined structural architecture for internal workflows</li>
+          <li>Defined the information architecture for the internal platform</li>
           <li>Designed user flows for multiple staff roles</li>
-          <li>Created responsive web interfaces</li>
-          <li>Maintained external website consistency</li>
-          <li>Collaborated with IT and compliance teams</li>
+          <li>Designed responsive web interfaces</li>
+          <li>Designed new website pages and templates and updated existing ones</li>
+          <li>Kept the website’s components and style guide consistent</li>
+          <li>Reviewed pages for accessibility and brand consistency</li>
         </ul>
       </section>
     </div>
 
     <section class="block" id="approach">
       <p class="block__label">03 — approach</p>
-      <h2 class="block__title">Principles that guided solutions</h2>
-      <p class="takeaway">Each principle below shaped how challenges were solved.</p>
+      <h2 class="block__title">Three decisions that shaped the work</h2>
+      <p class="takeaway">Two very different audiences, one principle: <b>make the right path obvious</b>, whether you’re a staff member on an internal tool or a patient on the public site.</p>
 
       <div class="trio">
         <article class="item">
           <p class="item__index">01</p>
-          <h3 class="item__title">Confidential workflows</h3>
+          <h3 class="item__title">Design permissions into the structure</h3>
           <p class="item__principle">Security-first design</p>
-          <p><b>Problem.</b> Internal systems required strict confidentiality.</p>
-          <p><b>Solution.</b> Designed flows with access control, clear permissions and secure architecture.</p>
+          <p><b>Decision.</b> I designed the flows around each staff role, with access control and clear permissions built into the platform’s architecture.</p>
+          <p><b>Why.</b> Building permissions into the structure protects sensitive work without adding steps for the people using it.</p>
         </article>
 
         <article class="item">
           <p class="item__index">02</p>
-          <h3 class="item__title">Streamlined user flows</h3>
+          <h3 class="item__title">Fewer steps, clearer paths</h3>
           <p class="item__principle">Clarity in navigation</p>
-          <p><b>Problem.</b> Staff needed efficient workflows across complex tasks.</p>
-          <p><b>Solution.</b> Created intuitive flows, simplified navigation and reduced redundancy.</p>
+          <p><b>Decision.</b> I simplified navigation and reduced redundancy, so each role had a clearer path through its tasks.</p>
+          <p><b>Why.</b> An internal tool should be quick to learn and easy to come back to.</p>
         </article>
 
         <article class="item">
           <p class="item__index">03</p>
-          <h3 class="item__title">Maintaining brand consistency</h3>
+          <h3 class="item__title">A system for the public site</h3>
           <p class="item__principle">Unified standards</p>
-          <p><b>Problem.</b> External website updates risked inconsistency.</p>
-          <p><b>Solution.</b> Applied brand guidelines rigorously across all updates and interfaces.</p>
+          <p><b>Decision.</b> New pages started from templates and shared components backed by a style guide, and pages were checked for accessibility and brand consistency as part of QA.</p>
+          <p><b>Why.</b> On a site that’s always changing, consistency only lasts if it’s built into how the work gets done.</p>
         </article>
       </div>
+
+      <!-- ───────── Visuals ───────── -->
+
+      <h3 class="block__title visuals__title">Two streams of work</h3>
+
+      <figure class="visual">
+        <div class="tracks">
+          <div class="track track--private">
+            <p class="track__who">Internal · Confidential</p>
+            <p class="track__name">Healthcare Innovation Lab platform</p>
+            <p class="track__for">For staff at the BJC HealthCare / Washington University School of Medicine Healthcare Innovation Lab.</p>
+            <ul class="track__chips">
+              <li>Information architecture</li>
+              <li>Roles & permissions</li>
+              <li>User flows</li>
+              <li>Responsive UI</li>
+            </ul>
+            <p class="track__note">Screens aren’t shown to protect confidentiality.</p>
+          </div>
+          <div class="track">
+            <p class="track__who">External · Public</p>
+            <p class="track__name">BJC public website</p>
+            <p class="track__for">For patients, families and visitors looking for care and information.</p>
+            <ul class="track__chips">
+              <li>New pages & templates</li>
+              <li>Page updates</li>
+              <li>Components & style guide</li>
+              <li>Accessibility & QA</li>
+            </ul>
+          </div>
+        </div>
+        <figcaption><b>Scope.</b> Two very different audiences, each with its own standards for privacy and consistency.</figcaption>
+      </figure>
+
+      <h3 class="block__title visuals__title">Public website</h3>
+
+      <figure class="visual">
+        <div class="screens">
+          <figure>
+            <div class="shot"><img src="./work/images/bjc/bjc-page-desktop.png" loading="lazy" alt="Public BJC website page on desktop"></div>
+            <figcaption>Page · desktop</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img src="./work/images/bjc/bjc-page-mobile.png" loading="lazy" alt="The same BJC website page on mobile"></div>
+            <figcaption>Page · mobile</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Responsive.</b> Pages built from shared templates and components, checked for accessibility as part of QA.</figcaption>
+      </figure>
+
+      <figure class="visual">
+        <div class="shot"><img src="./work/images/bjc/bjc-page-template.png" loading="lazy" alt="Another public BJC website page built from the shared templates"></div>
+        <figcaption><b>Templates.</b> New pages start from templates instead of a blank page, so the site stays consistent as it grows.</figcaption>
+      </figure>
     </section>
 
     <div class="split">
@@ -153,30 +303,27 @@
         <p class="block__label">04 — impact</p>
         <h2 class="block__title">What was delivered</h2>
         <ul class="points">
-          <li>Confidential internal platform with secure workflows</li>
-          <li>Streamlined user flows for staff efficiency</li>
-          <li>Consistent external website aligned with brand standards</li>
+          <li>A confidential internal platform for the Healthcare Innovation Lab, with permissions designed into its structure</li>
+          <li>Role-based user flows with simplified navigation and reduced redundancy</li>
+          <li>New public website pages and templates built on shared components</li>
+          <li>Website updates checked for accessibility and brand consistency</li>
         </ul>
-        <p class="confidential">Specific details are confidential due to project sensitivity.</p>
+        <p class="confidential">Platform details are confidential due to project sensitivity.</p>
       </section>
 
       <section class="block" id="reflection">
         <p class="block__label">05 — reflection</p>
         <h2 class="block__title">What I took from it</h2>
-        <p>
-          This project reinforced the importance of <b>confidentiality, clarity and consistency</b> in healthcare-related systems. It sharpened my ability to:
-        </p>
         <ul class="points">
-          <li>Design secure internal platforms</li>
-          <li>Architect complex workflows with clarity</li>
-          <li>Balance internal usability with external brand consistency</li>
+          <li><b>Privacy is an architecture decision.</b> Defining roles and permissions early keeps a platform both safe and simple.</li>
+          <li><b>Internal tools deserve the same care as public ones.</b> Staff time is valuable, and clear flows respect it.</li>
+          <li><b>Consistency is a process, not a one-time pass.</b> Templates, a style guide and a QA step are what keep a changing site on brand and accessible.</li>
         </ul>
       </section>
     </div>
   </section>
 
 </main>
-
 <footer class="footer">
   <div class="footer__inner">
     <p class="footer__name">Gustavo Quiros</p>
