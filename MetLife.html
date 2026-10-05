@@ -20,9 +20,11 @@
 
 <link rel="stylesheet" href="src/css/layout.css">
 
+<!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
 <style>
   .item p + p { margin-top: 10px; }
 
+  /* headline numbers */
   .stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -72,6 +74,7 @@
     color: var(--accent);
   }
 
+  /* screen galleries */
   .screens {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -88,6 +91,7 @@
     color: var(--text-soft);
   }
 
+  /* design tokens */
   .tokens {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
@@ -132,6 +136,7 @@
     color: var(--text-soft);
   }
 
+  /* microcopy examples */
   .copy {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
