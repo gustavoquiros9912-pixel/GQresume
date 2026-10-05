@@ -4,13 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--
+  BEFORE PUBLISHING — fill in or delete every element with class="todo".
+  They're highlighted in yellow so you can't miss them in the browser.
+  Search this file for "todo" to find them all. Also swap the placeholder
+  image paths in the "Before → after" section for your real exports.
+-->
+
 <title>PIP Global Safety — Gustavo Quiros</title>
-<meta name="description" content="Case study: Ensuring the correct transition of every product, interface and customer-facing material was aligned with PIP's brand under a tight deadline.">
+<meta name="description" content="Case study: leading the design side of PIP Global Safety's migration of Honeywell's safety portfolio — packaging, labels, manuals and web — across the Americas, Europe and Asia in one year.">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.gustavoquiros.com/work/PIP">
+<meta property="og:url" content="https://gustavoquiros.com/PIP.html">
 <meta property="og:title" content="PIP Global Safety — Gustavo Quiros">
-<meta property="og:description" content="Ensuring the correct transition of every product, interface and customer-facing material was aligned with PIP's brand under a tight deadline.">
+<meta property="og:description" content="Turning thousands of Honeywell safety assets into one PIP brand across three continents, in a year.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -19,6 +26,72 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+
+<!-- New pieces for this page only. Move into layout.css once you're happy. -->
+<style>
+  /* placeholder highlight — delete this rule once every .todo is gone */
+  .todo {
+    background: #ffe36e;
+    color: #111;
+    padding: 0 4px;
+    border-radius: 2px;
+  }
+
+  /* before → after image pairs */
+  .compare {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .compare + .compare { margin-top: 40px; }
+  .compare figure { margin: 0; }
+  .compare figcaption {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+  .compare figcaption b { color: var(--accent); font-weight: 700; }
+  .compare__note {
+    grid-column: 1 / -1;
+    max-width: 70ch;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* headline numbers in the impact section */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 24px 0 28px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stats__value {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--accent);
+  }
+  .stats__label {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+
+  .item p + p { margin-top: 10px; }
+
+  @media (max-width: 720px) {
+    .compare, .stats { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 
 <body>
@@ -52,16 +125,15 @@
         <p class="study__kicker">Global Product Migration & Rebranding</p>
 
         <p class="study__lede">
-          PIP Global Safety acquired Honeywell’s safety division and needed to migrate thousands of products, documents and assets into their new global brand.
-          I worked as the <b>Lead UI/UX & Product Designer</b>, initially overseeing the migration for the Americas and later expanding to Europe and Asia.
+          When PIP Global Safety acquired Honeywell’s safety division, every product, label, manual and web page carrying the Honeywell name had to become PIP. That meant <b><span class="todo">[~X,000]</span> assets in one year</b>, and every one had to stay compliant in every market where it was sold.
         </p>
         <p class="study__lede">
-          My role was to ensure every product, interface and customer-facing material aligned with PIP’s brand guidelines under a tight deadline.
+          As <b>Lead UI/UX & Product Designer</b>, I started with the Americas portfolio and later expanded to Europe and Asia. My job was less about designing assets one at a time and more about building the system, priorities and review process that let the team move quickly while staying compliant.
         </p>
       </div>
 
       <figure class="shot">
-        <img src="./work/images/pip1.jpeg" alt="PIP Global Safety Migration Mockup">
+        <img src="./work/images/pip1.jpeg" alt="PIP Global Safety brand imagery showing workers in hard hats, respirators, fall protection and firefighting gear">
       </figure>
     </div>
 
@@ -71,20 +143,20 @@
         <dd class="facts__value">Lead UI/UX & Product Designer</dd>
       </div>
       <div>
-        <dt class="facts__key">Duration</dt>
-        <dd class="facts__value">1 year</dd>
+        <dt class="facts__key">Timeline</dt>
+        <dd class="facts__value">1 year · 2025–2026</dd>
       </div>
       <div>
-        <dt class="facts__key">Platforms</dt>
-        <dd class="facts__value">Web portals, packaging, documentation systems</dd>
+        <dt class="facts__key">Team</dt>
+        <dd class="facts__value"><span class="todo">[X designers + regional product & compliance leads]</span></dd>
       </div>
       <div>
         <dt class="facts__key">Markets</dt>
-        <dd class="facts__value">Americas, Europe, Asia</dd>
+        <dd class="facts__value">Americas → Europe → Asia</dd>
       </div>
       <div>
-        <dt class="facts__key">Scope</dt>
-        <dd class="facts__value">Migration of product catalogs, packaging, documents, labels, interfaces and manuals into PIP’s global brand system</dd>
+        <dt class="facts__key">Deliverables</dt>
+        <dd class="facts__value">Packaging, labels, manuals, product catalog and web portals</dd>
       </div>
     </dl>
   </header>
@@ -93,86 +165,128 @@
     <div class="split">
       <section class="block" id="challenge">
         <p class="block__label">01 — the challenge</p>
-        <h2 class="block__title">Global migration under pressure</h2>
+        <h2 class="block__title">A rebrand where mistakes are a safety problem</h2>
         <ul class="points">
-          <li><b>Scale and speed.</b> Thousands of assets needed migration within a year.</li>
-          <li><b>Brand consistency.</b> Packaging, documents and interfaces had to strictly follow guidelines.</li>
-          <li><b>Regional complexity.</b> Regulatory and cultural differences across continents added challenges.</li>
+          <li><b>Volume against a fixed date.</b> <span class="todo">[~X,000]</span> assets across <span class="todo">[X]</span> product lines had to switch brands within a year, while products kept shipping.</li>
+          <li><b>Regulated content.</b> This is protective equipment. Certification marks, warnings and usage instructions differ by region and can’t be lost or altered when the brand changes.</li>
+          <li><b>Many hands.</b> Regional teams, product owners and compliance reviewers all touched the files. Without a shared system, the new brand would have splintered into dozens of local versions.</li>
         </ul>
-        <p class="takeaway">The goal was to deliver <b>speed, accuracy and cohesion</b across global markets.</p>
+        <p class="takeaway">On a normal rebrand, a wrong label is a brand mistake. Here it could become a <b>compliance failure</b>.</p>
       </section>
 
       <section class="block" id="role">
         <p class="block__label">02 — my role</p>
         <h2 class="block__title">Leading across continents</h2>
-        <p>I began with the Americas portfolio and later expanded to Europe and Asia.</p>
+        <p>I owned design for the Americas portfolio from day one, then extended the same system to Europe and Asia.</p>
         <ul class="points">
-          <li>UX and product design for digital interfaces</li>
-          <li>Packaging and label redesigns following brand guidelines</li>
-          <li>Document and manual migration into new templates</li>
-          <li>Collaboration with global stakeholders across design, product and compliance</li>
-          <li>Ensuring consistency across diverse regulatory environments</li>
+          <li>Set migration priorities with product leads</li>
+          <li>Designed the template system for packaging, labels and manuals</li>
+          <li>Redesigned the digital interfaces: <span class="todo">[which portals / catalog / product pages]</span></li>
+          <li>Reviewed designs with regional compliance teams in every market</li>
+          <li>Guided <span class="todo">[X designers / vendors]</span> producing assets at volume</li>
         </ul>
       </section>
     </div>
 
     <section class="block" id="approach">
       <p class="block__label">03 — approach</p>
-      <h2 class="block__title">Principles that guided the work</h2>
-      <p class="takeaway">Each principle below is the one that decided how its problem got solved.</p>
+      <h2 class="block__title">Three decisions that made it manageable</h2>
+      <p class="takeaway">At this volume, redesigning items one by one wasn’t possible. The real work was deciding <b>what order to go in, what to standardize and what to leave flexible</b>.</p>
 
       <div class="trio">
         <article class="item">
           <p class="item__index">01</p>
-          <h3 class="item__title">Managing scale at speed</h3>
+          <h3 class="item__title">Triage before design</h3>
           <p class="item__principle">Operational clarity</p>
-          <p><b>Problem.</b> Thousands of assets needed migration within a year.</p>
-          <p><b>Solution.</b> Established structured workflows, prioritized high‑impact products and created reusable templates.</p>
+          <p><b>Decision.</b> Instead of working through the catalog in order, I ranked assets by <span class="todo">[sales volume and regulatory deadlines]</span> and grouped them into <span class="todo">[X]</span> waves, so the products customers saw most moved first.</p>
+          <p><b>Trade-off.</b> Low-volume lines waited for later waves, which I agreed on with product leads up front rather than leaving it to chance.</p>
         </article>
 
         <article class="item">
           <p class="item__index">02</p>
-          <h3 class="item__title">Ensuring brand consistency</h3>
+          <h3 class="item__title">Templates, not one-offs</h3>
           <p class="item__principle">Design systems discipline</p>
-          <p><b>Problem.</b> Different regions risked fragmented branding.</p>
-          <p><b>Solution.</b> Applied strict brand guidelines, standardized packaging and aligned digital interfaces globally.</p>
+          <p><b>Decision.</b> I built modular templates with locked brand zones (logo, color, type, layout grid) and flexible content zones for product data and regulatory text.</p>
+          <p><b>Result.</b> <span class="todo">[X]</span> templates covered <span class="todo">[~X%]</span> of the portfolio, so most assets became a fill-in task instead of a design task.</p>
         </article>
 
         <article class="item">
           <p class="item__index">03</p>
-          <h3 class="item__title">Supporting diverse markets</h3>
+          <h3 class="item__title">Localize the content, not the brand</h3>
           <p class="item__principle">Global adaptability</p>
-          <p><b>Problem.</b> Regulatory and cultural differences complicated migration.</p>
-          <p><b>Solution.</b> Partnered with regional teams, adapted documentation and localized interfaces while maintaining brand cohesion.</p>
+          <p><b>Decision.</b> Regional teams owned certifications, languages and warnings. The brand layer stayed fixed worldwide, and compliance reviewed each wave with me.</p>
+          <p><b>Result.</b> Europe and Asia were rolled out on the same template system, with regional content adapted on top of it.</p>
         </article>
+      </div>
+
+      <!--
+        Replace the src paths with your real exports from pip.pdf.
+        Same crop/angle for each before/after pair reads best.
+      -->
+      <h3 class="block__title" style="margin-top:72px">Before → after</h3>
+
+      <div class="compare">
+        <figure>
+          <div class="shot"><img src="./work/images/pip-packaging-before.jpg" alt="Original Honeywell-branded product packaging"></div>
+          <figcaption><b>Before</b> · Honeywell packaging</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="./work/images/pip-packaging-after.jpg" alt="The same product’s packaging migrated to the PIP Global Safety brand"></div>
+          <figcaption><b>After</b> · PIP packaging template</figcaption>
+        </figure>
+        <p class="compare__note"><span class="todo">[One sentence on what changed and why, e.g. what the template locks and what regional teams can edit.]</span></p>
+      </div>
+
+      <div class="compare">
+        <figure>
+          <div class="shot"><img src="./work/images/pip-label-system.jpg" alt="PIP label template showing locked brand zones and flexible regulatory zones"></div>
+          <figcaption><b>System</b> · Label template anatomy</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="./work/images/pip-digital.jpg" alt="PIP-branded web portal after the migration"></div>
+          <figcaption><b>Digital</b> · <span class="todo">[Portal / product page name]</span></figcaption>
+        </figure>
       </div>
     </section>
 
     <div class="split">
       <section class="block" id="impact">
         <p class="block__label">04 — impact</p>
-        <h2 class="block__title">What was delivered</h2>
+        <h2 class="block__title">What changed</h2>
+
+        <div class="stats">
+          <div>
+            <p class="stats__value"><span class="todo">[X,000+]</span></p>
+            <p class="stats__label">assets migrated to the PIP brand</p>
+          </div>
+          <div>
+            <p class="stats__value"><span class="todo">[X]</span></p>
+            <p class="stats__label">reusable templates across print and digital</p>
+          </div>
+          <div>
+            <p class="stats__value">3</p>
+            <p class="stats__label">continents on a single brand system</p>
+          </div>
+        </div>
+
         <ul class="points">
-          <li>Successful migration of thousands of products and documents within deadline</li>
-          <li>Unified packaging, labels and manuals under PIP’s brand identity</li>
-          <li>Consistent digital interfaces across Americas, Europe and Asia</li>
-          <li>Strong foundation for future product launches under the new brand</li>
+          <li>Migration completed <span class="todo">[on schedule / X weeks early]</span></li>
+          <li><span class="todo">[Optional, delete if you can't share]</span> Per-asset turnaround reduced from <span class="todo">[X days]</span> to <span class="todo">[Y]</span> once templates were in place</li>
+          <li>One consistent PIP identity across packaging, documents and web in every market</li>
+          <li>The template system became the starting point for new PIP product launches</li>
         </ul>
-        <p class="confidential">Specific metrics and results are confidential.</p>
-        <p class="confidentialb"><a href="./pip.pdf" target="_blank" rel="noopener">Click here to see my work files</a></p>
+        <p class="confidential">Exact figures are confidential. Numbers shown are approximate.</p>
+        <p class="confidentialb"><a href="./pip.pdf" target="_blank" rel="noopener">See the full set of work files (PDF) ↗</a></p>
       </section>
 
       <section class="block" id="reflection">
         <p class="block__label">05 — reflection</p>
-        <h2 class="block__title">Designing for empathy and scale</h2>
-        <p>
-          This project sharpened my ability to:
-        </p>
+        <h2 class="block__title">What I’d take forward</h2>
         <ul class="points">
-          <li>Lead large‑scale migrations under tight deadlines</li>
-          <li>Balance global consistency with local adaptability</li>
-          <li>Apply design systems discipline beyond digital products</li>
-          <li>Collaborate across continents to deliver cohesive brand experiences</li>
+          <li><b>Design systems aren’t only for screens.</b> Locked zones, flexible content and clear ownership worked on packaging and manuals just as well as on a component library.</li>
+          <li><b>At scale, decisions are the bottleneck.</b> Settling the order and the rules early mattered more than any single design choice.</li>
+          <li><b>Bring compliance in early.</b> Making regional compliance a partner at each wave, rather than a final sign-off, caught problems while they were still cheap to fix.</li>
+          <li><b>What I’d do differently:</b> <span class="todo">[One honest sentence, e.g. "lock the template system before wave one instead of refining it during the first wave."]</span></li>
         </ul>
       </section>
     </div>
