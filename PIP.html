@@ -20,11 +20,9 @@
 
 <link rel="stylesheet" href="src/css/layout.css">
 
-<!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
 <style>
   .item p + p { margin-top: 10px; }
 
-  /* headline numbers */
   .stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -60,11 +58,6 @@
     color: var(--text-soft);
   }
   .visual figcaption b { color: var(--accent); font-weight: 700; }
-  .visual__pair {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
   .panel {
     padding: 28px;
     border: 1px solid var(--line);
@@ -72,7 +65,6 @@
     background: rgba(255, 255, 255, 0.02);
   }
 
-  /* scope board */
   .scope {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -126,29 +118,11 @@
     color: var(--text-soft);
   }
 
-  /* label anatomy diagram */
-  .anatomy { width: 100%; max-width: 880px; height: auto; display: block; margin: 0 auto; }
-  .visual__pair .shot img { aspect-ratio: 3 / 2; object-fit: cover; object-position: top left; }
-  .anatomy text {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    fill: rgba(255, 255, 255, 0.85);
-    letter-spacing: 0.04em;
-  }
-  .anatomy .a-small { font-size: 10px; fill: rgba(255, 255, 255, 0.6); }
-  .anatomy .a-head { font-size: 10px; letter-spacing: 0.18em; fill: #ea4e65; }
-  .anatomy .a-label { fill: none; stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; }
-  .anatomy .a-locked { fill: rgba(234, 78, 101, 0.22); stroke: #ea4e65; stroke-width: 1.5; }
-  .anatomy .a-product { fill: rgba(255, 255, 255, 0.04); stroke: rgba(255, 255, 255, 0.55); stroke-width: 1.2; stroke-dasharray: 5 4; }
-  .anatomy .a-regional { fill: none; stroke: #ea4e65; stroke-width: 1.2; stroke-dasharray: 2 3; }
-
   @media (max-width: 860px) {
-    .scope, .visual__pair { grid-template-columns: 1fr; }
+    .scope { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .panel { padding: 18px; }
-    .panel--scroll { overflow-x: auto; }
-    .panel--scroll .anatomy { min-width: 600px; }
   }
 </style>
 </head>
@@ -278,7 +252,7 @@
         </article>
       </div>
 
-      <h3 class="block__title visuals__title">What it looked like</h3>
+      <h3 class="block__title visuals__title">The scope at a glance</h3>
 
       <figure class="visual">
         <div class="panel">
@@ -318,65 +292,6 @@
         </div>
         <figcaption><b>Scope.</b> Everything that carried the Honeywell name, across four catalogs and three continents.</figcaption>
       </figure>
-
-      <figure class="visual">
-        <div class="panel panel--scroll">
-          <svg class="anatomy" viewBox="0 0 720 400" role="img" aria-labelledby="anatomy-title anatomy-desc">
-            <title id="anatomy-title">Label template anatomy</title>
-            <desc id="anatomy-desc">A product label split into zones. The brand bar is locked and identical everywhere. Product image, name, SKU, specs and barcode are filled per product. Certification marks and warnings or languages are regional and owned by each market.</desc>
-
-            <!-- the label -->
-            <rect class="a-label" x="20" y="20" width="380" height="360" rx="6"/>
-
-            <!-- locked -->
-            <rect class="a-locked" x="36" y="36" width="348" height="56" rx="3"/>
-            <text x="52" y="69">BRAND BAR · logo + brand</text>
-
-            <!-- product (per SKU) -->
-            <rect class="a-product" x="36" y="104" width="160" height="140" rx="3"/>
-            <text x="58" y="178">PRODUCT IMAGE</text>
-            <rect class="a-product" x="208" y="104" width="176" height="64" rx="3"/>
-            <text x="224" y="141">NAME · SKU</text>
-            <rect class="a-product" x="208" y="180" width="176" height="64" rx="3"/>
-            <text x="224" y="217">KEY SPECS</text>
-            <rect class="a-product" x="218" y="256" width="166" height="52" rx="3"/>
-            <text x="234" y="287">BARCODE</text>
-
-            <!-- regional -->
-            <rect class="a-regional" x="36" y="256" width="170" height="52" rx="3"/>
-            <text x="50" y="287">CERT. MARKS</text>
-            <rect class="a-regional" x="36" y="320" width="348" height="44" rx="3"/>
-            <text x="52" y="347">WARNINGS · LANGUAGES</text>
-
-            <!-- legend -->
-            <text class="a-head" x="440" y="60">TEMPLATE ZONES</text>
-
-            <rect class="a-locked" x="440" y="88" width="28" height="20" rx="2"/>
-            <text x="482" y="103">Locked</text>
-            <text class="a-small" x="482" y="121">Logo, color, type, grid.</text>
-            <text class="a-small" x="482" y="137">Identical in every market.</text>
-
-            <rect class="a-product" x="440" y="176" width="28" height="20" rx="2"/>
-            <text x="482" y="191">Per product</text>
-            <text class="a-small" x="482" y="209">Image, name, SKU, specs,</text>
-            <text class="a-small" x="482" y="225">barcode. Filled per item.</text>
-
-            <rect class="a-regional" x="440" y="264" width="28" height="20" rx="2"/>
-            <text x="482" y="279">Regional</text>
-            <text class="a-small" x="482" y="297">Certifications, warnings,</text>
-            <text class="a-small" x="482" y="313">languages. Adapted per market.</text>
-          </svg>
-        </div>
-        <figcaption><b>Template anatomy.</b> A simplified view of how each template split locked brand elements from content that changed per product and per region. Recreated for this case study. The original files stayed inside the client’s environment.</figcaption>
-      </figure>
-
-      <figure class="visual">
-        <div class="visual__pair">
-          <div class="shot"><img src="./work/images/pip-north-7700-product-page.jpg" alt="North 7700 Series half-mask respirator product page on pipglobal.com under the PIP brand, with a View Spec Sheet button" loading="lazy"></div>
-          <div class="shot"><img src="./work/images/pip-howard-leight-brand-page.jpg" alt="Howard Leight brand page on pipglobal.com under the PIP brand, showing workers wearing hearing protection" loading="lazy"></div>
-        </div>
-        <figcaption><b>Live today.</b> North and Howard Leight pages in PIP’s digital catalog after the migration. These are public screenshots from pipglobal.com, shown for context. They are not my original working files.</figcaption>
-      </figure>
     </section>
 
     <div class="split">
@@ -409,7 +324,7 @@
           <li>Every asset type now runs on a reusable template</li>
           <li>A reusable template foundation for future PIP product launches</li>
         </ul>
-        <p class="confidentialb"><a href="./pip.pdf" target="_blank" rel="noopener">See more work files (PDF) ↗</a></p>
+        <p class="confidential">Project files remain confidential, so original assets aren’t shown.</p>
       </section>
 
       <section class="block" id="reflection">
