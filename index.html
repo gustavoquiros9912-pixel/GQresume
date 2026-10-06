@@ -64,6 +64,29 @@
 <!-- Shared animation layer (see src/css/motion.css and src/js/motion.js) -->
 <link rel="stylesheet" href="src/css/motion.css">
 <script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
+<style>
+  /* project links under each role in the Experience list */
+  .ledger__projects {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-soft, rgba(255, 255, 255, 0.55));
+  }
+  .ledger__projects-label {
+    margin-right: 6px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .ledger__projects a {
+    color: var(--accent, #ea4e65);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+  .ledger__projects a:hover,
+  .ledger__projects a:focus-visible { border-bottom-color: currentColor; }
+</style>
 </head>
 
 <body>
@@ -98,7 +121,7 @@
   <div class="intro__head">
     <h1 class="intro__name">Gustavo Quiros</h1>
     <p class="intro__bio">
-      UX & Product Design Lead | Design Strategy | Customer Experience | Design Systems<br>
+      UX & Product Design Lead | Design Strategy | Customer Experience | Design Systems | Packaging Design<br>
       US Citizen | San Diego, California
     </p>
   </div>
@@ -110,20 +133,23 @@
         <div>
           <p class="ledger__org">Curae Health</p>
           <p class="ledger__detail">Senior UI/UX Designer, contract</p>
+          <p class="ledger__projects"><span class="ledger__projects-label">Projects</span> <a href="curae-health.html">Curae Health</a> · Aquina Health</p>
         </div>
         <p class="ledger__date">Jan 2022 – Present</p>
       </li>
       <li class="ledger__row">
         <div>
           <p class="ledger__org">Tata Consultancy Services</p>
-          <p class="ledger__detail">UX/CX Lead | Senior UI/UX Designer</p>
+          <p class="ledger__detail">UX/CX Lead | Senior UI/UX Designer | Senior Packaging Designer</p>
+          <p class="ledger__projects"><span class="ledger__projects-label">Projects</span> <a href="MetLife.html">MetLife</a> · <a href="PIP.html">PIP Global Safety</a></p>
         </div>
         <p class="ledger__date">Jul 2022 – Jul 2026</p>
       </li>
       <li class="ledger__row">
         <div>
           <p class="ledger__org">Hedy & Hopp</p>
-          <p class="ledger__detail">Lead Designer, contract · BJC</p>
+          <p class="ledger__detail">Lead Designer, contract</p>
+          <p class="ledger__projects"><span class="ledger__projects-label">Project</span> <a href="BJC.html">BJC Health</a></p>
         </div>
         <p class="ledger__date">Jan 2022 – Jan 2023</p>
       </li>
@@ -131,6 +157,7 @@
         <div>
           <p class="ledger__org">Token Agency</p>
           <p class="ledger__detail">Lead UI/UX Designer, Creative Lead</p>
+          <p class="ledger__projects"><span class="ledger__projects-label">Clients</span> H&amp;T Law Firm · FJ Capital · PureHealth · Cake&amp;Roll · <a href="Token.html">and more</a></p>
         </div>
         <p class="ledger__date">Aug 2017 – Jan 2022</p>
       </li>
@@ -196,14 +223,14 @@
     <!-- ─── PIP GLOBAL SAFETY ─── -->
     <a class="case" href="PIP.html" aria-labelledby="case-1-name" aria-describedby="case-1-blurb">
       <span class="case__media">
-        <img src="./work/images/pip-hero.png" alt="Four brands moved from Honeywell to PIP: North, Howard Leight, Miller and Uvex">
+        <img src="./work/images/pip-hero.png" alt="Five brands moved from Honeywell to PIP: North, Howard Leight, Miller, Uvex and Fibre-Metal">
         <span class="case__more">
           <span class="case__more-kicker">Case study</span>
           <span class="case__more-text">
             One year leading the design side of a global rebrand: moving 2,000+ Honeywell safety assets to PIP across the Americas, Europe and Asia.
           </span>
           <span class="case__facts">
-            <span><b>Role</b> Lead UI/UX Designer | Product Designer</span>
+            <span><b>Role</b> Lead UI/UX & Product Designer | Senior Packaging Designer</span>
             <span><b>Years</b> 2025 – 2026</span>
           </span>
         </span>

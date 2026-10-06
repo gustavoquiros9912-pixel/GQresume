@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>PIP Global Safety — Gustavo Quiros</title>
-<meta name="description" content="Case study: leading the design side of PIP Global Safety's migration of 2,000+ Honeywell assets (North, Howard Leight, Miller and Uvex) across the Americas, Europe and Asia in one year.">
+<meta name="description" content="Case study: leading the design side of PIP Global Safety's migration of 2,000+ Honeywell assets (North, Howard Leight, Miller, Uvex and Fibre-Metal) across the Americas, Europe and Asia in one year.">
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gustavoquiros.com/PIP.html">
 <meta property="og:title" content="PIP Global Safety — Gustavo Quiros">
-<meta property="og:description" content="2,000+ safety assets, four brands, three continents, one year: rebranding Honeywell's PPE portfolio as PIP.">
+<meta property="og:description" content="2,000+ safety assets, five brands, three continents, one year: rebranding Honeywell's PPE portfolio as PIP.">
 <meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -126,10 +126,11 @@
   /* brand photo grid */
   .brands {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 24px;
   }
-  .brands__item { margin: 0; }
+  .brands__item { margin: 0; grid-column: span 2; }
+  .brands__item:nth-child(n+4) { grid-column: span 3; }
   .brands .shot img {
     aspect-ratio: 2.75 / 1;
     object-fit: cover;
@@ -148,7 +149,7 @@
   .hero__svg .h-bg { fill: #202020; }
   .hero__svg text { font-family: 'Space Mono', monospace; }
   .hero__svg .h-kicker { font-size: 12px; letter-spacing: 0.2em; fill: #ea4e65; }
-  .hero__svg .h-name { font-family: var(--serif), 'Noto Serif JP', serif; font-size: 36px; font-weight: 300; fill: #fff; }
+  .hero__svg .h-name { font-family: var(--serif), 'Noto Serif JP', serif; font-size: 32px; font-weight: 300; fill: #fff; }
   .hero__svg .h-old { font-size: 14px; fill: rgba(255, 255, 255, 0.45); }
   .hero__svg .h-strike { stroke: rgba(255, 255, 255, 0.45); stroke-width: 1; }
   .hero__svg .h-link { stroke: rgba(255, 255, 255, 0.2); stroke-width: 1; stroke-dasharray: 2 5; }
@@ -158,6 +159,7 @@
   .hero__svg .h-label { font-size: 12px; fill: rgba(255, 255, 255, 0.55); }
   @media (max-width: 860px) {
     .scope, .brands { grid-template-columns: 1fr; }
+    .brands__item, .brands__item:nth-child(n+4) { grid-column: auto; }
   }
   @media (max-width: 640px) {
     .panel { padding: 18px; }
@@ -196,40 +198,45 @@
         <p class="study__kicker">Global Product Migration & Rebranding</p>
 
         <p class="study__lede">
-          When PIP Global Safety acquired Honeywell’s personal protective equipment business in 2025, four established brands, <b>North, Howard Leight, Miller and Uvex</b>, had to move from Honeywell to PIP. That meant <b>more than 2,000 assets in one year</b>, including manuals, labels, insert cards, packaging, spec sheets and digital interfaces, and every one had to stay compliant in every market where it was sold.
+          When PIP Global Safety acquired Honeywell’s personal protective equipment business in 2025, five established brands, <b>North, Howard Leight, Miller, Uvex and Fibre-Metal</b>, had to move from Honeywell to PIP. That meant <b>more than 2,000 assets in one year</b>, including manuals, labels, insert cards, packaging, spec sheets and digital interfaces, and every one had to stay compliant in every market where it was sold.
         </p>
         <p class="study__lede">
-          As <b>Lead UI/UX & Product Designer</b> on a 10-person global design team, I started with the Americas portfolio and later expanded to Europe and Asia. My job was less about designing assets one at a time and more about setting priorities and building the reusable system that let the team move quickly while staying compliant.
+          As <b>Lead UI/UX & Product Designer</b> and <b>Senior Packaging Designer</b> on a 10-person global design team, I started with the Americas portfolio and later expanded to Europe and Asia. My job was less about designing assets one at a time and more about setting priorities and building the reusable system that let the team move quickly while staying compliant.
         </p>
       </div>
 
       <figure class="shot hero">
         <svg class="hero__svg" viewBox="0 0 600 600" role="img" aria-labelledby="hero-title hero-desc">
-          <title id="hero-title">Four brands moved from Honeywell to PIP</title>
-          <desc id="hero-desc">North, Howard Leight, Miller and Uvex, each changing from "by Honeywell" to "by PIP". More than 2,000 assets across 3 continents in 1 year.</desc>
+          <title id="hero-title">Five brands moved from Honeywell to PIP</title>
+          <desc id="hero-desc">North, Howard Leight, Miller, Uvex and Fibre-Metal, each changing from "by Honeywell" to "by PIP". More than 2,000 assets across 3 continents in 1 year.</desc>
           <rect class="h-bg" x="0" y="0" width="600" height="600"/>
           <text class="h-kicker" x="48" y="64">BRAND MIGRATION · 2025–2026</text>
-          <text class="h-name" x="48" y="130">North</text>
-          <text class="h-old" x="48" y="162">by Honeywell</text>
-          <line class="h-strike" x1="46" y1="158" x2="151" y2="158"/>
-          <line class="h-link" x1="166" y1="158" x2="490" y2="158"/>
-          <text class="h-new" x="552" y="162" text-anchor="end">by PIP</text>
-          <text class="h-name" x="48" y="222">Howard Leight</text>
-          <text class="h-old" x="48" y="254">by Honeywell</text>
-          <line class="h-strike" x1="46" y1="250" x2="151" y2="250"/>
-          <line class="h-link" x1="166" y1="250" x2="490" y2="250"/>
-          <text class="h-new" x="552" y="254" text-anchor="end">by PIP</text>
-          <text class="h-name" x="48" y="314">Miller</text>
-          <text class="h-old" x="48" y="346">by Honeywell</text>
-          <line class="h-strike" x1="46" y1="342" x2="151" y2="342"/>
-          <line class="h-link" x1="166" y1="342" x2="490" y2="342"/>
-          <text class="h-new" x="552" y="346" text-anchor="end">by PIP</text>
-          <text class="h-name" x="48" y="406">Uvex</text>
-          <text class="h-old" x="48" y="438">by Honeywell</text>
-          <line class="h-strike" x1="46" y1="434" x2="151" y2="434"/>
-          <line class="h-link" x1="166" y1="434" x2="490" y2="434"/>
-          <text class="h-new" x="552" y="438" text-anchor="end">by PIP</text>
-          <line class="h-rule" x1="48" y1="484" x2="552" y2="484"/>
+          <text class="h-name" x="48" y="116">North</text>
+          <text class="h-old" x="48" y="144">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="140" x2="151" y2="140"/>
+          <line class="h-link" x1="166" y1="140" x2="490" y2="140"/>
+          <text class="h-new" x="552" y="144" text-anchor="end">by PIP</text>
+          <text class="h-name" x="48" y="190">Howard Leight</text>
+          <text class="h-old" x="48" y="218">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="214" x2="151" y2="214"/>
+          <line class="h-link" x1="166" y1="214" x2="490" y2="214"/>
+          <text class="h-new" x="552" y="218" text-anchor="end">by PIP</text>
+          <text class="h-name" x="48" y="264">Miller</text>
+          <text class="h-old" x="48" y="292">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="288" x2="151" y2="288"/>
+          <line class="h-link" x1="166" y1="288" x2="490" y2="288"/>
+          <text class="h-new" x="552" y="292" text-anchor="end">by PIP</text>
+          <text class="h-name" x="48" y="338">Uvex</text>
+          <text class="h-old" x="48" y="366">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="362" x2="151" y2="362"/>
+          <line class="h-link" x1="166" y1="362" x2="490" y2="362"/>
+          <text class="h-new" x="552" y="366" text-anchor="end">by PIP</text>
+          <text class="h-name" x="48" y="412">Fibre-Metal</text>
+          <text class="h-old" x="48" y="440">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="436" x2="151" y2="436"/>
+          <line class="h-link" x1="166" y1="436" x2="490" y2="436"/>
+          <text class="h-new" x="552" y="440" text-anchor="end">by PIP</text>
+          <line class="h-rule" x1="48" y1="482" x2="552" y2="482"/>
           <text class="h-stat" x="48" y="534">2,000+</text>
           <text class="h-stat" x="250" y="534">3</text>
           <text class="h-stat" x="420" y="534">1</text>
@@ -243,7 +250,7 @@
     <dl class="facts">
       <div>
         <dt class="facts__key">Role</dt>
-        <dd class="facts__value">Lead UI/UX & Product Designer</dd>
+        <dd class="facts__value">Lead UI/UX & Product Designer · Senior Packaging Designer</dd>
       </div>
       <div>
         <dt class="facts__key">Timeline</dt>
@@ -255,7 +262,7 @@
       </div>
       <div>
         <dt class="facts__key">Brands</dt>
-        <dd class="facts__value">North, Howard Leight, Miller and Uvex, all by PIP</dd>
+        <dd class="facts__value">North, Howard Leight, Miller, Uvex and Fibre-Metal, all by PIP</dd>
       </div>
       <div>
         <dt class="facts__key">Deliverables</dt>
@@ -270,7 +277,7 @@
         <p class="block__label">01 — the challenge</p>
         <h2 class="block__title">A rebrand where mistakes are a safety problem</h2>
         <ul class="points">
-          <li><b>Volume against a fixed date.</b> More than 2,000 assets across four brand catalogs had to switch to PIP within a year, while products kept shipping.</li>
+          <li><b>Volume against a fixed date.</b> More than 2,000 assets across five brand catalogs had to switch to PIP within a year, while products kept shipping.</li>
           <li><b>Regulated content.</b> This is protective equipment. Certification marks, warnings and usage instructions differ by region and can’t be lost or altered when the brand changes.</li>
           <li><b>Many hands.</b> Ten designers on three continents, plus regional product and compliance teams, all touched the files. Without a shared system, the new brand could easily have splintered into local versions.</li>
         </ul>
@@ -328,12 +335,13 @@
         <div class="panel">
           <div class="scope">
             <div>
-              <p class="scope__label">4 brand catalogs</p>
+              <p class="scope__label">5 brand catalogs</p>
               <ul class="scope__chips">
                 <li>North by PIP</li>
                 <li>Howard Leight by PIP</li>
                 <li>Miller by PIP</li>
                 <li>Uvex by PIP</li>
+                <li>Fibre-Metal by PIP</li>
               </ul>
             </div>
             <div>
@@ -360,10 +368,10 @@
             </div>
           </div>
         </div>
-        <figcaption><b>Scope.</b> Everything that carried the Honeywell name, across four catalogs and three continents.</figcaption>
+        <figcaption><b>Scope.</b> Everything that carried the Honeywell name, across five catalogs and three continents.</figcaption>
       </figure>
 
-      <h3 class="block__title visuals__title">The four brands, now under PIP</h3>
+      <h3 class="block__title visuals__title">The five brands, now under PIP</h3>
 
       <figure class="visual">
         <div class="brands">
@@ -382,6 +390,10 @@
           <figure class="brands__item">
             <div class="shot"><img src="./work/images/pip-brand-uvex.webp" width="1920" height="768" loading="lazy" alt="Worker wearing Uvex wraparound safety glasses"></div>
             <figcaption>Uvex by PIP · eye protection</figcaption>
+          </figure>
+          <figure class="brands__item">
+            <div class="shot"><img src="./work/images/pip-brand-fibre-metal.webp" width="1920" height="768" loading="lazy" alt="Fibre-Metal head and face protection in use"></div>
+            <figcaption>Fibre-Metal by PIP · head &amp; face protection</figcaption>
           </figure>
         </div>
         <figcaption><b>Photography: PIP Global Safety.</b> Public brand imagery from pipglobal.com, shown for context. Not my design work.</figcaption>
@@ -413,7 +425,7 @@
         </div>
 
         <ul class="points">
-          <li>All four brand catalogs moved from Honeywell to PIP before the deadline</li>
+          <li>All five brand catalogs moved from Honeywell to PIP before the deadline</li>
           <li>One consistent PIP identity across print, documents and digital in every market</li>
           <li>Every asset type now runs on a reusable template</li>
           <li>A reusable template foundation for future PIP product launches</li>
