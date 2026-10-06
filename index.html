@@ -65,27 +65,162 @@
 <link rel="stylesheet" href="src/css/motion.css">
 <script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
 <style>
-  /* project links under each role in the Experience list */
-  .ledger__projects {
-    margin-top: 4px;
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--text-soft, rgba(255, 255, 255, 0.55));
+  /* ── case study gate ─────────────────────────────────────── */
+  .gate {
+    position: relative;
+    margin: 0 var(--gutter, 40px);
+    padding: 120px 0 140px;
+    scroll-margin-top: var(--nav-height, 72px);
   }
-  .ledger__projects-label {
-    margin-right: 6px;
+  .gate__preview {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    filter: blur(10px);
+    opacity: 0.55;
+    pointer-events: none;
+    user-select: none;
+  }
+  .gate__card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #202020;
+  }
+  .gate__img {
+    height: 180px;
+    background:
+      radial-gradient(120% 90% at 20% 20%, rgba(234, 78, 101, 0.55), transparent 55%),
+      radial-gradient(90% 80% at 85% 80%, rgba(90, 120, 255, 0.35), transparent 60%),
+      #2a2a2a;
+  }
+  .gate__card:nth-child(2) .gate__img { background: radial-gradient(100% 90% at 70% 20%, rgba(0, 144, 218, 0.55), transparent 60%), #2a2a2a; }
+  .gate__card:nth-child(3) .gate__img { background: radial-gradient(100% 90% at 30% 70%, rgba(164, 206, 78, 0.45), transparent 60%), #2a2a2a; }
+  .gate__card:nth-child(4) .gate__img { background: radial-gradient(100% 90% at 60% 40%, rgba(255, 198, 0, 0.4), transparent 60%), #2a2a2a; }
+  .gate__card:nth-child(5) .gate__img { background: radial-gradient(100% 90% at 40% 30%, rgba(216, 10, 91, 0.45), transparent 60%), #2a2a2a; }
+  .gate__card:nth-child(6) .gate__img { background: radial-gradient(100% 90% at 50% 50%, rgba(255, 255, 255, 0.18), transparent 60%), #2a2a2a; }
+  .gate__lines { padding: 18px; }
+  .gate__lines span {
+    display: block;
+    height: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.18);
+  }
+  .gate__lines span:nth-child(1) { width: 18%; background: rgba(234, 78, 101, 0.5); }
+  .gate__lines span:nth-child(2) { width: 80%; height: 14px; }
+  .gate__lines span:nth-child(3) { width: 92%; }
+  .gate__lines span:nth-child(4) { width: 60%; }
+
+  .gate__panel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(460px, calc(100% - 32px));
+    transform: translate(-50%, -50%);
+    padding: 40px 36px;
+    background: rgba(26, 26, 26, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+  .gate__kicker {
     font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent, #ea4e65);
+  }
+  .gate__title {
+    margin-top: 12px;
+    font-family: var(--serif, 'Noto Serif JP', serif);
+    font-size: clamp(26px, 3.4vw, 34px);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .gate__text {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .gate__form { margin-top: 24px; }
+  .gate__field {
+    display: flex;
+    gap: 8px;
+  }
+  .gate__input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    font: inherit;
+    font-size: 14px;
+    color: #fff;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  .gate__input:focus { outline: 2px solid var(--accent, #ea4e65); outline-offset: 2px; border-color: transparent; }
+  .gate__input[aria-invalid="true"] { border-color: var(--accent, #ea4e65); }
+  .gate__btn {
+    padding: 14px 18px;
+    font: inherit;
+    font-size: 11px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-  }
-  .ledger__projects a {
-    color: var(--accent, #ea4e65);
+    color: #fff;
+    background: var(--accent, #ea4e65);
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
+    white-space: nowrap;
+    transition: filter 0.2s ease;
   }
-  .ledger__projects a:hover,
-  .ledger__projects a:focus-visible { border-bottom-color: currentColor; }
+  .gate__btn:hover { filter: brightness(1.1); }
+  .gate__btn[disabled] { opacity: 0.7; cursor: progress; }
+  .gate__remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .gate__error {
+    min-height: 1.6em;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--accent, #ea4e65);
+  }
+  .gate__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+  .gate__links a { color: rgba(255, 255, 255, 0.65); text-decoration: none; }
+  .gate__links a:hover { color: var(--accent, #ea4e65); }
+  .gate__unlocked { display: none; }
+  .gate.is-unlocked .gate__form,
+  .gate.is-unlocked .gate__links { display: none; }
+  .gate.is-unlocked .gate__unlocked { display: block; margin-top: 24px; }
+  .gate.is-unlocked .gate__btn { display: inline-block; }
+
+  @media (max-width: 860px) {
+    .gate__preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gate__preview .gate__card:nth-child(n+5) { display: none; }
+  }
+  @media (max-width: 520px) {
+    .gate { padding: 80px 0 100px; }
+    .gate__preview { grid-template-columns: 1fr; }
+    .gate__preview .gate__card:nth-child(n+3) { display: none; }
+    .gate__panel { padding: 28px 22px; }
+    .gate__field { flex-direction: column; }
+  }
 </style>
 </head>
 
@@ -112,7 +247,7 @@
 
 <header class="intro" id="intro">
   <ul class="intro__links">
-    <li><a href="#work">selected work <span class="jump" aria-hidden="true">↓</span></a></li>
+    <li><a href="#work">case studies <span class="jump" aria-hidden="true">↓</span></a></li>
     <li><a href="RESUMEGQ2026.pdf" target="_blank" rel="noopener">resume <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
     <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
     <li><a href="mailto:gustavoquiros9912@gmail.com">email <span aria-hidden="true">↗</span></a></li>
@@ -133,7 +268,6 @@
         <div>
           <p class="ledger__org">Curae Health</p>
           <p class="ledger__detail">Senior UI/UX Designer, contract</p>
-          <p class="ledger__projects"><span class="ledger__projects-label">Projects</span> <a href="curae-health.html">Curae Health</a> · Aquina Health</p>
         </div>
         <p class="ledger__date">Jan 2022 – Present</p>
       </li>
@@ -141,7 +275,6 @@
         <div>
           <p class="ledger__org">Tata Consultancy Services</p>
           <p class="ledger__detail">UX/CX Lead | Senior UI/UX Designer | Senior Packaging Designer</p>
-          <p class="ledger__projects"><span class="ledger__projects-label">Projects</span> <a href="MetLife.html">MetLife</a> · <a href="PIP.html">PIP Global Safety</a></p>
         </div>
         <p class="ledger__date">Jul 2022 – Jul 2026</p>
       </li>
@@ -149,7 +282,6 @@
         <div>
           <p class="ledger__org">Hedy & Hopp</p>
           <p class="ledger__detail">Lead Designer, contract</p>
-          <p class="ledger__projects"><span class="ledger__projects-label">Project</span> <a href="BJC.html">BJC Health</a></p>
         </div>
         <p class="ledger__date">Jan 2022 – Jan 2023</p>
       </li>
@@ -157,7 +289,6 @@
         <div>
           <p class="ledger__org">Token Agency</p>
           <p class="ledger__detail">Lead UI/UX Designer, Creative Lead</p>
-          <p class="ledger__projects"><span class="ledger__projects-label">Clients</span> H&amp;T Law Firm · FJ Capital · PureHealth · Cake&amp;Roll · <a href="Token.html">and more</a></p>
         </div>
         <p class="ledger__date">Aug 2017 – Jan 2022</p>
       </li>
@@ -213,186 +344,40 @@
 
 </header>
 
-<main class="work" id="work">
-  <div class="work__head">
-    <h2 class="work__title">Highlights in<br><span class="work__title_highlight">Design &amp; Development</span></h2>
+<main class="gate" id="work" aria-labelledby="gate-title">
+  <div class="gate__preview" aria-hidden="true">
+      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
+      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
+      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
+      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
+      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
+      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
   </div>
 
-  <div class="work__grid">
+  <div class="gate__panel">
+    <p class="gate__kicker">Case studies · protected</p>
+    <h2 class="gate__title" id="gate-title">Want to view my case studies?</h2>
+    <p class="gate__text">My client work is shared privately. Enter the password from my resume or application email to see the full list.</p>
 
-    <!-- ─── PIP GLOBAL SAFETY ─── -->
-    <a class="case" href="PIP.html" aria-labelledby="case-1-name" aria-describedby="case-1-blurb">
-      <span class="case__media">
-        <img src="./work/images/pip-hero.png" alt="Five brands moved from Honeywell to PIP: North, Howard Leight, Miller, Uvex and Fibre-Metal">
-        <span class="case__more">
-          <span class="case__more-kicker">Case study</span>
-          <span class="case__more-text">
-            One year leading the design side of a global rebrand: moving 2,000+ Honeywell safety assets to PIP across the Americas, Europe and Asia.
-          </span>
-          <span class="case__facts">
-            <span><b>Role</b> Lead UI/UX & Product Designer | Senior Packaging Designer</span>
-            <span><b>Years</b> 2025 – 2026</span>
-          </span>
-        </span>
-      </span>
-      <span class="case__label">
-        <span class="case__index">01</span>
-        <span class="case__name" id="case-1-name">Orchestrating global product migration</span>
-        <span class="case__blurb" id="case-1-blurb">Design leadership across packaging, documents and interfaces, ensuring brand cohesion under tight deadlines.</span>
-        <span class="case__tags">
-          <span class="tag">Product Migration</span>
-          <span class="tag">UX Design</span>
-          <span class="tag">Brand Guidelines</span>
-          <span class="tag">Global Operations</span>
-          <span class="tag">Packaging & Labeling</span>
-        </span>
-      </span>
-    </a>
+    <form class="gate__form" data-gate-form action="work.html" novalidate>
+      <label class="sr-only" for="gate-password">Password</label>
+      <div class="gate__field">
+        <input class="gate__input" id="gate-password" type="password" placeholder="Password" autocomplete="current-password" required aria-describedby="gate-error">
+        <button class="gate__btn" type="submit">Unlock</button>
+      </div>
+      <label class="gate__remember"><input type="checkbox" id="gate-remember" checked> Remember me for 30 days</label>
+      <p class="gate__error" id="gate-error" role="alert"></p>
+    </form>
 
-    <!-- ─── METLIFE ─── -->
-    <a class="case" href="MetLife.html" aria-labelledby="case-2-name" aria-describedby="case-2-blurb">
-      <span class="case__media">
-        <img src="./work/images/MetLife1.jpg" alt="MetLife Client Self-Service app on two iPhones">
-        <span class="case__more">
-          <span class="case__more-kicker">Case study</span>
-          <span class="case__more-text">
-            Led CX/UX strategy, design systems and user research, turning complex insurance processes into clear digital experiences across mobile and web in three international markets.
-          </span>
-          <span class="case__facts">
-            <span><b>Role</b> UX/CX Lead | Senior UI/UX Designer</span>
-            <span><b>Years</b> 2022 – 2025</span>
-          </span>
-        </span>
-      </span>
-      <span class="case__label">
-        <span class="case__index">02</span>
-        <span class="case__name" id="case-2-name">Driving cross-market insurance transformation</span>
-        <span class="case__blurb" id="case-2-blurb">Design leadership across mobile and web portals, aligning international products while simplifying complex workflows.</span>
-        <span class="case__tags">
-          <span class="tag">UI/UX</span>
-          <span class="tag">UX/CX Strategy</span>
-          <span class="tag">Design Systems</span>
-          <span class="tag">Interaction Flows</span>
-          <span class="tag">Global Alignment</span>
-        </span>
-      </span>
-    </a>
+    <div class="gate__links">
+      <span></span>
+      <a href="mailto:gustavoquiros9912@gmail.com?subject=Portfolio%20password">request access <span aria-hidden="true">↗</span></a>
+    </div>
 
-    <!-- ─── CURAE HEALTH ─── -->
-    <a class="case" href="curae-health.html" aria-labelledby="case-3-name" aria-describedby="case-3-blurb">
-      <span class="case__media">
-        <img src="./work/images/curae1.png" alt="Curae Health and Curae marketing pages and dashboard on desktop and laptop screens">
-        <span class="case__more">
-          <span class="case__more-kicker">Case study</span>
-          <span class="case__more-text">
-            Sole designer across a healthcare fintech: marketing sites, client portal, patient billing and payments, and sales collateral, all on one visual system.
-          </span>
-          <span class="case__facts">
-            <span><b>Role</b> Senior UI/UX Designer</span>
-            <span><b>Years</b> 2022 – Present</span>
-          </span>
-        </span>
-      </span>
-      <span class="case__label">
-        <span class="case__index">03</span>
-        <span class="case__name" id="case-3-name">Making healthcare billing make sense</span>
-        <span class="case__blurb" id="case-3-blurb">Simplifying patient and operational financial workflows for a healthcare platform.</span>
-        <span class="case__tags">
-          <span class="tag">UI/UX</span>
-          <span class="tag">Design Systems</span>
-          <span class="tag">Healthcare</span>
-        </span>
-      </span>
-    </a>
-
-    <!-- ─── BJC ─── -->
-    <a class="case" href="BJC.html" aria-labelledby="case-4-name" aria-describedby="case-4-blurb">
-      <span class="case__media">
-        <img src="./work/images/bjc1.png" alt="BJC HealthCare public website shown on a laptop">
-        <span class="case__more">
-          <span class="case__more-kicker">Case study</span>
-          <span class="case__more-text">
-            Lead designer on a confidential internal platform for the BJC / Washington University Healthcare Innovation Lab, plus new pages and templates for BJC’s public website.
-          </span>
-          <span class="case__facts">
-            <span><b>Role</b> Lead Designer | Web Interfaces</span>
-            <span><b>Years</b> 2022 – 2023</span>
-          </span>
-        </span>
-      </span>
-      <span class="case__label">
-        <span class="case__index">04</span>
-        <span class="case__name" id="case-4-name">Designing confidential healthcare systems</span>
-        <span class="case__blurb" id="case-4-blurb">Internal platform architecture and user flows, alongside public website design.</span>
-        <span class="case__tags">
-          <span class="tag">UX Design</span>
-          <span class="tag">Information Architecture</span>
-          <span class="tag">User Flows</span>
-          <span class="tag">Healthcare Innovation</span>
-          <span class="tag">Accessibility</span>
-        </span>
-      </span>
-    </a>
-
-    <!-- ─── TOKEN AGENCY ─── -->
-    <a class="case" href="Token.html" aria-labelledby="case-5-name" aria-describedby="case-5-blurb">
-      <span class="case__media">
-        <img src="./work/images/token1.png" alt="Brand and product work from Token Agency client projects">
-        <span class="case__more">
-          <span class="case__more-kicker">Case study</span>
-          <span class="case__more-text">
-            Nearly five years as sole designer and creative lead, connecting research, websites, branding and campaigns for finance, education and industrial clients.
-          </span>
-          <span class="case__facts">
-            <span><b>Role</b> Lead UI/UX Designer | Creative Lead</span>
-            <span><b>Years</b> 2017 – 2022</span>
-          </span>
-        </span>
-      </span>
-      <span class="case__label">
-        <span class="case__index">05</span>
-        <span class="case__name" id="case-5-name">Leading design strategy across client projects</span>
-        <span class="case__blurb" id="case-5-blurb">Research, journey mapping and creative direction for websites, products and campaigns.</span>
-        <span class="case__tags">
-          <span class="tag">UI/UX</span>
-          <span class="tag">Research</span>
-          <span class="tag">Brand</span>
-          <span class="tag">Marketing</span>
-          <span class="tag">Graphic Design</span>
-        </span>
-      </span>
-    </a>
-
-    <!-- ─── CONTACT ─── -->
-    <a class="case" href="mailto:gustavoquiros9912@gmail.com" aria-label="Email Gustavo about your next project" aria-describedby="case-6-blurb">
-      <span class="case__media">
-        <img src="./work/images/coming-soon.jpg" alt="Placeholder image for upcoming case study">
-        <span class="case__more">
-          <span class="case__more-kicker">Get in touch</span>
-          <span class="case__more-text">
-            Your project could be the next case study. I bring UX strategy, design systems, branding and marketing design. Let’s talk.
-          </span>
-          <span class="case__facts">
-            <span><b>Role</b> Lead Designer | UX/CX Specialist</span>
-          </span>
-        </span>
-      </span>
-      <span class="case__label">
-        <span class="case__index">06</span>
-        <span class="case__name" id="case-6-name">Coming Soon — Collaborate with Me</span>
-        <span class="case__blurb" id="case-6-blurb">Future project placeholder highlighting my abilities in UX, branding, marketing, and design systems.</span>
-        <span class="case__tags">
-          <span class="tag">UX Strategy</span>
-          <span class="tag">Branding</span>
-          <span class="tag">Marketing</span>
-          <span class="tag">Design Systems</span>
-          <span class="tag">Collaboration</span>
-        </span>
-      </span>
-    </a>
-
+    <div class="gate__unlocked">
+      <a class="gate__btn" href="work.html">View case studies →</a>
+    </div>
   </div>
-
 </main>
 
 <footer class="footer">
@@ -456,6 +441,140 @@
   addEventListener('load', update);
   addEventListener('pageshow', update);
   spy();
+})();
+</script>
+<script>
+// Case study gate: checks the password here, then opens the protected work page.
+// work.html is encrypted with StatiCrypt; this uses the same hashing so one
+// password unlocks it, and StatiCrypt's own "remember me" carries over to every case study.
+(() => {
+  const gate = document.querySelector('.gate');
+  const form = document.querySelector('[data-gate-form]');
+  if (!gate || !form) return;
+
+  const PASS_KEY = 'staticrypt_passphrase';
+  const EXP_KEY = 'staticrypt_expiration';
+  const FALLBACK_SALT = 'd1f262da1b9c7b5e397532d4ae2f11a5';
+
+  const input = document.getElementById('gate-password');
+  const remember = document.getElementById('gate-remember');
+  const btn = form.querySelector('button[type="submit"]');
+  const err = document.getElementById('gate-error');
+  const title = gate.querySelector('.gate__title');
+  const text = gate.querySelector('.gate__text');
+  const original = { title: title.textContent, text: text.textContent };
+
+  // Already unlocked on this device? Show a straight link instead of the form.
+  const checkRemembered = () => {
+    let ok = false;
+    try {
+      const saved = localStorage.getItem(PASS_KEY);
+      const exp = parseInt(localStorage.getItem(EXP_KEY) || '0', 10);
+      ok = Boolean(saved && (!exp || exp > Date.now()));
+    } catch (e) {}
+    gate.classList.toggle('is-unlocked', ok);
+    title.textContent = ok ? 'Welcome back.' : original.title;
+    text.textContent = ok ? 'Your case study access is still active on this device.' : original.text;
+  };
+  checkRemembered();
+
+  // Coming back with the Back button: clear the field and re-check access.
+  addEventListener('pageshow', (e) => {
+    if (!e.persisted) return;
+    input.value = '';
+    resetButton();
+    checkRemembered();
+  });
+
+  const enc = new TextEncoder();
+  const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  const unhex = (h) => new Uint8Array(h.match(/.{2}/g).map((b) => parseInt(b, 16)));
+  const pbkdf2 = async (pw, salt, iterations, hash) => {
+    const key = await crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveBits']);
+    const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', hash, iterations, salt: enc.encode(salt) }, key, 256);
+    return hex(bits);
+  };
+  const hashPassword = async (pw, salt) => {
+    let h = await pbkdf2(pw, salt, 1000, 'SHA-1');
+    h = await pbkdf2(h, salt, 14000, 'SHA-256');
+    return pbkdf2(h, salt, 585000, 'SHA-256');
+  };
+  const hmac = async (hashed, msg) => {
+    const key = await crypto.subtle.importKey('raw', unhex(hashed), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+    return hex(await crypto.subtle.sign('HMAC', key, enc.encode(msg)));
+  };
+
+  const showError = (msg) => {
+    err.textContent = '';
+    requestAnimationFrame(() => { err.textContent = msg; }); // re-announced every time
+    input.setAttribute('aria-invalid', 'true');
+    input.focus();
+    input.select();
+  };
+  function resetButton() {
+    btn.disabled = false;
+    btn.textContent = 'Unlock';
+    form.removeAttribute('aria-busy');
+  }
+
+  let busy = false;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (busy) return;
+    const pw = input.value;
+    err.textContent = '';
+    input.removeAttribute('aria-invalid');
+    if (!pw) return showError('Enter the password to continue.');
+    if (!window.crypto || !crypto.subtle) {
+      location.href = 'work.html'; // work.html asks for the password itself
+      return;
+    }
+
+    busy = true;
+    btn.disabled = true;
+    btn.textContent = 'Checking…';
+    form.setAttribute('aria-busy', 'true');
+
+    try {
+      // Read the encrypted page so a wrong password is caught right here.
+      let salt = FALLBACK_SALT;
+      let signed = null;
+      let reachable = false;
+      try {
+        const res = await fetch('work.html', { cache: 'no-store' });
+        if (res.ok) {
+          reachable = true;
+          const html = await res.text();
+          const s = html.match(/"staticryptSaltUniqueVariableName":"([0-9a-f]+)"/);
+          const m = html.match(/"staticryptEncryptedMsgUniqueVariableName":"([0-9a-f]+)"/);
+          if (s) salt = s[1];
+          if (m) signed = m[1];
+        }
+      } catch (fetchErr) { /* offline or opened from disk: work.html will check it */ }
+
+      if (reachable && !signed) {
+        // work.html isn't the encrypted version: never let anyone through on trust.
+        busy = false;
+        resetButton();
+        return showError('Case studies are temporarily unavailable. Please request access by email.');
+      }
+
+      const hashed = await hashPassword(pw, salt);
+
+      if (signed && (await hmac(hashed, signed.slice(64))) !== signed.slice(0, 64)) {
+        busy = false;
+        resetButton();
+        return showError('That password didn’t work. Check your resume or email, or request access.');
+      }
+
+      // StatiCrypt saves the access itself (only after it decrypts successfully).
+      location.href = 'work.html#staticrypt_pwd=' + hashed + (remember.checked ? '&remember_me' : '');
+    } catch (e3) {
+      busy = false;
+      resetButton();
+      showError('Something went wrong. Please try again.');
+    }
+  });
 })();
 </script>
 <script src="src/js/motion.js" defer></script>
