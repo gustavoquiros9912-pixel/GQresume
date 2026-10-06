@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 <link rel="stylesheet" href="./src/css/layout.css">
 
-<!-- Person structured data for SEO / AI search surfaces -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,7 +61,6 @@
 }
 </script>
 
-<!-- Shared animation layer (see src/css/motion.css and src/js/motion.js) -->
 <link rel="stylesheet" href="src/css/motion.css">
 <script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
 <style>
@@ -357,7 +356,7 @@
   <div class="gate__panel">
     <p class="gate__kicker">Case studies · protected</p>
     <h2 class="gate__title" id="gate-title">Want to view my case studies?</h2>
-    <p class="gate__text">My client work is shared privately. Enter the password from my resume or application email to see the full list.</p>
+    <p class="gate__text">My client work is shared privately. Enter the password to see the full list. </br>(Request it via email)</p>
 
     <form class="gate__form" data-gate-form action="work.html" novalidate>
       <label class="sr-only" for="gate-password">Password</label>
@@ -526,7 +525,7 @@
     input.removeAttribute('aria-invalid');
     if (!pw) return showError('Enter the password to continue.');
     if (!window.crypto || !crypto.subtle) {
-      location.href = 'work.html'; // work.html asks for the password itself
+      location.href = 'work.html'; 
       return;
     }
 
@@ -536,7 +535,7 @@
     form.setAttribute('aria-busy', 'true');
 
     try {
-      // Read the encrypted page so a wrong password is caught right here.
+    
       let salt = FALLBACK_SALT;
       let signed = null;
       let reachable = false;
