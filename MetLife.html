@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--
+  IMAGES TO ADD (export as PNG @2x from Figma / XD, save into work/images/metlife/):
+    metlife-app-home.png          CSS app: home / my policies
+    metlife-app-policy.png        CSS app: policy detail
+    metlife-app-payments.png      CSS app: payments (or another key flow)
+    metlife-ds-overview.png       CSS Library: colors + type + components overview
+    metlife-cwp-desktop.png       CWP documents page, desktop
+    metlife-cwp-mobile.png        CWP documents page, mobile
+    metlife-status-tooltips.png   CWP policy status tags + tooltip states
+  Check every export for real customer data before uploading.
+-->
+
 <title>MetLife — Gustavo Quiros</title>
 <meta name="description" content="Case study: leading UX/CX for MetLife's Client Self-Service app and Client Web Portal in Mexico and the Agent Web Portal in the US and Colombia, built on a shared design system.">
 
@@ -19,8 +31,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="src/css/motion.css">
+<script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
 
-
+<!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
 <style>
   .item p + p { margin-top: 10px; }
 
@@ -508,6 +522,8 @@ document.addEventListener('DOMContentLoaded', () => {
   spy();
 });
 </script>
+
+<script src="src/js/motion.js" defer></script>
 
 </body>
 </html>

@@ -19,10 +19,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="src/css/motion.css">
+<script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
 
+<!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
 <style>
   .item p + p { margin-top: 10px; }
 
+  /* headline numbers */
   .stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -65,6 +69,7 @@
     background: rgba(255, 255, 255, 0.02);
   }
 
+  /* scope board */
   .scope {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -118,8 +123,41 @@
     color: var(--text-soft);
   }
 
+  /* brand photo grid */
+  .brands {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .brands__item { margin: 0; }
+  .brands .shot img {
+    aspect-ratio: 2.75 / 1;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .brands__item figcaption {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  /* hero graphic */
+  .hero__svg { display: block; width: 100%; height: auto; }
+  .hero__svg .h-bg { fill: #202020; }
+  .hero__svg text { font-family: 'Space Mono', monospace; }
+  .hero__svg .h-kicker { font-size: 12px; letter-spacing: 0.2em; fill: #ea4e65; }
+  .hero__svg .h-name { font-family: var(--serif), 'Noto Serif JP', serif; font-size: 36px; font-weight: 300; fill: #fff; }
+  .hero__svg .h-old { font-size: 14px; fill: rgba(255, 255, 255, 0.45); }
+  .hero__svg .h-strike { stroke: rgba(255, 255, 255, 0.45); stroke-width: 1; }
+  .hero__svg .h-link { stroke: rgba(255, 255, 255, 0.2); stroke-width: 1; stroke-dasharray: 2 5; }
+  .hero__svg .h-new { font-size: 14px; font-weight: 700; fill: #ea4e65; }
+  .hero__svg .h-rule { stroke: rgba(234, 78, 101, 0.4); stroke-width: 1; }
+  .hero__svg .h-stat { font-family: var(--serif), 'Noto Serif JP', serif; font-size: 32px; font-weight: 300; fill: #ea4e65; }
+  .hero__svg .h-label { font-size: 12px; fill: rgba(255, 255, 255, 0.55); }
   @media (max-width: 860px) {
-    .scope { grid-template-columns: 1fr; }
+    .scope, .brands { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .panel { padding: 18px; }
@@ -165,8 +203,40 @@
         </p>
       </div>
 
-      <figure class="shot">
-        <img src="./work/images/pip1.jpeg" alt="PIP Global Safety brand imagery showing workers in hard hats, respirators, fall protection and firefighting gear">
+      <figure class="shot hero">
+        <svg class="hero__svg" viewBox="0 0 600 600" role="img" aria-labelledby="hero-title hero-desc">
+          <title id="hero-title">Four brands moved from Honeywell to PIP</title>
+          <desc id="hero-desc">North, Howard Leight, Miller and Uvex, each changing from "by Honeywell" to "by PIP". More than 2,000 assets across 3 continents in 1 year.</desc>
+          <rect class="h-bg" x="0" y="0" width="600" height="600"/>
+          <text class="h-kicker" x="48" y="64">BRAND MIGRATION · 2025–2026</text>
+          <text class="h-name" x="48" y="130">North</text>
+          <text class="h-old" x="48" y="162">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="158" x2="151" y2="158"/>
+          <line class="h-link" x1="166" y1="158" x2="490" y2="158"/>
+          <text class="h-new" x="552" y="162" text-anchor="end">by PIP</text>
+          <text class="h-name" x="48" y="222">Howard Leight</text>
+          <text class="h-old" x="48" y="254">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="250" x2="151" y2="250"/>
+          <line class="h-link" x1="166" y1="250" x2="490" y2="250"/>
+          <text class="h-new" x="552" y="254" text-anchor="end">by PIP</text>
+          <text class="h-name" x="48" y="314">Miller</text>
+          <text class="h-old" x="48" y="346">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="342" x2="151" y2="342"/>
+          <line class="h-link" x1="166" y1="342" x2="490" y2="342"/>
+          <text class="h-new" x="552" y="346" text-anchor="end">by PIP</text>
+          <text class="h-name" x="48" y="406">Uvex</text>
+          <text class="h-old" x="48" y="438">by Honeywell</text>
+          <line class="h-strike" x1="46" y1="434" x2="151" y2="434"/>
+          <line class="h-link" x1="166" y1="434" x2="490" y2="434"/>
+          <text class="h-new" x="552" y="438" text-anchor="end">by PIP</text>
+          <line class="h-rule" x1="48" y1="484" x2="552" y2="484"/>
+          <text class="h-stat" x="48" y="534">2,000+</text>
+          <text class="h-stat" x="250" y="534">3</text>
+          <text class="h-stat" x="420" y="534">1</text>
+          <text class="h-label" x="48" y="560">assets</text>
+          <text class="h-label" x="250" y="560">continents</text>
+          <text class="h-label" x="420" y="560">year</text>
+        </svg>
       </figure>
     </div>
 
@@ -292,6 +362,30 @@
         </div>
         <figcaption><b>Scope.</b> Everything that carried the Honeywell name, across four catalogs and three continents.</figcaption>
       </figure>
+
+      <h3 class="block__title visuals__title">The four brands, now under PIP</h3>
+
+      <figure class="visual">
+        <div class="brands">
+          <figure class="brands__item">
+            <div class="shot"><img src="./work/images/pip-brand-north.webp" width="1920" height="768" loading="lazy" alt="Worker in a yellow hard hat, safety glasses and a North half-mask respirator with purple cartridges"></div>
+            <figcaption>North by PIP · respiratory</figcaption>
+          </figure>
+          <figure class="brands__item">
+            <div class="shot"><img src="./work/images/pip-brand-howard-leight.webp" width="1920" height="768" loading="lazy" alt="Two construction workers on site wearing hard hats, earmuffs and high-visibility vests"></div>
+            <figcaption>Howard Leight by PIP · hearing</figcaption>
+          </figure>
+          <figure class="brands__item">
+            <div class="shot"><img src="./work/images/pip-brand-miller.webp" width="1920" height="768" loading="lazy" alt="Two workers seen from behind at a construction site wearing fall-protection harnesses and hard hats"></div>
+            <figcaption>Miller by PIP · fall protection</figcaption>
+          </figure>
+          <figure class="brands__item">
+            <div class="shot"><img src="./work/images/pip-brand-uvex.webp" width="1920" height="768" loading="lazy" alt="Worker wearing Uvex wraparound safety glasses"></div>
+            <figcaption>Uvex by PIP · eye protection</figcaption>
+          </figure>
+        </div>
+        <figcaption><b>Photography: PIP Global Safety.</b> Public brand imagery from pipglobal.com, shown for context. Not my design work.</figcaption>
+      </figure>
     </section>
 
     <div class="split">
@@ -401,6 +495,8 @@ document.addEventListener('DOMContentLoaded', () => {
   spy();
 });
 </script>
+
+<script src="src/js/motion.js" defer></script>
 
 </body>
 </html>

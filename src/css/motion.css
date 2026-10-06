@@ -1,0 +1,129 @@
+/*
+  motion.css — shared animation layer for every page.
+
+  Nothing here does anything until the inline snippet in each page's <head>
+  adds the "motion" class to <html> (JavaScript running and "reduce motion"
+  off). It uses the individual translate/scale properties and elements that
+  motion.js injects, so it never overrides rules in layout.css, and motion.js
+  removes the reveal styles from each element once its animation finishes.
+*/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* thin reading-progress line along the top */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 2px;
+  background: #ea4e65;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ── scroll reveal ─────────────────────────────────────────────── */
+.motion [data-reveal] {
+  opacity: 0;
+  translate: 0 22px;
+  transition:
+    opacity 0.7s ease,
+    translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.motion [data-reveal].is-in {
+  opacity: 1;
+  translate: none;
+}
+
+/* ── big titles: letters rise in one by one; words never break apart ── */
+/* keep the title hidden until motion.js splits it, so it never flashes */
+.motion .intro__name:not(.split-title),
+.motion .study__title:not(.split-title) { opacity: 0; }
+.split-title .word { display: inline-block; white-space: nowrap; }
+.split-title .char { display: inline-block; }
+.motion .split-title .char {
+  opacity: 0;
+  translate: 0 0.4em;
+  transition:
+    opacity 0.6s ease,
+    translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(120ms + var(--c, 0) * 35ms);
+}
+.motion .split-title.is-in .char {
+  opacity: 1;
+  translate: none;
+}
+
+/* ── homepage ledger rows: an accent hairline draws in, then fades ── */
+.fx-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: rgba(234, 78, 101, 0.6);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  opacity: 0;
+  pointer-events: none;
+}
+.fx-line.is-drawing {
+  animation: fx-draw 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes fx-draw {
+  0%   { transform: scaleX(0); opacity: 1; }
+  55%  { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+/* ── cards: soft spotlight behind the content that follows the cursor ── */
+.fx-spot {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(234, 78, 101, 0.16), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+@media (hover: hover) {
+  .fx-host:hover > .fx-spot { opacity: 1; }
+}
+.fx-host:focus-visible > .fx-spot { opacity: 1; }
+
+.case:focus-visible {
+  outline: 2px solid #ea4e65;
+  outline-offset: 4px;
+}
+
+/* jump-to-work link on the homepage: nudges down on hover */
+.intro__links .jump { display: inline-block; transition: translate 0.25s ease; }
+@media (hover: hover) {
+  .motion .intro__links a:hover .jump { translate: 0 3px; }
+}
+
+/* never print half-revealed content */
+@media print {
+  [data-reveal], .split-title .char { opacity: 1 !important; translate: none !important; }
+  .progress, .fx-spot, .fx-line { display: none !important; }
+}

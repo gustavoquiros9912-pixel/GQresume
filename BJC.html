@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--
+  IMAGES TO ADD (PNG @2x, save into work/images/bjc/):
+    bjc-page-desktop.png   A public BJC page you designed or updated (desktop)
+    bjc-page-mobile.png    The same page on mobile
+    bjc-page-template.png  Another public page or template you designed
+  Public website only. Nothing from the internal Innovation Lab platform.
+-->
+
 <title>BJC Health — Gustavo Quiros</title>
 <meta name="description" content="Case study: lead designer, through Hedy &amp; Hopp, on a confidential internal platform for the BJC HealthCare / Washington University School of Medicine Healthcare Innovation Lab and design for BJC's public website.">
 
@@ -19,8 +27,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="src/css/motion.css">
+<script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
 
-
+<!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
 <style>
   .item p + p { margin-top: 10px; }
 
@@ -384,6 +394,8 @@ document.addEventListener('DOMContentLoaded', () => {
   spy();
 });
 </script>
+
+<script src="src/js/motion.js" defer></script>
 
 </body>
 </html>

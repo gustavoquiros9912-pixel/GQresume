@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--
+  IMAGES TO ADD (PNG or JPG, save into work/images/token/):
+    token-web-1.png   Client website (desktop)
+    token-web-2.png   Another client website, or the same site on mobile
+    token-mkt-1.png … token-mkt-6.png   Campaign, ad, social and brand pieces
+  Update each figcaption to name the industry (Finance, Education or Industrial).
+  Delete any <figure> you don't have an image for.
+-->
+
 <title>Token Agency — Gustavo Quiros</title>
 <meta name="description" content="Case study: sole designer and creative lead at Token Agency, leading UX strategy, research, branding and marketing design for clients in finance, education and industrial sectors.">
 
@@ -19,7 +28,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="src/css/motion.css">
+<script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
 
+<!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
 <style>
   .item p + p { margin-top: 10px; }
 
@@ -400,6 +412,8 @@ document.addEventListener('DOMContentLoaded', () => {
   spy();
 });
 </script>
+
+<script src="src/js/motion.js" defer></script>
 
 </body>
 </html>

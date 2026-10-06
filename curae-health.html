@@ -4,6 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--
+  IMAGES TO ADD (export as PNG @2x, save into work/images/curae/).
+  Also re-check the existing hero image (work/images/curae1.png) for real data.
+    curae-site-home.png         Marketing site: home page (desktop)
+    curae-site-mobile.png       Marketing site: same page on mobile
+    curae-portal-dashboard.png  Client portal: main dashboard
+    curae-billing-statement.png Patient billing: statement / balance
+    curae-billing-payment.png   Patient billing: payment step
+    curae-billing-confirm.png   Patient billing: confirmation
+    curae-components.png        Shared components / UI library overview
+    curae-collateral-1.png      Sales or marketing piece
+    curae-collateral-2.png      Sales or marketing piece
+  Use demo data only. Patient names, account numbers, balances and dates
+  must be fake before anything is published.
+-->
+
 <title>Curae Health — Gustavo Quiros</title>
 <meta name="description" content="Case study: sole senior UI/UX designer across Curae Health and its Curae platform: marketing sites, client portal, patient billing and payment flows, and sales collateral.">
 
@@ -19,6 +35,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
 
 <link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="src/css/motion.css">
+<script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
 
 <!-- Styles for the pieces new to this page. Move into layout.css whenever convenient. -->
 <style>
@@ -452,6 +470,8 @@ document.addEventListener('DOMContentLoaded', () => {
   spy();
 });
 </script>
+
+<script src="src/js/motion.js" defer></script>
 
 </body>
 </html>
