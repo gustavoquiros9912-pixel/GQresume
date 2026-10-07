@@ -127,3 +127,118 @@
   [data-reveal], .split-title .char { opacity: 1 !important; translate: none !important; }
   .progress, .fx-spot, .fx-line { display: none !important; }
 }
+
+
+/* ── drifting gradient glows (Token-style) ─────────────────────── */
+html.motion, .motion body { overflow-x: clip; } /* glows and tilted collages never cause sideways scrolling */
+.fx-glow {
+  position: absolute;
+  inset: -12vmax -40px;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  margin: 0 !important;
+}
+.fx-glow span {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  opacity: 0.55;
+}
+.fx-glow__a {
+  left: -18vmax;
+  top: 0;
+  background: radial-gradient(circle, rgba(234, 78, 101, 0.36) 0%, rgba(234, 78, 101, 0.16) 35%, rgba(234, 78, 101, 0) 68%);
+}
+.fx-glow__b {
+  right: -20vmax;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, rgba(124, 58, 237, 0.18) 35%, rgba(124, 58, 237, 0) 68%);
+}
+.motion .fx-glow__a { animation: fx-drift-a 22s ease-in-out infinite alternate; }
+.motion .fx-glow__b { animation: fx-drift-b 26s ease-in-out infinite alternate; }
+.fx-glow.is-paused span { animation-play-state: paused; }
+@keyframes fx-drift-a {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(8vmax, 6vmax) scale(1.12); }
+}
+@keyframes fx-drift-b {
+  0%   { transform: translate(0, 0) scale(1.05); }
+  100% { transform: translate(-9vmax, -5vmax) scale(0.95); }
+}
+
+/* ── accent bar under section labels ───────────────────────────── */
+.fx-bar {
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin-top: 10px;
+  background: #ea4e65;
+  transform-origin: 0 50%;
+}
+.motion .fx-bar { transform: scaleX(0); transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--d, 0ms); }
+.motion .fx-bar.is-drawn { transform: scaleX(1); }
+
+/* ── framed screens that grow as you scroll ────────────────────── */
+/* Styled from the <head> class, so the frame is there before first paint (no layout shift). */
+.motion .visual > .shot {
+  position: relative;
+  padding-top: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  background: #111;
+}
+.motion .visual > .shot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    radial-gradient(circle at 16px 14px, rgba(234, 78, 101, 0.85) 4.5px, transparent 5px),
+    radial-gradient(circle at 32px 14px, rgba(255, 255, 255, 0.2) 4.5px, transparent 5px),
+    radial-gradient(circle at 48px 14px, rgba(255, 255, 255, 0.2) 4.5px, transparent 5px),
+    #242424;
+}
+.motion .fx-frame {
+  scale: calc(0.86 + 0.14 * var(--p, 1));
+  transform-origin: 50% 0;
+}
+
+/* ── tilted collage that flattens as you scroll (Token-style) ───── */
+.motion .fx-tilt-stage { perspective: 1600px; }
+.motion .fx-tilt {
+  transform-origin: 50% 30%;
+  transform:
+    rotateX(calc((1 - var(--p, 1)) * 32deg))
+    rotateZ(calc((1 - var(--p, 1)) * -7deg))
+    scale(calc(0.9 + 0.1 * var(--p, 1)));
+}
+.motion .fx-tilt > :first-child {
+  translate: calc((1 - var(--p, 1)) * -48px) calc((1 - var(--p, 1)) * -36px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, calc((1 - var(--p, 1)) * 0.5));
+}
+.motion .fx-tilt > :last-child {
+  translate: calc((1 - var(--p, 1)) * 48px) calc((1 - var(--p, 1)) * 36px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, calc((1 - var(--p, 1)) * 0.5));
+}
+@media (max-width: 700px) {
+  .motion .fx-tilt {
+    transform:
+      rotateX(calc((1 - var(--p, 1)) * 24deg))
+      rotateZ(calc((1 - var(--p, 1)) * -3deg))
+      scale(calc(0.94 + 0.06 * var(--p, 1)));
+  }
+  .motion .fx-tilt > :first-child,
+  .motion .fx-tilt > :last-child { translate: none; }
+}
+
+@media print {
+  .fx-glow { display: none !important; }
+  .fx-frame, .fx-tilt { scale: none !important; transform: none !important; box-shadow: none !important; }
+  .fx-tilt > * { translate: none !important; box-shadow: none !important; }
+  .fx-bar { transform: none !important; }
+}

@@ -57,6 +57,10 @@
 
   const SPOT = '.work__grid .case, .trio .item, .copy__card, .track, .surfaces > li, .journey > li';
 
+  const GLOW = '.gate, main.work, .study #overview';       // drifting pink/purple glows
+  const FRAME = '.visual > .shot';                         // full-width screens: framed, grow on scroll
+  const TILT = '.gallery';                                 // image grids: tilted collage that flattens
+
   const COUNT_AUTO = '.stats__value'; // numbers on case pages, e.g. 2,000+  100%  ~15/wk
 
   const revealAll = () => {
@@ -168,6 +172,11 @@
       el.classList.add('is-in');
       if (el.hasAttribute('data-counter')) runCount(el);
       el.querySelectorAll('[data-counter]').forEach(runCount);
+      const bar = el.querySelector(':scope > .fx-bar');
+      if (bar) {
+        bar.style.setProperty('--d', `${150 + i * 70}ms`);
+        bar.classList.add('is-drawn');
+      }
       const line = el.querySelector(':scope > .fx-line');
       if (line) {
         line.style.setProperty('--d', `${200 + i * 70}ms`);
@@ -231,7 +240,74 @@
           if (el._count) el._count.vis.textContent = el._count.finalText;
         });
         root.classList.remove('motion');
+        document.querySelectorAll('.fx-frame, .fx-tilt').forEach((el) => el.style.setProperty('--p', '1'));
       });
+    }
+
+    /* ── Drifting gradient glows behind key sections ─────────────────── */
+    const glowHosts = [];
+    document.querySelectorAll(GLOW).forEach((host) => {
+      if (host.querySelector(':scope > .fx-glow')) return;
+      if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+      host.style.isolation = 'isolate';
+      const glow = document.createElement('div');
+      glow.className = 'fx-glow';
+      glow.setAttribute('aria-hidden', 'true');
+      glow.innerHTML = '<span class="fx-glow__a"></span><span class="fx-glow__b"></span>';
+      host.appendChild(glow);
+      glowHosts.push(glow);
+    });
+    if (glowHosts.length) {
+      // pause the drifting glows while they're off screen
+      const gio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => e.target.classList.toggle('is-paused', !e.isIntersecting));
+      });
+      glowHosts.forEach((g) => gio.observe(g));
+    }
+
+    /* ── Short accent bar under section labels ("01 — the challenge") ── */
+    document.querySelectorAll('.block__label').forEach((label) => {
+      if (label.querySelector(':scope > .fx-bar')) return;
+      const bar = document.createElement('span');
+      bar.className = 'fx-bar';
+      bar.setAttribute('aria-hidden', 'true');
+      label.appendChild(bar);
+    });
+
+    /* ── Scroll-linked effects: framed screens grow, collages flatten ── */
+    const frames = [...document.querySelectorAll(FRAME)];
+    frames.forEach((shot) => shot.classList.add('fx-frame'));
+    const tilts = [...document.querySelectorAll(TILT)];
+    tilts.forEach((g) => {
+      g.classList.add('fx-tilt');
+      if (g.parentElement) g.parentElement.classList.add('fx-tilt-stage');
+    });
+
+    const linked = [...frames, ...tilts];
+    if (linked.length) {
+      // 0 when the element's top enters the bottom of the screen, 1 when it reaches 35% from the top
+      // (or when the page can't scroll any further).
+      const measure = (el) => (el.classList.contains('fx-tilt') && el.parentElement ? el.parentElement : el);
+      let ticking = false;
+      const updateLinked = () => {
+        ticking = false;
+        const vh = window.innerHeight || 1;
+        const atBottom = window.scrollY >= root.scrollHeight - vh - 2;
+        const tops = linked.map((el) => measure(el).getBoundingClientRect().top); // all reads first
+        linked.forEach((el, i) => {                                                // then all writes
+          const p = atBottom ? 1 : Math.min(1, Math.max(0, (vh - tops[i]) / (vh * 0.65)));
+          el.style.setProperty('--p', p.toFixed(3));
+        });
+      };
+      const onLinked = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateLinked);
+      };
+      document.addEventListener('scroll', onLinked, { passive: true, capture: true });
+      addEventListener('resize', onLinked, { passive: true });
+      addEventListener('load', onLinked);
+      updateLinked();
     }
 
     /* Card spotlight follows the cursor (fine pointers only, one update per frame). */
