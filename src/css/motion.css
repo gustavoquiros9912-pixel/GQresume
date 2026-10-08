@@ -133,12 +133,19 @@
 html.motion, .motion body { overflow-x: clip; } /* glows and tilted collages never cause sideways scrolling */
 .fx-glow {
   position: absolute;
-  inset: -12vmax -40px;
+  inset: 0 -40px;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
   margin: 0 !important;
+  /* fade out at the top and bottom so sections blend with no hard edges */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
 }
+/* the footer always sits above the glows, and the page background matches it,
+   so nothing lighter shows under the footer (e.g. when a Mac trackpad bounces) */
+.footer { position: relative; z-index: 1; }
+html { background-color: #101010; }
 .fx-glow span {
   position: absolute;
   width: 60vmax;
@@ -148,12 +155,12 @@ html.motion, .motion body { overflow-x: clip; } /* glows and tilted collages nev
 }
 .fx-glow__a {
   left: -18vmax;
-  top: 0;
+  top: -10vmax;
   background: radial-gradient(circle, rgba(234, 78, 101, 0.36) 0%, rgba(234, 78, 101, 0.16) 35%, rgba(234, 78, 101, 0) 68%);
 }
 .fx-glow__b {
   right: -20vmax;
-  bottom: 0;
+  bottom: -10vmax;
   background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, rgba(124, 58, 237, 0.18) 35%, rgba(124, 58, 237, 0) 68%);
 }
 .motion .fx-glow__a { animation: fx-drift-a 22s ease-in-out infinite alternate; }
@@ -180,22 +187,22 @@ html.motion, .motion body { overflow-x: clip; } /* glows and tilted collages nev
 .motion .fx-bar { transform: scaleX(0); transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--d, 0ms); }
 .motion .fx-bar.is-drawn { transform: scaleX(1); }
 
-/* ── framed screens that grow as you scroll ────────────────────── */
-/* Styled from the <head> class, so the frame is there before first paint (no layout shift). */
-.motion .visual > .shot {
+/* ── window frame on every case-study image ─────────────────────── */
+/* Always on (not tied to animation), so every image gets the same top bar. */
+.study .shot {
   position: relative;
   padding-top: 28px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   background: #111;
 }
-.motion .visual > .shot::before {
+.study .shot::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 28px;
+  z-index: 1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   background:
     radial-gradient(circle at 16px 14px, rgba(234, 78, 101, 0.85) 4.5px, transparent 5px),
@@ -203,6 +210,38 @@ html.motion, .motion body { overflow-x: clip; } /* glows and tilted collages nev
     radial-gradient(circle at 48px 14px, rgba(255, 255, 255, 0.2) 4.5px, transparent 5px),
     #242424;
 }
+.study .visual > .shot { box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); }
+
+/* ── images side by side share one height ───────────────────────── */
+/* motion.js sets --ar (width ÷ height) on each figure; widths follow the
+   aspect ratio, so every image in the row ends up exactly the same height. */
+.study .screens.is-justified {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.study .screens.is-justified > figure {
+  flex: var(--ar, 1) 1 2px; /* the 2px offsets the frame's side borders so heights match exactly */
+  min-width: 0;
+  margin: 0;
+}
+.study .screens.is-justified img,
+.study .screens.is-justified video { display: block; width: 100%; height: auto; }
+@media (max-width: 520px) {
+  .study .screens.is-justified { gap: 12px; } /* stay side by side on phones too, so heights still match */
+}
+
+/* grids with several rows: one fixed shape per section, images never cropped */
+.study .gallery .shot img,
+.study .brand-grid .shot img {
+  width: 100%;
+  object-fit: contain;
+  background: #111;
+}
+.study .gallery .shot img { aspect-ratio: 1 / 1; }
+.study .brand-grid .shot img { aspect-ratio: 16 / 10; }
+
+/* ── framed screens that grow as you scroll ────────────────────── */
 .motion .fx-frame {
   scale: calc(0.86 + 0.14 * var(--p, 1));
   transform-origin: 50% 0;

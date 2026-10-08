@@ -10,6 +10,23 @@
 (() => {
   const root = document.documentElement;
 
+  /* ── Equal-height image rows (always on; layout, not decoration) ── */
+  document.querySelectorAll('.study .screens').forEach((row) => {
+    row.classList.add('is-justified');
+    row.querySelectorAll(':scope > figure').forEach((fig) => {
+      const media = fig.querySelector('img, video');
+      if (!media) return;
+      const setRatio = () => {
+        const w = media.naturalWidth || media.videoWidth;
+        const h = media.naturalHeight || media.videoHeight;
+        if (w && h) fig.style.setProperty('--ar', (w / h).toFixed(4));
+      };
+      if (media.tagName === 'VIDEO') media.addEventListener('loadedmetadata', setRatio);
+      else media.addEventListener('load', setRatio);
+      setRatio();
+    });
+  });
+
   /* ── Reading progress line (always on; it's information, not decoration) ── */
   let bar = document.querySelector('.progress');
   if (!bar) {
@@ -57,7 +74,7 @@
 
   const SPOT = '.work__grid .case, .trio .item, .copy__card, .track, .surfaces > li, .journey > li';
 
-  const GLOW = '.gate, main.work, .study #overview';       // drifting pink/purple glows
+  const GLOW = '.intro, .gate, main.work, .study #overview';       // drifting pink/purple glows
   const FRAME = '.visual > .shot';                         // full-width screens: framed, grow on scroll
   const TILT = '.gallery';                                 // image grids: tilted collage that flattens
 
