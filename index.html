@@ -3,35 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#141414">
 
-<title>Gustavo Quiros — UX & Product Design Lead</title>
-<meta name="description" content="UX and product design lead in San Diego. 9+ years of design strategy, customer experience and design systems work for enterprise products.">
+<title>Gustavo Quiros | UX &amp; Product Design Lead</title>
+<meta name="description" content="UX and product design lead in San Diego. 10+ years of design strategy, customer experience and design systems work for enterprise insurance, healthcare and industrial products.">
+<link rel="canonical" href="https://gustavoquiros.com/">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.gustavoquiros.com/">
-<meta property="og:title" content="Gustavo Quiros — UX & Product Design Lead">
+<meta property="og:site_name" content="Gustavo Quiros">
+<meta property="og:url" content="https://gustavoquiros.com/">
+<meta property="og:title" content="Gustavo Quiros | UX &amp; Product Design Lead">
 <meta property="og:description" content="Design strategy, customer experience and design systems for enterprise products.">
-<meta property="og:image" content="https://www.gustavoquiros.com/og-image.png">
+<meta property="og:image" content="https://gustavoquiros.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gustavo Quiros, UX and Product Design Lead">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gustavo Quiros — UX & Product Design Lead">
+<meta name="twitter:title" content="Gustavo Quiros | UX &amp; Product Design Lead">
 <meta name="twitter:description" content="Design strategy, customer experience and design systems for enterprise products.">
-<meta name="twitter:image" content="https://www.gustavoquiros.com/og-image.png">
+<meta name="twitter:image" content="https://gustavoquiros.com/og-image.png">
 
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700&family=Space+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href="./src/css/layout.css">
 
-<!-- Person structured data for SEO / AI search surfaces -->
+
+<link rel="stylesheet" href="src/css/tokens.css">
+<link rel="stylesheet" href="src/css/layout.css">
+<link rel="stylesheet" href="src/css/polish.css">
+<link rel="stylesheet" href="src/css/v3.css">
+<link rel="stylesheet" href="src/css/motion.css">
+<link rel="stylesheet" href="src/css/craft.css">
+
+<!-- Person structured data for search and AI surfaces -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Gustavo Quiros",
   "jobTitle": "UX & Product Design Lead",
-  "url": "https://www.gustavoquiros.com/",
-  "image": "https://www.gustavoquiros.com/og-image.png",
+  "url": "https://gustavoquiros.com/",
+  "image": "https://gustavoquiros.com/og-image.png",
   "email": "mailto:gustavoquiros9912@gmail.com",
   "sameAs": [
     "https://www.linkedin.com/in/gustavoquiros15/"
@@ -43,539 +52,454 @@
     "addressCountry": "US"
   },
   "alumniOf": [
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Universitat Politècnica de Catalunya"
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Universidad Autónoma de Guadalajara"
-    }
+    { "@type": "CollegeOrUniversity", "name": "Universitat Politècnica de Catalunya" },
+    { "@type": "CollegeOrUniversity", "name": "Universidad Autónoma de Guadalajara" }
   ],
-  "knowsAbout": [
-    "UX Design",
-    "Design Strategy",
-    "Customer Experience",
-    "Design Systems"
-  ]
+  "knowsAbout": ["UX Design", "Product Design", "Design Systems", "Design Strategy", "Customer Experience"]
 }
 </script>
 
-<!-- Shared animation layer (see src/css/motion.css and src/js/motion.js) -->
-<link rel="stylesheet" href="src/css/motion.css">
+<!-- Turns motion on only when scripts run and "reduce motion" is off; removes it again if site.js never loads. -->
 <script>(function(){var d=document.documentElement,ok=window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;if(!ok)return;d.classList.add('motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion');},3000);})();</script>
-<style>
-  /* ── case study gate ─────────────────────────────────────── */
-  .gate {
-    position: relative;
-    margin: 0 var(--gutter, 40px);
-    padding: 120px 0 140px;
-    scroll-margin-top: var(--nav-height, 72px);
-  }
-  .gate__preview {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    filter: blur(10px);
-    opacity: 0.55;
-    pointer-events: none;
-    user-select: none;
-  }
-  .gate__card {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 6px;
-    overflow: hidden;
-    background: #202020;
-  }
-  .gate__img {
-    height: 180px;
-    background:
-      radial-gradient(120% 90% at 20% 20%, rgba(234, 78, 101, 0.55), transparent 55%),
-      radial-gradient(90% 80% at 85% 80%, rgba(90, 120, 255, 0.35), transparent 60%),
-      #2a2a2a;
-  }
-  .gate__card:nth-child(2) .gate__img { background: radial-gradient(100% 90% at 70% 20%, rgba(0, 144, 218, 0.55), transparent 60%), #2a2a2a; }
-  .gate__card:nth-child(3) .gate__img { background: radial-gradient(100% 90% at 30% 70%, rgba(164, 206, 78, 0.45), transparent 60%), #2a2a2a; }
-  .gate__card:nth-child(4) .gate__img { background: radial-gradient(100% 90% at 60% 40%, rgba(255, 198, 0, 0.4), transparent 60%), #2a2a2a; }
-  .gate__card:nth-child(5) .gate__img { background: radial-gradient(100% 90% at 40% 30%, rgba(216, 10, 91, 0.45), transparent 60%), #2a2a2a; }
-  .gate__card:nth-child(6) .gate__img { background: radial-gradient(100% 90% at 50% 50%, rgba(255, 255, 255, 0.18), transparent 60%), #2a2a2a; }
-  .gate__lines { padding: 18px; }
-  .gate__lines span {
-    display: block;
-    height: 10px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.18);
-  }
-  .gate__lines span:nth-child(1) { width: 18%; background: rgba(234, 78, 101, 0.5); }
-  .gate__lines span:nth-child(2) { width: 80%; height: 14px; }
-  .gate__lines span:nth-child(3) { width: 92%; }
-  .gate__lines span:nth-child(4) { width: 60%; }
-
-  .gate__panel {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: min(460px, calc(100% - 32px));
-    transform: translate(-50%, -50%);
-    padding: 40px 36px;
-    background: rgba(26, 26, 26, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-  }
-  .gate__kicker {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent, #ea4e65);
-  }
-  .gate__title {
-    margin-top: 12px;
-    font-family: var(--serif, 'Noto Serif JP', serif);
-    font-size: clamp(26px, 3.4vw, 34px);
-    font-weight: 300;
-    line-height: 1.2;
-  }
-  .gate__text {
-    margin-top: 14px;
-    font-size: 13px;
-    line-height: 1.75;
-    color: rgba(255, 255, 255, 0.65);
-  }
-  .gate__form { margin-top: 24px; }
-  .gate__field {
-    display: flex;
-    gap: 8px;
-  }
-  .gate__input {
-    flex: 1;
-    min-width: 0;
-    padding: 14px;
-    font: inherit;
-    font-size: 14px;
-    color: #fff;
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-  }
-  .gate__input:focus { outline: 2px solid var(--accent, #ea4e65); outline-offset: 2px; border-color: transparent; }
-  .gate__input[aria-invalid="true"] { border-color: var(--accent, #ea4e65); }
-  .gate__btn {
-    padding: 14px 18px;
-    font: inherit;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #fff;
-    background: var(--accent, #ea4e65);
-    border: 0;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: filter 0.2s ease;
-  }
-  .gate__btn:hover { filter: brightness(1.1); }
-  .gate__btn[disabled] { opacity: 0.7; cursor: progress; }
-  .gate__remember {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 14px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.65);
-  }
-  .gate__error {
-    min-height: 1.6em;
-    margin-top: 10px;
-    font-size: 12px;
-    color: var(--accent, #ea4e65);
-  }
-  .gate__links {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 8px;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-  }
-  .gate__links a { color: rgba(255, 255, 255, 0.65); text-decoration: none; }
-  .gate__links a:hover { color: var(--accent, #ea4e65); }
-  .gate__unlocked { display: none; }
-  .gate.is-unlocked .gate__form,
-  .gate.is-unlocked .gate__links { display: none; }
-  .gate.is-unlocked .gate__unlocked { display: block; margin-top: 24px; }
-  .gate.is-unlocked .gate__btn { display: inline-block; }
-
-  @media (max-width: 860px) {
-    .gate__preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .gate__preview .gate__card:nth-child(n+5) { display: none; }
-  }
-  @media (max-width: 520px) {
-    .gate { padding: 80px 0 100px; }
-    .gate__preview { grid-template-columns: 1fr; }
-    .gate__preview .gate__card:nth-child(n+3) { display: none; }
-    .gate__panel { padding: 28px 22px; }
-    .gate__field { flex-direction: column; }
-  }
-</style>
 </head>
 
 <body>
 
-<div class="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav class="nav" aria-label="Sections">
-  <ol class="nav__stops">
-    <li class="nav__stop nav__stop--intro">
-      <a href="#intro">
-        <span class="nav__marker" aria-hidden="true"></span>
-        <span class="nav__label">home</span>
-      </a>
-    </li>
-    <li class="nav__stop nav__stop--work">
-      <a href="#work">
-        <span class="nav__marker" aria-hidden="true"></span>
-        <span class="nav__label">work</span>
-      </a>
-    </li>
-  </ol>
-</nav>
-
-<header class="intro" id="intro">
-  <ul class="intro__links">
-    <li><a href="#work">case studies <span class="jump" aria-hidden="true">↓</span></a></li>
-    <li><a href="RESUMEGQ2026.pdf" target="_blank" rel="noopener">resume <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
-    <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
-    <li><a href="mailto:gustavoquiros9912@gmail.com">email <span aria-hidden="true">↗</span></a></li>
-  </ul>
-
-  <div class="intro__head">
-    <h1 class="intro__name">Gustavo Quiros</h1>
-    <p class="intro__bio">
-      UX & Product Design Lead | Design Strategy | Customer Experience | Design Systems | Packaging Design<br>
-      US Citizen | San Diego, California
-    </p>
-  </div>
-
-  <section class="ledger">
-    <h2 class="ledger__title">Experience (<span data-count="9">9</span>+ years)</h2>
-    <ul>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Curae Health</p>
-          <p class="ledger__detail">Senior UI/UX Designer, contract</p>
-        </div>
-        <p class="ledger__date">Jan 2022 – Present</p>
-      </li>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Tata Consultancy Services</p>
-          <p class="ledger__detail">UX/CX Lead | Senior UI/UX Designer | Senior Packaging Designer</p>
-        </div>
-        <p class="ledger__date">Jul 2022 – Jul 2026</p>
-      </li>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Hedy & Hopp</p>
-          <p class="ledger__detail">Lead Designer, contract</p>
-        </div>
-        <p class="ledger__date">Jan 2022 – Jan 2023</p>
-      </li>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Token Agency</p>
-          <p class="ledger__detail">Lead UI/UX Designer, Creative Lead</p>
-        </div>
-        <p class="ledger__date">Aug 2017 – Jan 2022</p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="ledger">
-    <h2 class="ledger__title">Education</h2>
-    <ul>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Universitat Politècnica de Catalunya</p>
-          <p class="ledger__detail">Master's, customer experience</p>
-        </div>
-        <p class="ledger__date">Apr 2023</p>
-      </li>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Universidad Autónoma de Guadalajara</p>
-          <p class="ledger__detail">Bachelor's, design engineering</p>
-        </div>
-        <p class="ledger__date">Dec 2021</p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="ledger">
-    <h2 class="ledger__title">Certifications</h2>
-    <ul>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Google</p>
-          <p class="ledger__detail">UX Design Professional Certificate</p>
-        </div>
-        <p class="ledger__date">2022</p>
-      </li>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Microsoft</p>
-          <p class="ledger__detail">Azure, Azure AI and project management</p>
-        </div>
-        <p class="ledger__date">2023</p>
-      </li>
-      <li class="ledger__row">
-        <div>
-          <p class="ledger__org">Adobe Creative Cloud</p>
-          <p class="ledger__detail">Illustrator, Photoshop, Premiere Pro, InDesign</p>
-        </div>
-        <p class="ledger__date">2025</p>
-      </li>
-    </ul>
-  </section>
-
+<header class="nav">
+  <nav class="nav__inner" aria-label="Main">
+    <a class="nav__brand" href="#top" aria-label="Gustavo Quiros, home">
+      <span class="nav__brand-full">Gustavo Quiros</span><span class="nav__brand-short" aria-hidden="true">GQ</span>
+    </a>
+    <ol class="nav__stops">
+      <li class="nav__stop"><a href="#work">Work</a></li>
+      <li class="nav__stop nav__stop--secondary"><a href="#systems">Systems</a></li>
+      <li class="nav__stop nav__stop--secondary"><a href="#experience">Experience</a></li>
+      <li class="nav__stop"><a href="RESUMEGQ2026.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li class="nav__stop"><a href="mailto:gustavoquiros9912@gmail.com">Email</a></li>
+    </ol>
+  </nav>
 </header>
 
-<main class="gate" id="work" aria-labelledby="gate-title">
-  <div class="gate__preview" aria-hidden="true">
-      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
-      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
-      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
-      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
-      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
-      <div class="gate__card"><div class="gate__img"></div><div class="gate__lines"><span></span><span></span><span></span><span></span></div></div>
-  </div>
+<main id="main">
 
-  <div class="gate__panel">
-    <p class="gate__kicker">Case studies · protected</p>
-    <h2 class="gate__title" id="gate-title">Want to view my case studies?</h2>
-    <p class="gate__text">My client work is shared privately. Enter the password from my resume or application email to see the full list.</p>
-
-    <form class="gate__form" data-gate-form action="work.html" novalidate>
-      <label class="sr-only" for="gate-password">Password</label>
-      <div class="gate__field">
-        <input class="gate__input" id="gate-password" type="password" placeholder="Password" autocomplete="current-password" required aria-describedby="gate-error">
-        <button class="gate__btn" type="submit">Unlock</button>
+  <section class="stagehero stagehero--film" id="top" aria-labelledby="hero-title">
+    <h1 class="sr-only" id="hero-title">Clarity is a design decision.</h1>
+    <canvas class="stagehero__gradient" data-gradient data-colors="#141414,#34101b,#ea4e65,#ff9a8b" data-grain="0.05" data-scale="0.45" aria-hidden="true"></canvas>
+    <div class="stagehero__shade" aria-hidden="true"></div>
+    <figure class="film" data-film>
+      <video class="film__video" muted playsinline preload="metadata" poster="work/hero/film-poster.webp" width="1920" height="1080" aria-describedby="film-desc" data-film-video>
+        <source src="work/hero/gq-film-720.webm" type="video/webm" media="(max-width: 860px)">
+        <source src="work/hero/gq-film-720.mp4" type="video/mp4" media="(max-width: 860px)">
+        <source src="work/hero/gq-film.webm" type="video/webm">
+        <source src="work/hero/gq-film.mp4" type="video/mp4">
+      </video>
+      <figcaption class="sr-only" id="film-desc">A 23 second film. The words "Complexity loses people" are interrupted by a salmon full stop and rearrange into "Clarity is a design decision." The camera pulls back: the line is on a designer's monitor in a cut-paper room, which the website's divider redraws in pixel art before the camera pushes back in. The full stop becomes the View case studies button, which opens work cards for industrial safety, insurance and healthcare finance, each with an image from the project. It lands as the full stop of "Regulated does not have to mean rigid", where legal, quality, product and engineering collaborators gather. Then it is dragged into a language template. The slogan switches to Simplified Chinese, Arabic (read right to left), Turkish, Polish and Spanish, then back to English, while the brand zone stays locked. Engineering, product, quality and legal each react to one language in a speech bubble. Then the team approves the template. It multiplies into 2,000+ assets, one system, then the full stop draws "10+ years" and ends the name: Gustavo Quiros, UX and Product Design Lead. Designing meaningful digital experiences. The pixel character from the footer walks in and waves.</figcaption>
+      <div class="film__controls">
+        <button type="button" class="film__btn" data-film-play data-state="play" aria-label="Play film">
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1"/><rect x="13.9" y="5" width="3.6" height="14" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.4v13.2a1 1 0 0 0 1.5.86l10.6-6.6a1 1 0 0 0 0-1.72L9.5 4.54A1 1 0 0 0 8 5.4z"/></svg>
+          <svg class="i-replay" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V2.5L7.5 6 12 9.5V7a5.5 5.5 0 1 1-5.5 5.5H4.5A7.5 7.5 0 1 0 12 5z"/></svg>
+        </button>
+        <button type="button" class="film__btn" data-film-sound aria-pressed="false" aria-label="Turn sound on">
+          <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z"/><path d="M15.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z"/><path d="M15.4 8.8a4.6 4.6 0 0 1 0 6.4M18 6.4a8 8 0 0 1 0 11.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
       </div>
-      <label class="gate__remember"><input type="checkbox" id="gate-remember" checked> Remember me for 30 days</label>
-      <p class="gate__error" id="gate-error" role="alert"></p>
-    </form>
-
-    <div class="gate__links">
-      <span></span>
-      <a href="mailto:gustavoquiros9912@gmail.com?subject=Portfolio%20password">request access <span aria-hidden="true">↗</span></a>
+    </figure>
+    <div class="stagehero__bar">
+      <div class="stagehero__intro">
+        <p class="stagehero__sub">UX and product design lead with 10+ years in enterprise insurance, healthcare finance and industrial safety.</p>
+      </div>
+      <div class="hero__actions">
+        <a class="btn" href="#work">View case studies</a>
+        <a class="btn btn--ghost" href="RESUMEGQ2026.pdf" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
     </div>
+  </section>
 
-    <div class="gate__unlocked">
-      <a class="gate__btn" href="work.html">View case studies →</a>
-    </div>
+
+  <div class="strip" data-craft-in aria-hidden="true">
+    <div class="strip__paper"><div class="marquee__track"><span>Packaging</span><span>Labels</span><span>Interfaces</span><span>Design systems</span><span>Branding</span><span>Research</span><span>Web</span><span>Print</span><span>Packaging</span><span>Labels</span><span>Interfaces</span><span>Design systems</span><span>Branding</span><span>Research</span><span>Web</span><span>Print</span></div></div>
+    <i class="strip__tape strip__tape--l"></i><i class="strip__tape strip__tape--r"></i>
   </div>
+
+  <section class="section" id="work" aria-labelledby="work-title">
+    <h2 class="section__title" id="work-title">Selected work</h2>
+    <p class="section__lede">Case studies grouped by the industry they served. Client names are shared inside the protected pages.</p>
+    <ul class="industries" data-craft-in aria-label="Industries I have designed for">
+      <li><i class="ico" style="--r:0"></i>Industrial</li>
+      <li><i class="ico" style="--r:1"></i>Healthcare</li>
+      <li><i class="ico" style="--r:2"></i>Finance</li>
+      <li><i class="ico" style="--r:3"></i>Insurance</li>
+      <li><i class="ico" style="--r:4"></i>Education</li>
+      <li><i class="ico" style="--r:5"></i>Government</li>
+      <li><i class="ico" style="--r:6"></i>Marketing</li>
+      <li><i class="ico" style="--r:7"></i>Media</li>
+      <li><i class="ico" style="--r:8"></i>Consumer</li>
+    </ul>
+    <ol class="stack">
+      <li class="stack__card stack__card--accent" style="--i:0">
+        <a class="scard" href="industrial-safety.html" data-case="industrial-safety.html">
+          <span class="scard__text">
+            <span class="scard__role">Lead UI/UX &amp; Product Designer · 2025-2026</span>
+            <span class="scard__name">Industrial safety</span>
+            <span class="scard__what">Packaging, documents and digital interfaces for protective equipment, moved to one brand across three continents. 2,000+ assets, 25 languages, one year.</span>
+            <span class="scard__cta">Open case study <span class="arrow" aria-hidden="true">→</span></span>
+          </span>
+          <span class="scard__media"><img src="work/images/home/card-industrial-safety.webp" alt="" width="1400" height="1400" loading="lazy" decoding="async"><span class="wcard__lock"><i class="mlock" aria-hidden="true"></i>Case study is password protected</span></span>
+        </a>
+      </li>
+      <li class="stack__card stack__card--cream" style="--i:1">
+        <a class="scard" href="insurance.html" data-case="insurance.html">
+          <span class="scard__text">
+            <span class="scard__role">UX/CX Lead · 2022-2025</span>
+            <span class="scard__name">Insurance</span>
+            <span class="scard__what">A client self-service app and international web portals for a global insurer. Three products, three markets, three design systems.</span>
+            <span class="scard__cta">Open case study <span class="arrow" aria-hidden="true">→</span></span>
+          </span>
+          <span class="scard__media"><img src="work/images/home/card-insurance.webp" alt="" width="1400" height="788" loading="lazy" decoding="async"><span class="wcard__lock"><i class="mlock" aria-hidden="true"></i>Case study is password protected</span></span>
+        </a>
+      </li>
+      <li class="stack__card stack__card--char" style="--i:2">
+        <a class="scard" href="healthcare-finance.html" data-case="healthcare-finance.html">
+          <span class="scard__text">
+            <span class="scard__role">Senior UI/UX Designer · 2022-present</span>
+            <span class="scard__name">Healthcare finance</span>
+            <span class="scard__what">A healthcare financial platform, from marketing site to client portal and patient billing.</span>
+            <span class="scard__cta">Open case study <span class="arrow" aria-hidden="true">→</span></span>
+          </span>
+          <span class="scard__media"><img src="work/images/home/card-healthcare-finance.webp" alt="" width="900" height="506" loading="lazy" decoding="async"><span class="wcard__lock"><i class="mlock" aria-hidden="true"></i>Case study is password protected</span></span>
+        </a>
+      </li>
+      <li class="stack__card stack__card--cream" style="--i:3">
+        <a class="scard" href="healthcare-platform.html" data-case="healthcare-platform.html">
+          <span class="scard__text">
+            <span class="scard__role">Lead Designer · 2022-2023</span>
+            <span class="scard__name">Healthcare</span>
+            <span class="scard__what">A confidential internal platform for a health system innovation lab, plus new pages and templates for its public website.</span>
+            <span class="scard__cta">Open case study <span class="arrow" aria-hidden="true">→</span></span>
+          </span>
+          <span class="scard__media"><img src="work/images/home/card-healthcare.webp" alt="" width="1400" height="677" loading="lazy" decoding="async" style="object-position: 60% 40%"><span class="wcard__lock"><i class="mlock" aria-hidden="true"></i>Case study is password protected</span></span>
+        </a>
+      </li>
+      <li class="stack__card stack__card--accent" style="--i:4">
+        <a class="scard" href="marketing-agency.html" data-case="marketing-agency.html">
+          <span class="scard__text">
+            <span class="scard__role">Lead UI/UX Designer, Creative Lead · 2017-2022</span>
+            <span class="scard__name">Marketing and education</span>
+            <span class="scard__what">Research, websites, branding and campaigns for finance, education, industrial, video and photography clients.</span>
+            <span class="scard__cta">Open case study <span class="arrow" aria-hidden="true">→</span></span>
+          </span>
+          <span class="scard__media"><img src="work/images/home/card-marketing.webp" alt="" width="1400" height="934" loading="lazy" decoding="async"><span class="wcard__lock"><i class="mlock" aria-hidden="true"></i>Case study is password protected</span></span>
+        </a>
+      </li>
+    </ol>
+    <p class="index__note">Some of this work is under client confidentiality, so the case studies are password protected.</p>
+  </section>
+
+  <section class="gate" id="access" aria-labelledby="gate-title">
+    <div class="gate__stage">
+      <div class="gate__covers" aria-hidden="true">
+        <img src="work/images/home/card-insurance.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+        <img src="work/images/home/card-healthcare-finance.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+        <img src="work/images/home/card-healthcare.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+        <img src="work/images/home/card-industrial-safety.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+        <img src="work/images/home/card-healthcare-finance.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+        <img src="work/images/home/card-marketing.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+      </div>
+
+      <div class="gate__panel">
+        <canvas class="gate__lock" data-lock width="24" height="26" aria-hidden="true"></canvas>
+        <p class="gate__kicker">Protected</p>
+        <h2 class="gate__title" id="gate-title">Want to view my case studies?</h2>
+        <p class="gate__text">My client work is shared privately. Enter the password from my resume or application email to see the full list.</p>
+
+        <form class="gate__form" data-gate-form action="work.html" novalidate>
+          <label class="gate__label" for="gate-password">Password</label>
+          <div class="gate__field">
+            <input class="gate__input" id="gate-password" type="password" autocomplete="current-password" required aria-describedby="gate-error">
+            <button class="btn" type="submit">Unlock</button>
+          </div>
+          <label class="gate__remember"><input type="checkbox" id="gate-remember" checked> Remember me for 30 days</label>
+          <p class="gate__error" id="gate-error" role="alert"></p>
+        </form>
+
+        <p class="gate__links"><a href="mailto:gustavoquiros9912@gmail.com?subject=Portfolio%20password">Request access by email</a></p>
+
+        <div class="gate__unlocked">
+          <a class="btn" href="work.html">View case studies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="stance-title">
+    <h2 class="section__title" id="stance-title">How I work</h2>
+    <div class="stance">
+      <div class="stance__item">
+        <div class="stance__art" data-craft-in><svg class="picto" viewBox="0 0 240 150" width="240" height="150" aria-hidden="true" focusable="false" data-picto="explain"><defs><pattern id="gq-grain" width="256" height="256" patternUnits="userSpaceOnUse"><image href="src/art/grain.webp" width="256" height="256"/></pattern></defs><g class="pk" style="--d:0;--fx:0px;--fy:30px;--fr:3deg"><path d="M209.0 70.0 L211.7 70.5 L213.9 72.1 L215.5 74.3 L216.0 77.0 L216.1 88.0 L215.9 99.0 L215.1 110.0 L216.0 121.0 L215.5 123.7 L213.9 125.9 L211.7 127.5 L209.0 128.0 L199.6 128.1 L190.3 128.0 L180.9 127.8 L171.5 128.7 L162.2 128.0 L152.8 127.7 L143.4 127.4 L134.1 128.9 L124.7 128.4 L115.3 128.9 L105.9 127.3 L96.6 127.6 L87.2 129.0 L77.8 126.9 L68.5 127.0 L59.1 127.7 L49.7 127.7 L40.4 128.8 L31.0 128.0 L28.3 127.5 L26.1 125.9 L24.5 123.7 L24.0 121.0 L22.9 110.0 L24.1 99.0 L23.0 88.0 L24.0 77.0 L24.5 74.3 L26.1 72.1 L28.3 70.5 L31.0 70.0 L40.4 69.3 L49.7 69.4 L59.1 69.0 L68.5 69.9 L77.8 69.9 L87.2 70.8 L96.6 70.0 L105.9 70.3 L115.3 70.0 L124.7 70.4 L134.1 69.9 L143.4 69.5 L152.8 71.1 L162.2 71.1 L171.5 70.7 L180.9 70.5 L190.3 69.6 L199.6 69.4Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M209.0 70.0 L211.7 70.5 L213.9 72.1 L215.5 74.3 L216.0 77.0 L216.1 88.0 L215.9 99.0 L215.1 110.0 L216.0 121.0 L215.5 123.7 L213.9 125.9 L211.7 127.5 L209.0 128.0 L199.6 128.1 L190.3 128.0 L180.9 127.8 L171.5 128.7 L162.2 128.0 L152.8 127.7 L143.4 127.4 L134.1 128.9 L124.7 128.4 L115.3 128.9 L105.9 127.3 L96.6 127.6 L87.2 129.0 L77.8 126.9 L68.5 127.0 L59.1 127.7 L49.7 127.7 L40.4 128.8 L31.0 128.0 L28.3 127.5 L26.1 125.9 L24.5 123.7 L24.0 121.0 L22.9 110.0 L24.1 99.0 L23.0 88.0 L24.0 77.0 L24.5 74.3 L26.1 72.1 L28.3 70.5 L31.0 70.0 L40.4 69.3 L49.7 69.4 L59.1 69.0 L68.5 69.9 L77.8 69.9 L87.2 70.8 L96.6 70.0 L105.9 70.3 L115.3 70.0 L124.7 70.4 L134.1 69.9 L143.4 69.5 L152.8 71.1 L162.2 71.1 L171.5 70.7 L180.9 70.5 L190.3 69.6 L199.6 69.4Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M209.0 70.0 L211.7 70.5 L213.9 72.1 L215.5 74.3 L216.0 77.0 L216.1 88.0 L215.9 99.0 L215.1 110.0 L216.0 121.0 L215.5 123.7 L213.9 125.9 L211.7 127.5 L209.0 128.0 L199.6 128.1 L190.3 128.0 L180.9 127.8 L171.5 128.7 L162.2 128.0 L152.8 127.7 L143.4 127.4 L134.1 128.9 L124.7 128.4 L115.3 128.9 L105.9 127.3 L96.6 127.6 L87.2 129.0 L77.8 126.9 L68.5 127.0 L59.1 127.7 L49.7 127.7 L40.4 128.8 L31.0 128.0 L28.3 127.5 L26.1 125.9 L24.5 123.7 L24.0 121.0 L22.9 110.0 L24.1 99.0 L23.0 88.0 L24.0 77.0 L24.5 74.3 L26.1 72.1 L28.3 70.5 L31.0 70.0 L40.4 69.3 L49.7 69.4 L59.1 69.0 L68.5 69.9 L77.8 69.9 L87.2 70.8 L96.6 70.0 L105.9 70.3 L115.3 70.0 L124.7 70.4 L134.1 69.9 L143.4 69.5 L152.8 71.1 L162.2 71.1 L171.5 70.7 L180.9 70.5 L190.3 69.6 L199.6 69.4Z" fill="#efeeea"/><path d="M209.0 70.0 L211.7 70.5 L213.9 72.1 L215.5 74.3 L216.0 77.0 L216.1 88.0 L215.9 99.0 L215.1 110.0 L216.0 121.0 L215.5 123.7 L213.9 125.9 L211.7 127.5 L209.0 128.0 L199.6 128.1 L190.3 128.0 L180.9 127.8 L171.5 128.7 L162.2 128.0 L152.8 127.7 L143.4 127.4 L134.1 128.9 L124.7 128.4 L115.3 128.9 L105.9 127.3 L96.6 127.6 L87.2 129.0 L77.8 126.9 L68.5 127.0 L59.1 127.7 L49.7 127.7 L40.4 128.8 L31.0 128.0 L28.3 127.5 L26.1 125.9 L24.5 123.7 L24.0 121.0 L22.9 110.0 L24.1 99.0 L23.0 88.0 L24.0 77.0 L24.5 74.3 L26.1 72.1 L28.3 70.5 L31.0 70.0 L40.4 69.3 L49.7 69.4 L59.1 69.0 L68.5 69.9 L77.8 69.9 L87.2 70.8 L96.6 70.0 L105.9 70.3 L115.3 70.0 L124.7 70.4 L134.1 69.9 L143.4 69.5 L152.8 71.1 L162.2 71.1 L171.5 70.7 L180.9 70.5 L190.3 69.6 L199.6 69.4Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk" style="--d:1;--fx:0px;--fy:10px;--fr:0deg"><path d="M40.0 86.0 L46.2 86.4 L52.4 86.2 L58.7 86.3 L64.9 86.4 L71.1 85.8 L77.3 86.1 L83.6 86.4 L89.8 86.4 L96.0 86.0 L96.0 94.0 L89.8 93.9 L83.6 94.3 L77.3 94.1 L71.1 93.5 L64.9 94.4 L58.7 94.2 L52.4 93.5 L46.2 94.1 L40.0 94.0Z" fill="#000" opacity="0.3" transform="translate(1 1.4)"/><path d="M40.0 86.0 L46.2 86.4 L52.4 86.2 L58.7 86.3 L64.9 86.4 L71.1 85.8 L77.3 86.1 L83.6 86.4 L89.8 86.4 L96.0 86.0 L96.0 94.0 L89.8 93.9 L83.6 94.3 L77.3 94.1 L71.1 93.5 L64.9 94.4 L58.7 94.2 L52.4 93.5 L46.2 94.1 L40.0 94.0Z" fill="#b9a89c"/><path d="M40.0 86.0 L46.2 86.4 L52.4 86.2 L58.7 86.3 L64.9 86.4 L71.1 85.8 L77.3 86.1 L83.6 86.4 L89.8 86.4 L96.0 86.0 L96.0 94.0 L89.8 93.9 L83.6 94.3 L77.3 94.1 L71.1 93.5 L64.9 94.4 L58.7 94.2 L52.4 93.5 L46.2 94.1 L40.0 94.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk" style="--d:2;--fx:0px;--fy:10px;--fr:0deg"><path d="M104.0 86.0 L110.0 85.7 L116.0 86.2 L122.0 86.1 L128.0 86.0 L134.0 85.7 L140.0 86.3 L146.0 86.0 L146.0 94.0 L140.0 93.7 L134.0 94.0 L128.0 94.0 L122.0 94.3 L116.0 94.5 L110.0 94.1 L104.0 94.0Z" fill="#000" opacity="0.3" transform="translate(1 1.4)"/><path d="M104.0 86.0 L110.0 85.7 L116.0 86.2 L122.0 86.1 L128.0 86.0 L134.0 85.7 L140.0 86.3 L146.0 86.0 L146.0 94.0 L140.0 93.7 L134.0 94.0 L128.0 94.0 L122.0 94.3 L116.0 94.5 L110.0 94.1 L104.0 94.0Z" fill="#b9a89c"/><path d="M104.0 86.0 L110.0 85.7 L116.0 86.2 L122.0 86.1 L128.0 86.0 L134.0 85.7 L140.0 86.3 L146.0 86.0 L146.0 94.0 L140.0 93.7 L134.0 94.0 L128.0 94.0 L122.0 94.3 L116.0 94.5 L110.0 94.1 L104.0 94.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk" style="--d:3;--fx:0px;--fy:10px;--fr:0deg"><path d="M40.0 106.0 L46.0 106.5 L52.0 105.6 L58.0 105.5 L64.0 106.5 L70.0 105.7 L76.0 105.6 L82.0 106.2 L88.0 105.8 L94.0 106.4 L100.0 105.7 L106.0 106.5 L112.0 105.8 L118.0 106.1 L124.0 106.4 L130.0 106.2 L136.0 106.4 L142.0 106.2 L148.0 105.5 L154.0 106.4 L160.0 106.0 L160.0 114.0 L154.0 113.9 L148.0 114.2 L142.0 114.3 L136.0 113.7 L130.0 113.9 L124.0 113.6 L118.0 113.7 L112.0 113.5 L106.0 113.9 L100.0 113.8 L94.0 113.9 L88.0 114.2 L82.0 113.5 L76.0 114.2 L70.0 113.7 L64.0 113.5 L58.0 113.8 L52.0 114.4 L46.0 113.7 L40.0 114.0Z" fill="#000" opacity="0.3" transform="translate(1 1.4)"/><path d="M40.0 106.0 L46.0 106.5 L52.0 105.6 L58.0 105.5 L64.0 106.5 L70.0 105.7 L76.0 105.6 L82.0 106.2 L88.0 105.8 L94.0 106.4 L100.0 105.7 L106.0 106.5 L112.0 105.8 L118.0 106.1 L124.0 106.4 L130.0 106.2 L136.0 106.4 L142.0 106.2 L148.0 105.5 L154.0 106.4 L160.0 106.0 L160.0 114.0 L154.0 113.9 L148.0 114.2 L142.0 114.3 L136.0 113.7 L130.0 113.9 L124.0 113.6 L118.0 113.7 L112.0 113.5 L106.0 113.9 L100.0 113.8 L94.0 113.9 L88.0 114.2 L82.0 113.5 L76.0 114.2 L70.0 113.7 L64.0 113.5 L58.0 113.8 L52.0 114.4 L46.0 113.7 L40.0 114.0Z" fill="#b9a89c"/><path d="M40.0 106.0 L46.0 106.5 L52.0 105.6 L58.0 105.5 L64.0 106.5 L70.0 105.7 L76.0 105.6 L82.0 106.2 L88.0 105.8 L94.0 106.4 L100.0 105.7 L106.0 106.5 L112.0 105.8 L118.0 106.1 L124.0 106.4 L130.0 106.2 L136.0 106.4 L142.0 106.2 L148.0 105.5 L154.0 106.4 L160.0 106.0 L160.0 114.0 L154.0 113.9 L148.0 114.2 L142.0 114.3 L136.0 113.7 L130.0 113.9 L124.0 113.6 L118.0 113.7 L112.0 113.5 L106.0 113.9 L100.0 113.8 L94.0 113.9 L88.0 114.2 L82.0 113.5 L76.0 114.2 L70.0 113.7 L64.0 113.5 L58.0 113.8 L52.0 114.4 L46.0 113.7 L40.0 114.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk" style="--d:4;--fx:0px;--fy:8px;--fr:0deg"><path d="M104.0 97.0 L110.0 97.0 L116.0 96.8 L122.0 96.6 L128.0 97.1 L134.0 96.8 L140.0 96.8 L146.0 97.0 L146.0 101.0 L140.0 101.1 L134.0 100.9 L128.0 100.6 L122.0 101.0 L116.0 100.6 L110.0 100.6 L104.0 101.0Z" fill="#000" opacity="0.3" transform="translate(1 1.2)"/><path d="M104.0 97.0 L110.0 97.0 L116.0 96.8 L122.0 96.6 L128.0 97.1 L134.0 96.8 L140.0 96.8 L146.0 97.0 L146.0 101.0 L140.0 101.1 L134.0 100.9 L128.0 100.6 L122.0 101.0 L116.0 100.6 L110.0 100.6 L104.0 101.0Z" fill="#ea4e65"/><path d="M104.0 97.0 L110.0 97.0 L116.0 96.8 L122.0 96.6 L128.0 97.1 L134.0 96.8 L140.0 96.8 L146.0 97.0 L146.0 101.0 L140.0 101.1 L134.0 100.9 L128.0 100.6 L122.0 101.0 L116.0 100.6 L110.0 100.6 L104.0 101.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk pk--unfold" style="--d:5;--fx:0px;--fy:-26px;--fr:-8deg"><path d="M98.0 22.0 L107.5 21.8 L117.0 21.6 L126.5 21.5 L136.0 22.7 L145.5 22.1 L155.0 22.3 L164.5 22.1 L174.0 22.0 L174.2 33.3 L173.6 44.7 L174.0 56.0 L163.5 55.9 L153.0 55.6 L142.5 55.7 L132.0 56.0 L125.0 66.0 L118.0 56.0 L108.0 55.5 L98.0 56.0 L97.9 44.7 L97.4 33.3Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M98.0 22.0 L107.5 21.8 L117.0 21.6 L126.5 21.5 L136.0 22.7 L145.5 22.1 L155.0 22.3 L164.5 22.1 L174.0 22.0 L174.2 33.3 L173.6 44.7 L174.0 56.0 L163.5 55.9 L153.0 55.6 L142.5 55.7 L132.0 56.0 L125.0 66.0 L118.0 56.0 L108.0 55.5 L98.0 56.0 L97.9 44.7 L97.4 33.3Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M98.0 22.0 L107.5 21.8 L117.0 21.6 L126.5 21.5 L136.0 22.7 L145.5 22.1 L155.0 22.3 L164.5 22.1 L174.0 22.0 L174.2 33.3 L173.6 44.7 L174.0 56.0 L163.5 55.9 L153.0 55.6 L142.5 55.7 L132.0 56.0 L125.0 66.0 L118.0 56.0 L108.0 55.5 L98.0 56.0 L97.9 44.7 L97.4 33.3Z" fill="#ea4e65"/><path d="M98.0 22.0 L107.5 21.8 L117.0 21.6 L126.5 21.5 L136.0 22.7 L145.5 22.1 L155.0 22.3 L164.5 22.1 L174.0 22.0 L174.2 33.3 L173.6 44.7 L174.0 56.0 L163.5 55.9 L153.0 55.6 L142.5 55.7 L132.0 56.0 L125.0 66.0 L118.0 56.0 L108.0 55.5 L98.0 56.0 L97.9 44.7 L97.4 33.3Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk" style="--d:6;--fx:0px;--fy:-14px;--fr:10deg"><path d="M124.6 39.0 L123.1 44.3 L118.7 47.5 L113.5 47.1 L108.8 44.1 L107.1 39.0 L109.1 34.2 L113.4 30.8 L118.5 31.2 L122.7 33.8Z" fill="#000" opacity="0.3" transform="translate(1 1.2)"/><path d="M124.6 39.0 L123.1 44.3 L118.7 47.5 L113.5 47.1 L108.8 44.1 L107.1 39.0 L109.1 34.2 L113.4 30.8 L118.5 31.2 L122.7 33.8Z" fill="#efeeea"/><path d="M124.6 39.0 L123.1 44.3 L118.7 47.5 L113.5 47.1 L108.8 44.1 L107.1 39.0 L109.1 34.2 L113.4 30.8 L118.5 31.2 L122.7 33.8Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M115.0 36.0 L117.6 36.0 L117.5 40.0 L117.6 44.0 L115.0 44.0 L115.1 40.0Z" fill="#ea4e65"/><path d="M117.9 32.6 L117.5 33.7 L116.3 34.2 L115.2 33.7 L114.8 32.6 L115.2 31.5 L116.3 30.9 L117.4 31.5Z" fill="#ea4e65"/></g><g class="pk" style="--d:7;--fx:0px;--fy:-6px;--fr:0deg"><path d="M130.0 33.0 L135.1 33.0 L140.3 32.9 L145.4 33.1 L150.6 32.8 L155.7 33.0 L160.9 33.3 L166.0 33.0 L166.0 37.0 L160.9 37.2 L155.7 37.1 L150.6 36.9 L145.4 37.2 L140.3 37.2 L135.1 36.8 L130.0 37.0Z" fill="#efeeea"/><path d="M130.0 33.0 L135.1 33.0 L140.3 32.9 L145.4 33.1 L150.6 32.8 L155.7 33.0 L160.9 33.3 L166.0 33.0 L166.0 37.0 L160.9 37.2 L155.7 37.1 L150.6 36.9 L145.4 37.2 L140.3 37.2 L135.1 36.8 L130.0 37.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk" style="--d:8;--fx:0px;--fy:-6px;--fr:0deg"><path d="M130.0 43.0 L136.0 42.8 L142.0 43.0 L148.0 42.8 L154.0 43.0 L154.0 47.0 L148.0 46.8 L142.0 47.2 L136.0 47.0 L130.0 47.0Z" fill="#efeeea"/><path d="M130.0 43.0 L136.0 42.8 L142.0 43.0 L148.0 42.8 L154.0 43.0 L154.0 47.0 L148.0 46.8 L142.0 47.2 L136.0 47.0 L130.0 47.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g></svg></div>
+        <p class="stance__claim">Explain it where it appears.</p>
+        <div>
+          <p class="stance__why">Policy terms get a plain-language explanation beside them, through tooltips and status tags, instead of a glossary somewhere else.</p>
+          <a class="stance__proof" href="insurance.html" data-case="insurance.html">See the insurance study</a>
+        </div>
+      </div>
+      <div class="stance__item">
+        <div class="stance__art" data-craft-in><svg class="picto" viewBox="0 0 240 150" width="240" height="150" aria-hidden="true" focusable="false" data-picto="order"><defs><pattern id="gq-grain" width="256" height="256" patternUnits="userSpaceOnUse"><image href="src/art/grain.webp" width="256" height="256"/></pattern></defs><g transform="rotate(-6 60 80)"><g class="pk" style="--d:0;--fx:-40px;--fy:-40px;--fr:-12deg"><path d="M88.0 34.0 L90.3 34.5 L92.2 35.8 L93.5 37.7 L94.0 40.0 L93.1 50.0 L94.5 60.0 L94.1 70.0 L94.8 80.0 L92.9 90.0 L94.8 100.0 L93.6 110.0 L94.0 120.0 L93.5 122.3 L92.2 124.2 L90.3 125.5 L88.0 126.0 L78.7 125.8 L69.3 125.5 L60.0 126.2 L50.7 126.3 L41.3 126.2 L32.0 126.0 L29.7 125.5 L27.8 124.2 L26.5 122.3 L26.0 120.0 L25.1 110.0 L25.6 100.0 L25.5 90.0 L26.6 80.0 L25.9 70.0 L25.1 60.0 L25.0 50.0 L26.0 40.0 L26.5 37.7 L27.8 35.8 L29.7 34.5 L32.0 34.0 L41.3 33.7 L50.7 35.1 L60.0 33.0 L69.3 33.9 L78.7 34.6Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M88.0 34.0 L90.3 34.5 L92.2 35.8 L93.5 37.7 L94.0 40.0 L93.1 50.0 L94.5 60.0 L94.1 70.0 L94.8 80.0 L92.9 90.0 L94.8 100.0 L93.6 110.0 L94.0 120.0 L93.5 122.3 L92.2 124.2 L90.3 125.5 L88.0 126.0 L78.7 125.8 L69.3 125.5 L60.0 126.2 L50.7 126.3 L41.3 126.2 L32.0 126.0 L29.7 125.5 L27.8 124.2 L26.5 122.3 L26.0 120.0 L25.1 110.0 L25.6 100.0 L25.5 90.0 L26.6 80.0 L25.9 70.0 L25.1 60.0 L25.0 50.0 L26.0 40.0 L26.5 37.7 L27.8 35.8 L29.7 34.5 L32.0 34.0 L41.3 33.7 L50.7 35.1 L60.0 33.0 L69.3 33.9 L78.7 34.6Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M88.0 34.0 L90.3 34.5 L92.2 35.8 L93.5 37.7 L94.0 40.0 L93.1 50.0 L94.5 60.0 L94.1 70.0 L94.8 80.0 L92.9 90.0 L94.8 100.0 L93.6 110.0 L94.0 120.0 L93.5 122.3 L92.2 124.2 L90.3 125.5 L88.0 126.0 L78.7 125.8 L69.3 125.5 L60.0 126.2 L50.7 126.3 L41.3 126.2 L32.0 126.0 L29.7 125.5 L27.8 124.2 L26.5 122.3 L26.0 120.0 L25.1 110.0 L25.6 100.0 L25.5 90.0 L26.6 80.0 L25.9 70.0 L25.1 60.0 L25.0 50.0 L26.0 40.0 L26.5 37.7 L27.8 35.8 L29.7 34.5 L32.0 34.0 L41.3 33.7 L50.7 35.1 L60.0 33.0 L69.3 33.9 L78.7 34.6Z" fill="#1f1f22"/><path d="M88.0 34.0 L90.3 34.5 L92.2 35.8 L93.5 37.7 L94.0 40.0 L93.1 50.0 L94.5 60.0 L94.1 70.0 L94.8 80.0 L92.9 90.0 L94.8 100.0 L93.6 110.0 L94.0 120.0 L93.5 122.3 L92.2 124.2 L90.3 125.5 L88.0 126.0 L78.7 125.8 L69.3 125.5 L60.0 126.2 L50.7 126.3 L41.3 126.2 L32.0 126.0 L29.7 125.5 L27.8 124.2 L26.5 122.3 L26.0 120.0 L25.1 110.0 L25.6 100.0 L25.5 90.0 L26.6 80.0 L25.9 70.0 L25.1 60.0 L25.0 50.0 L26.0 40.0 L26.5 37.7 L27.8 35.8 L29.7 34.5 L32.0 34.0 L41.3 33.7 L50.7 35.1 L60.0 33.0 L69.3 33.9 L78.7 34.6Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M55.0 68.0 L60.0 64.0 L63.0 64.0 L63.2 69.0 L63.0 74.0 L62.9 79.0 L62.7 84.0 L63.1 89.0 L63.0 94.0 L58.0 94.0 L58.0 88.5 L57.9 83.0 L58.0 77.5 L58.0 72.0 L55.0 73.0Z" fill="#000" opacity="0.3" transform="translate(1 1.3)"/><path d="M55.0 68.0 L60.0 64.0 L63.0 64.0 L63.2 69.0 L63.0 74.0 L62.9 79.0 L62.7 84.0 L63.1 89.0 L63.0 94.0 L58.0 94.0 L58.0 88.5 L57.9 83.0 L58.0 77.5 L58.0 72.0 L55.0 73.0Z" fill="#ea4e65"/><path d="M55.0 68.0 L60.0 64.0 L63.0 64.0 L63.2 69.0 L63.0 74.0 L62.9 79.0 L62.7 84.0 L63.1 89.0 L63.0 94.0 L58.0 94.0 L58.0 88.5 L57.9 83.0 L58.0 77.5 L58.0 72.0 L55.0 73.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M40.0 104.0 L46.7 103.8 L53.3 103.8 L60.0 104.1 L66.7 104.1 L73.3 104.1 L80.0 104.0 L80.0 108.0 L73.3 108.1 L66.7 108.0 L60.0 107.8 L53.3 107.8 L46.7 108.1 L40.0 108.0Z" fill="#3a3a40"/><path d="M40.0 113.0 L47.0 112.8 L54.0 112.8 L61.0 113.1 L68.0 113.0 L68.0 117.0 L61.0 117.2 L54.0 116.7 L47.0 116.8 L40.0 117.0Z" fill="#3a3a40"/></g></g><g transform="rotate(0 120 72)"><g class="pk" style="--d:2;--fx:0px;--fy:-40px;--fr:0deg"><path d="M148.0 26.0 L150.3 26.5 L152.2 27.8 L153.5 29.7 L154.0 32.0 L154.4 42.0 L153.7 52.0 L155.1 62.0 L152.9 72.0 L153.3 82.0 L152.9 92.0 L154.5 102.0 L154.0 112.0 L153.5 114.3 L152.2 116.2 L150.3 117.5 L148.0 118.0 L138.7 118.7 L129.3 119.0 L120.0 118.7 L110.7 119.0 L101.3 117.6 L92.0 118.0 L89.7 117.5 L87.8 116.2 L86.5 114.3 L86.0 112.0 L85.7 102.0 L86.7 92.0 L86.6 82.0 L85.7 72.0 L85.3 62.0 L85.7 52.0 L85.0 42.0 L86.0 32.0 L86.5 29.7 L87.8 27.8 L89.7 26.5 L92.0 26.0 L101.3 26.3 L110.7 25.3 L120.0 25.2 L129.3 26.9 L138.7 25.9Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M148.0 26.0 L150.3 26.5 L152.2 27.8 L153.5 29.7 L154.0 32.0 L154.4 42.0 L153.7 52.0 L155.1 62.0 L152.9 72.0 L153.3 82.0 L152.9 92.0 L154.5 102.0 L154.0 112.0 L153.5 114.3 L152.2 116.2 L150.3 117.5 L148.0 118.0 L138.7 118.7 L129.3 119.0 L120.0 118.7 L110.7 119.0 L101.3 117.6 L92.0 118.0 L89.7 117.5 L87.8 116.2 L86.5 114.3 L86.0 112.0 L85.7 102.0 L86.7 92.0 L86.6 82.0 L85.7 72.0 L85.3 62.0 L85.7 52.0 L85.0 42.0 L86.0 32.0 L86.5 29.7 L87.8 27.8 L89.7 26.5 L92.0 26.0 L101.3 26.3 L110.7 25.3 L120.0 25.2 L129.3 26.9 L138.7 25.9Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M148.0 26.0 L150.3 26.5 L152.2 27.8 L153.5 29.7 L154.0 32.0 L154.4 42.0 L153.7 52.0 L155.1 62.0 L152.9 72.0 L153.3 82.0 L152.9 92.0 L154.5 102.0 L154.0 112.0 L153.5 114.3 L152.2 116.2 L150.3 117.5 L148.0 118.0 L138.7 118.7 L129.3 119.0 L120.0 118.7 L110.7 119.0 L101.3 117.6 L92.0 118.0 L89.7 117.5 L87.8 116.2 L86.5 114.3 L86.0 112.0 L85.7 102.0 L86.7 92.0 L86.6 82.0 L85.7 72.0 L85.3 62.0 L85.7 52.0 L85.0 42.0 L86.0 32.0 L86.5 29.7 L87.8 27.8 L89.7 26.5 L92.0 26.0 L101.3 26.3 L110.7 25.3 L120.0 25.2 L129.3 26.9 L138.7 25.9Z" fill="#1f1f22"/><path d="M148.0 26.0 L150.3 26.5 L152.2 27.8 L153.5 29.7 L154.0 32.0 L154.4 42.0 L153.7 52.0 L155.1 62.0 L152.9 72.0 L153.3 82.0 L152.9 92.0 L154.5 102.0 L154.0 112.0 L153.5 114.3 L152.2 116.2 L150.3 117.5 L148.0 118.0 L138.7 118.7 L129.3 119.0 L120.0 118.7 L110.7 119.0 L101.3 117.6 L92.0 118.0 L89.7 117.5 L87.8 116.2 L86.5 114.3 L86.0 112.0 L85.7 102.0 L86.7 92.0 L86.6 82.0 L85.7 72.0 L85.3 62.0 L85.7 52.0 L85.0 42.0 L86.0 32.0 L86.5 29.7 L87.8 27.8 L89.7 26.5 L92.0 26.0 L101.3 26.3 L110.7 25.3 L120.0 25.2 L129.3 26.9 L138.7 25.9Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M110.0 59.0 L115.0 56.0 L120.0 56.0 L125.0 56.0 L129.0 60.0 L129.0 69.0 L125.0 73.0 L121.0 77.0 L117.0 81.0 L123.0 80.9 L129.0 81.0 L129.0 86.0 L122.7 85.8 L116.3 86.2 L110.0 86.0 L110.0 81.0 L114.3 76.6 L118.8 72.5 L123.0 68.0 L123.0 62.0 L116.0 62.0 L115.0 65.0 L110.0 64.0Z" fill="#000" opacity="0.3" transform="translate(1 1.3)"/><path d="M110.0 59.0 L115.0 56.0 L120.0 56.0 L125.0 56.0 L129.0 60.0 L129.0 69.0 L125.0 73.0 L121.0 77.0 L117.0 81.0 L123.0 80.9 L129.0 81.0 L129.0 86.0 L122.7 85.8 L116.3 86.2 L110.0 86.0 L110.0 81.0 L114.3 76.6 L118.8 72.5 L123.0 68.0 L123.0 62.0 L116.0 62.0 L115.0 65.0 L110.0 64.0Z" fill="#ea4e65"/><path d="M110.0 59.0 L115.0 56.0 L120.0 56.0 L125.0 56.0 L129.0 60.0 L129.0 69.0 L125.0 73.0 L121.0 77.0 L117.0 81.0 L123.0 80.9 L129.0 81.0 L129.0 86.0 L122.7 85.8 L116.3 86.2 L110.0 86.0 L110.0 81.0 L114.3 76.6 L118.8 72.5 L123.0 68.0 L123.0 62.0 L116.0 62.0 L115.0 65.0 L110.0 64.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M100.0 96.0 L106.7 96.2 L113.3 96.0 L120.0 96.0 L126.7 95.9 L133.3 95.8 L140.0 96.0 L140.0 100.0 L133.3 100.1 L126.7 100.2 L120.0 100.2 L113.3 100.2 L106.7 100.3 L100.0 100.0Z" fill="#3a3a40"/><path d="M100.0 105.0 L107.0 105.0 L114.0 104.8 L121.0 104.9 L128.0 105.0 L128.0 109.0 L121.0 109.0 L114.0 109.3 L107.0 109.0 L100.0 109.0Z" fill="#3a3a40"/></g></g><g transform="rotate(6 180 80)"><g class="pk" style="--d:4;--fx:40px;--fy:-40px;--fr:12deg"><path d="M208.0 34.0 L210.3 34.5 L212.2 35.8 L213.5 37.7 L214.0 40.0 L214.9 50.0 L213.8 60.0 L212.9 70.0 L214.3 80.0 L213.9 90.0 L214.3 100.0 L213.5 110.0 L214.0 120.0 L213.5 122.3 L212.2 124.2 L210.3 125.5 L208.0 126.0 L198.7 125.6 L189.3 125.8 L180.0 125.0 L170.7 125.6 L161.3 126.3 L152.0 126.0 L149.7 125.5 L147.8 124.2 L146.5 122.3 L146.0 120.0 L145.7 110.0 L146.3 100.0 L146.4 90.0 L145.4 80.0 L146.7 70.0 L145.9 60.0 L146.6 50.0 L146.0 40.0 L146.5 37.7 L147.8 35.8 L149.7 34.5 L152.0 34.0 L161.3 33.1 L170.7 33.6 L180.0 32.9 L189.3 33.8 L198.7 33.5Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M208.0 34.0 L210.3 34.5 L212.2 35.8 L213.5 37.7 L214.0 40.0 L214.9 50.0 L213.8 60.0 L212.9 70.0 L214.3 80.0 L213.9 90.0 L214.3 100.0 L213.5 110.0 L214.0 120.0 L213.5 122.3 L212.2 124.2 L210.3 125.5 L208.0 126.0 L198.7 125.6 L189.3 125.8 L180.0 125.0 L170.7 125.6 L161.3 126.3 L152.0 126.0 L149.7 125.5 L147.8 124.2 L146.5 122.3 L146.0 120.0 L145.7 110.0 L146.3 100.0 L146.4 90.0 L145.4 80.0 L146.7 70.0 L145.9 60.0 L146.6 50.0 L146.0 40.0 L146.5 37.7 L147.8 35.8 L149.7 34.5 L152.0 34.0 L161.3 33.1 L170.7 33.6 L180.0 32.9 L189.3 33.8 L198.7 33.5Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M208.0 34.0 L210.3 34.5 L212.2 35.8 L213.5 37.7 L214.0 40.0 L214.9 50.0 L213.8 60.0 L212.9 70.0 L214.3 80.0 L213.9 90.0 L214.3 100.0 L213.5 110.0 L214.0 120.0 L213.5 122.3 L212.2 124.2 L210.3 125.5 L208.0 126.0 L198.7 125.6 L189.3 125.8 L180.0 125.0 L170.7 125.6 L161.3 126.3 L152.0 126.0 L149.7 125.5 L147.8 124.2 L146.5 122.3 L146.0 120.0 L145.7 110.0 L146.3 100.0 L146.4 90.0 L145.4 80.0 L146.7 70.0 L145.9 60.0 L146.6 50.0 L146.0 40.0 L146.5 37.7 L147.8 35.8 L149.7 34.5 L152.0 34.0 L161.3 33.1 L170.7 33.6 L180.0 32.9 L189.3 33.8 L198.7 33.5Z" fill="#1f1f22"/><path d="M208.0 34.0 L210.3 34.5 L212.2 35.8 L213.5 37.7 L214.0 40.0 L214.9 50.0 L213.8 60.0 L212.9 70.0 L214.3 80.0 L213.9 90.0 L214.3 100.0 L213.5 110.0 L214.0 120.0 L213.5 122.3 L212.2 124.2 L210.3 125.5 L208.0 126.0 L198.7 125.6 L189.3 125.8 L180.0 125.0 L170.7 125.6 L161.3 126.3 L152.0 126.0 L149.7 125.5 L147.8 124.2 L146.5 122.3 L146.0 120.0 L145.7 110.0 L146.3 100.0 L146.4 90.0 L145.4 80.0 L146.7 70.0 L145.9 60.0 L146.6 50.0 L146.0 40.0 L146.5 37.7 L147.8 35.8 L149.7 34.5 L152.0 34.0 L161.3 33.1 L170.7 33.6 L180.0 32.9 L189.3 33.8 L198.7 33.5Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M170.0 66.0 L176.3 65.8 L182.7 66.0 L189.0 66.0 L189.0 71.0 L185.0 74.0 L181.0 77.0 L189.0 82.0 L189.0 91.0 L185.0 95.0 L179.5 94.7 L174.0 95.0 L170.0 91.0 L170.0 87.0 L175.0 89.0 L183.0 89.0 L183.0 83.0 L176.0 80.0 L176.0 75.0 L182.0 71.0 L176.0 70.8 L170.0 71.0Z" fill="#000" opacity="0.3" transform="translate(1 1.3)"/><path d="M170.0 66.0 L176.3 65.8 L182.7 66.0 L189.0 66.0 L189.0 71.0 L185.0 74.0 L181.0 77.0 L189.0 82.0 L189.0 91.0 L185.0 95.0 L179.5 94.7 L174.0 95.0 L170.0 91.0 L170.0 87.0 L175.0 89.0 L183.0 89.0 L183.0 83.0 L176.0 80.0 L176.0 75.0 L182.0 71.0 L176.0 70.8 L170.0 71.0Z" fill="#ea4e65"/><path d="M170.0 66.0 L176.3 65.8 L182.7 66.0 L189.0 66.0 L189.0 71.0 L185.0 74.0 L181.0 77.0 L189.0 82.0 L189.0 91.0 L185.0 95.0 L179.5 94.7 L174.0 95.0 L170.0 91.0 L170.0 87.0 L175.0 89.0 L183.0 89.0 L183.0 83.0 L176.0 80.0 L176.0 75.0 L182.0 71.0 L176.0 70.8 L170.0 71.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M160.0 104.0 L166.7 103.9 L173.3 104.2 L180.0 103.9 L186.7 103.8 L193.3 104.2 L200.0 104.0 L200.0 108.0 L193.3 107.8 L186.7 107.9 L180.0 108.3 L173.3 108.1 L166.7 108.1 L160.0 108.0Z" fill="#3a3a40"/><path d="M160.0 113.0 L167.0 112.8 L174.0 113.2 L181.0 112.9 L188.0 113.0 L188.0 117.0 L181.0 116.8 L174.0 116.8 L167.0 117.0 L160.0 117.0Z" fill="#3a3a40"/></g></g></svg></div>
+        <p class="stance__claim">Decide the order before the details.</p>
+        <div>
+          <p class="stance__why">At 2,000 assets, settling the sequence and the rules early mattered more than any single design choice.</p>
+          <a class="stance__proof" href="industrial-safety.html" data-case="industrial-safety.html">See the industrial safety study</a>
+        </div>
+      </div>
+      <div class="stance__item">
+        <div class="stance__art" data-craft-in><svg class="picto" viewBox="0 0 240 150" width="240" height="150" aria-hidden="true" focusable="false" data-picto="bend"><defs><pattern id="gq-grain" width="256" height="256" patternUnits="userSpaceOnUse"><image href="src/art/grain.webp" width="256" height="256"/></pattern></defs><g class="pk" style="--d:0;--fx:-30px;--fy:0px;--fr:0deg"><g transform="translate(30 64)"><g class="seg" style="--k:0"><path d="M0.0 0.0 L6.2 -0.4 L12.4 -0.0 L18.6 0.3 L24.8 0.2 L31.0 0.0 L30.8 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.0 L12.4 22.4 L6.2 22.0 L0.0 22.0 L-0.5 14.7 L0.4 7.3Z" fill="#000" opacity="0.13" transform="translate(4 5)"/><path d="M0.0 0.0 L6.2 -0.4 L12.4 -0.0 L18.6 0.3 L24.8 0.2 L31.0 0.0 L30.8 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.0 L12.4 22.4 L6.2 22.0 L0.0 22.0 L-0.5 14.7 L0.4 7.3Z" fill="#000" opacity="0.3" transform="translate(1.6 2.2)"/><path d="M0.0 0.0 L6.2 -0.4 L12.4 -0.0 L18.6 0.3 L24.8 0.2 L31.0 0.0 L30.8 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.0 L12.4 22.4 L6.2 22.0 L0.0 22.0 L-0.5 14.7 L0.4 7.3Z" fill="#efeeea"/><path d="M0.0 0.0 L6.2 -0.4 L12.4 -0.0 L18.6 0.3 L24.8 0.2 L31.0 0.0 L30.8 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.0 L12.4 22.4 L6.2 22.0 L0.0 22.0 L-0.5 14.7 L0.4 7.3Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M4.0 0.0 L5.8 0.0 L5.8 7.0 L4.0 7.0Z" fill="#1f1f22"/><path d="M11.0 0.0 L12.8 0.0 L12.8 4.5 L11.0 4.5Z" fill="#1f1f22"/><path d="M18.0 0.0 L19.8 0.0 L19.8 7.0 L18.0 7.0Z" fill="#1f1f22"/><path d="M25.0 0.0 L26.8 0.0 L26.8 4.5 L25.0 4.5Z" fill="#1f1f22"/><g transform="translate(30 0)"><g class="seg" style="--k:1"><path d="M0.0 0.0 L6.2 0.1 L12.4 -0.3 L18.6 0.5 L24.8 0.4 L31.0 0.0 L31.0 7.3 L30.8 14.7 L31.0 22.0 L24.8 22.3 L18.6 22.3 L12.4 22.2 L6.2 21.8 L0.0 22.0 L-0.3 14.7 L0.5 7.3Z" fill="#000" opacity="0.13" transform="translate(4 5)"/><path d="M0.0 0.0 L6.2 0.1 L12.4 -0.3 L18.6 0.5 L24.8 0.4 L31.0 0.0 L31.0 7.3 L30.8 14.7 L31.0 22.0 L24.8 22.3 L18.6 22.3 L12.4 22.2 L6.2 21.8 L0.0 22.0 L-0.3 14.7 L0.5 7.3Z" fill="#000" opacity="0.3" transform="translate(1.6 2.2)"/><path d="M0.0 0.0 L6.2 0.1 L12.4 -0.3 L18.6 0.5 L24.8 0.4 L31.0 0.0 L31.0 7.3 L30.8 14.7 L31.0 22.0 L24.8 22.3 L18.6 22.3 L12.4 22.2 L6.2 21.8 L0.0 22.0 L-0.3 14.7 L0.5 7.3Z" fill="#e3ddd3"/><path d="M0.0 0.0 L6.2 0.1 L12.4 -0.3 L18.6 0.5 L24.8 0.4 L31.0 0.0 L31.0 7.3 L30.8 14.7 L31.0 22.0 L24.8 22.3 L18.6 22.3 L12.4 22.2 L6.2 21.8 L0.0 22.0 L-0.3 14.7 L0.5 7.3Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M4.0 0.0 L5.8 0.0 L5.8 7.0 L4.0 7.0Z" fill="#1f1f22"/><path d="M11.0 0.0 L12.8 0.0 L12.8 4.5 L11.0 4.5Z" fill="#1f1f22"/><path d="M18.0 0.0 L19.8 0.0 L19.8 7.0 L18.0 7.0Z" fill="#1f1f22"/><path d="M25.0 0.0 L26.8 0.0 L26.8 4.5 L25.0 4.5Z" fill="#1f1f22"/><g transform="translate(30 0)"><g class="seg" style="--k:2"><path d="M0.0 0.0 L6.2 -0.4 L12.4 0.1 L18.6 -0.3 L24.8 0.2 L31.0 0.0 L30.9 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.9 L18.6 21.9 L12.4 22.5 L6.2 22.0 L0.0 22.0 L0.1 14.7 L0.0 7.3Z" fill="#000" opacity="0.13" transform="translate(4 5)"/><path d="M0.0 0.0 L6.2 -0.4 L12.4 0.1 L18.6 -0.3 L24.8 0.2 L31.0 0.0 L30.9 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.9 L18.6 21.9 L12.4 22.5 L6.2 22.0 L0.0 22.0 L0.1 14.7 L0.0 7.3Z" fill="#000" opacity="0.3" transform="translate(1.6 2.2)"/><path d="M0.0 0.0 L6.2 -0.4 L12.4 0.1 L18.6 -0.3 L24.8 0.2 L31.0 0.0 L30.9 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.9 L18.6 21.9 L12.4 22.5 L6.2 22.0 L0.0 22.0 L0.1 14.7 L0.0 7.3Z" fill="#efeeea"/><path d="M0.0 0.0 L6.2 -0.4 L12.4 0.1 L18.6 -0.3 L24.8 0.2 L31.0 0.0 L30.9 7.3 L31.1 14.7 L31.0 22.0 L24.8 21.9 L18.6 21.9 L12.4 22.5 L6.2 22.0 L0.0 22.0 L0.1 14.7 L0.0 7.3Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M4.0 0.0 L5.8 0.0 L5.8 7.0 L4.0 7.0Z" fill="#1f1f22"/><path d="M11.0 0.0 L12.8 0.0 L12.8 4.5 L11.0 4.5Z" fill="#1f1f22"/><path d="M18.0 0.0 L19.8 0.0 L19.8 7.0 L18.0 7.0Z" fill="#1f1f22"/><path d="M25.0 0.0 L26.8 0.0 L26.8 4.5 L25.0 4.5Z" fill="#1f1f22"/><g transform="translate(30 0)"><g class="seg" style="--k:3"><path d="M0.0 0.0 L6.2 0.5 L12.4 -0.0 L18.6 0.2 L24.8 0.2 L31.0 0.0 L31.3 7.3 L31.4 14.7 L31.0 22.0 L24.8 21.9 L18.6 22.4 L12.4 22.1 L6.2 21.6 L0.0 22.0 L0.4 14.7 L-0.4 7.3Z" fill="#000" opacity="0.13" transform="translate(4 5)"/><path d="M0.0 0.0 L6.2 0.5 L12.4 -0.0 L18.6 0.2 L24.8 0.2 L31.0 0.0 L31.3 7.3 L31.4 14.7 L31.0 22.0 L24.8 21.9 L18.6 22.4 L12.4 22.1 L6.2 21.6 L0.0 22.0 L0.4 14.7 L-0.4 7.3Z" fill="#000" opacity="0.3" transform="translate(1.6 2.2)"/><path d="M0.0 0.0 L6.2 0.5 L12.4 -0.0 L18.6 0.2 L24.8 0.2 L31.0 0.0 L31.3 7.3 L31.4 14.7 L31.0 22.0 L24.8 21.9 L18.6 22.4 L12.4 22.1 L6.2 21.6 L0.0 22.0 L0.4 14.7 L-0.4 7.3Z" fill="#e3ddd3"/><path d="M0.0 0.0 L6.2 0.5 L12.4 -0.0 L18.6 0.2 L24.8 0.2 L31.0 0.0 L31.3 7.3 L31.4 14.7 L31.0 22.0 L24.8 21.9 L18.6 22.4 L12.4 22.1 L6.2 21.6 L0.0 22.0 L0.4 14.7 L-0.4 7.3Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M4.0 0.0 L5.8 0.0 L5.8 7.0 L4.0 7.0Z" fill="#1f1f22"/><path d="M11.0 0.0 L12.8 0.0 L12.8 4.5 L11.0 4.5Z" fill="#1f1f22"/><path d="M18.0 0.0 L19.8 0.0 L19.8 7.0 L18.0 7.0Z" fill="#1f1f22"/><path d="M25.0 0.0 L26.8 0.0 L26.8 4.5 L25.0 4.5Z" fill="#1f1f22"/><g transform="translate(30 0)"><g class="seg" style="--k:4"><path d="M0.0 0.0 L6.2 0.5 L12.4 0.4 L18.6 0.2 L24.8 -0.3 L31.0 0.0 L31.2 7.3 L30.8 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.5 L12.4 22.3 L6.2 21.6 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="#000" opacity="0.13" transform="translate(4 5)"/><path d="M0.0 0.0 L6.2 0.5 L12.4 0.4 L18.6 0.2 L24.8 -0.3 L31.0 0.0 L31.2 7.3 L30.8 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.5 L12.4 22.3 L6.2 21.6 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="#000" opacity="0.3" transform="translate(1.6 2.2)"/><path d="M0.0 0.0 L6.2 0.5 L12.4 0.4 L18.6 0.2 L24.8 -0.3 L31.0 0.0 L31.2 7.3 L30.8 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.5 L12.4 22.3 L6.2 21.6 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="#efeeea"/><path d="M0.0 0.0 L6.2 0.5 L12.4 0.4 L18.6 0.2 L24.8 -0.3 L31.0 0.0 L31.2 7.3 L30.8 14.7 L31.0 22.0 L24.8 21.7 L18.6 22.5 L12.4 22.3 L6.2 21.6 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M4.0 0.0 L5.8 0.0 L5.8 7.0 L4.0 7.0Z" fill="#1f1f22"/><path d="M11.0 0.0 L12.8 0.0 L12.8 4.5 L11.0 4.5Z" fill="#1f1f22"/><path d="M18.0 0.0 L19.8 0.0 L19.8 7.0 L18.0 7.0Z" fill="#1f1f22"/><path d="M25.0 0.0 L26.8 0.0 L26.8 4.5 L25.0 4.5Z" fill="#1f1f22"/><g transform="translate(30 0)"><g class="seg" style="--k:5"><path d="M0.0 0.0 L6.2 0.4 L12.4 -0.2 L18.6 0.3 L24.8 0.5 L31.0 0.0 L31.2 7.3 L30.7 14.7 L31.0 22.0 L24.8 22.2 L18.6 22.3 L12.4 22.2 L6.2 21.7 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="#000" opacity="0.13" transform="translate(4 5)"/><path d="M0.0 0.0 L6.2 0.4 L12.4 -0.2 L18.6 0.3 L24.8 0.5 L31.0 0.0 L31.2 7.3 L30.7 14.7 L31.0 22.0 L24.8 22.2 L18.6 22.3 L12.4 22.2 L6.2 21.7 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="#000" opacity="0.3" transform="translate(1.6 2.2)"/><path d="M0.0 0.0 L6.2 0.4 L12.4 -0.2 L18.6 0.3 L24.8 0.5 L31.0 0.0 L31.2 7.3 L30.7 14.7 L31.0 22.0 L24.8 22.2 L18.6 22.3 L12.4 22.2 L6.2 21.7 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="#e3ddd3"/><path d="M0.0 0.0 L6.2 0.4 L12.4 -0.2 L18.6 0.3 L24.8 0.5 L31.0 0.0 L31.2 7.3 L30.7 14.7 L31.0 22.0 L24.8 22.2 L18.6 22.3 L12.4 22.2 L6.2 21.7 L0.0 22.0 L-0.4 14.7 L0.2 7.3Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M4.0 0.0 L5.8 0.0 L5.8 7.0 L4.0 7.0Z" fill="#1f1f22"/><path d="M11.0 0.0 L12.8 0.0 L12.8 4.5 L11.0 4.5Z" fill="#1f1f22"/><path d="M18.0 0.0 L19.8 0.0 L19.8 7.0 L18.0 7.0Z" fill="#1f1f22"/><path d="M25.0 0.0 L26.8 0.0 L26.8 4.5 L25.0 4.5Z" fill="#1f1f22"/><path d="M23.0 0.0 L31.0 0.0 L31.0 5.5 L31.2 11.0 L30.6 16.5 L31.0 22.0 L23.0 22.0 L23.1 16.5 L23.1 11.0 L23.4 5.5Z" fill="#ea4e65"/><path d="M23.0 0.0 L31.0 0.0 L31.0 5.5 L31.2 11.0 L30.6 16.5 L31.0 22.0 L23.0 22.0 L23.1 16.5 L23.1 11.0 L23.4 5.5Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g></g></g></g></g></g></g></g></g></g></g></g></g><g class="pk" style="--d:3;--fx:20px;--fy:-20px;--fr:14deg"><path d="M209.0 40.0 L206.6 47.2 L201.2 51.8 L194.1 52.5 L187.5 49.9 L184.0 43.6 L183.3 36.4 L187.3 30.4 L194.2 27.5 L201.4 27.8 L207.0 32.8Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M209.0 40.0 L206.6 47.2 L201.2 51.8 L194.1 52.5 L187.5 49.9 L184.0 43.6 L183.3 36.4 L187.3 30.4 L194.2 27.5 L201.4 27.8 L207.0 32.8Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M209.0 40.0 L206.6 47.2 L201.2 51.8 L194.1 52.5 L187.5 49.9 L184.0 43.6 L183.3 36.4 L187.3 30.4 L194.2 27.5 L201.4 27.8 L207.0 32.8Z" fill="#ea4e65"/><path d="M209.0 40.0 L206.6 47.2 L201.2 51.8 L194.1 52.5 L187.5 49.9 L184.0 43.6 L183.3 36.4 L187.3 30.4 L194.2 27.5 L201.4 27.8 L207.0 32.8Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M189.0 40.0 L194.5 45.5 L204.0 34.0" fill="none" stroke="#141414" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
+        <p class="stance__claim">Regulated does not have to mean rigid.</p>
+        <div>
+          <p class="stance__why">Working closely with legal, quality and compliance teams made it possible to meet strict requirements and still write for people.</p>
+          <a class="stance__proof" href="insurance.html" data-case="insurance.html">See the insurance study</a>
+        </div>
+      </div>
+      <div class="stance__item">
+        <div class="stance__art" data-craft-in><svg class="picto" viewBox="0 0 240 150" width="240" height="150" aria-hidden="true" focusable="false" data-picto="research"><defs><pattern id="gq-grain" width="256" height="256" patternUnits="userSpaceOnUse"><image href="src/art/grain.webp" width="256" height="256"/></pattern></defs><g class="pk" style="--d:0;--fx:0px;--fy:24px;--fr:-4deg"><path d="M173.0 26.0 L175.7 26.5 L177.9 28.1 L179.5 30.3 L180.0 33.0 L179.4 42.0 L180.9 51.0 L180.5 60.0 L179.9 69.0 L181.0 78.0 L179.5 87.0 L181.1 96.0 L180.7 105.0 L179.5 114.0 L180.0 123.0 L179.5 125.7 L177.9 127.9 L175.7 129.5 L173.0 130.0 L163.9 129.3 L154.9 130.2 L145.8 128.9 L136.7 129.1 L127.7 130.6 L118.6 130.7 L109.5 129.3 L100.5 129.6 L91.4 129.1 L82.3 131.0 L73.3 129.9 L64.2 130.2 L55.1 130.0 L46.1 129.5 L37.0 130.0 L34.3 129.5 L32.1 127.9 L30.5 125.7 L30.0 123.0 L30.3 114.0 L29.2 105.0 L30.8 96.0 L30.4 87.0 L30.5 78.0 L30.2 69.0 L30.4 60.0 L31.0 51.0 L30.7 42.0 L30.0 33.0 L30.5 30.3 L32.1 28.1 L34.3 26.5 L37.0 26.0 L46.1 25.9 L55.1 25.4 L64.2 25.4 L73.3 25.2 L82.3 26.0 L91.4 25.1 L100.5 26.0 L109.5 25.2 L118.6 26.7 L127.7 25.7 L136.7 26.7 L145.8 26.8 L154.9 26.8 L163.9 27.0Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M173.0 26.0 L175.7 26.5 L177.9 28.1 L179.5 30.3 L180.0 33.0 L179.4 42.0 L180.9 51.0 L180.5 60.0 L179.9 69.0 L181.0 78.0 L179.5 87.0 L181.1 96.0 L180.7 105.0 L179.5 114.0 L180.0 123.0 L179.5 125.7 L177.9 127.9 L175.7 129.5 L173.0 130.0 L163.9 129.3 L154.9 130.2 L145.8 128.9 L136.7 129.1 L127.7 130.6 L118.6 130.7 L109.5 129.3 L100.5 129.6 L91.4 129.1 L82.3 131.0 L73.3 129.9 L64.2 130.2 L55.1 130.0 L46.1 129.5 L37.0 130.0 L34.3 129.5 L32.1 127.9 L30.5 125.7 L30.0 123.0 L30.3 114.0 L29.2 105.0 L30.8 96.0 L30.4 87.0 L30.5 78.0 L30.2 69.0 L30.4 60.0 L31.0 51.0 L30.7 42.0 L30.0 33.0 L30.5 30.3 L32.1 28.1 L34.3 26.5 L37.0 26.0 L46.1 25.9 L55.1 25.4 L64.2 25.4 L73.3 25.2 L82.3 26.0 L91.4 25.1 L100.5 26.0 L109.5 25.2 L118.6 26.7 L127.7 25.7 L136.7 26.7 L145.8 26.8 L154.9 26.8 L163.9 27.0Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M173.0 26.0 L175.7 26.5 L177.9 28.1 L179.5 30.3 L180.0 33.0 L179.4 42.0 L180.9 51.0 L180.5 60.0 L179.9 69.0 L181.0 78.0 L179.5 87.0 L181.1 96.0 L180.7 105.0 L179.5 114.0 L180.0 123.0 L179.5 125.7 L177.9 127.9 L175.7 129.5 L173.0 130.0 L163.9 129.3 L154.9 130.2 L145.8 128.9 L136.7 129.1 L127.7 130.6 L118.6 130.7 L109.5 129.3 L100.5 129.6 L91.4 129.1 L82.3 131.0 L73.3 129.9 L64.2 130.2 L55.1 130.0 L46.1 129.5 L37.0 130.0 L34.3 129.5 L32.1 127.9 L30.5 125.7 L30.0 123.0 L30.3 114.0 L29.2 105.0 L30.8 96.0 L30.4 87.0 L30.5 78.0 L30.2 69.0 L30.4 60.0 L31.0 51.0 L30.7 42.0 L30.0 33.0 L30.5 30.3 L32.1 28.1 L34.3 26.5 L37.0 26.0 L46.1 25.9 L55.1 25.4 L64.2 25.4 L73.3 25.2 L82.3 26.0 L91.4 25.1 L100.5 26.0 L109.5 25.2 L118.6 26.7 L127.7 25.7 L136.7 26.7 L145.8 26.8 L154.9 26.8 L163.9 27.0Z" fill="#efeeea"/><path d="M173.0 26.0 L175.7 26.5 L177.9 28.1 L179.5 30.3 L180.0 33.0 L179.4 42.0 L180.9 51.0 L180.5 60.0 L179.9 69.0 L181.0 78.0 L179.5 87.0 L181.1 96.0 L180.7 105.0 L179.5 114.0 L180.0 123.0 L179.5 125.7 L177.9 127.9 L175.7 129.5 L173.0 130.0 L163.9 129.3 L154.9 130.2 L145.8 128.9 L136.7 129.1 L127.7 130.6 L118.6 130.7 L109.5 129.3 L100.5 129.6 L91.4 129.1 L82.3 131.0 L73.3 129.9 L64.2 130.2 L55.1 130.0 L46.1 129.5 L37.0 130.0 L34.3 129.5 L32.1 127.9 L30.5 125.7 L30.0 123.0 L30.3 114.0 L29.2 105.0 L30.8 96.0 L30.4 87.0 L30.5 78.0 L30.2 69.0 L30.4 60.0 L31.0 51.0 L30.7 42.0 L30.0 33.0 L30.5 30.3 L32.1 28.1 L34.3 26.5 L37.0 26.0 L46.1 25.9 L55.1 25.4 L64.2 25.4 L73.3 25.2 L82.3 26.0 L91.4 25.1 L100.5 26.0 L109.5 25.2 L118.6 26.7 L127.7 25.7 L136.7 26.7 L145.8 26.8 L154.9 26.8 L163.9 27.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk pk--rise" style="--d:1;--fx:0px;--fy:18px;--fr:0deg"><path d="M48.0 58.0 L56.0 58.3 L64.0 58.0 L63.7 64.4 L64.2 70.9 L64.2 77.3 L64.0 83.8 L64.3 90.2 L64.3 96.7 L63.8 103.1 L64.1 109.6 L64.0 116.0 L56.0 115.8 L48.0 116.0 L48.3 109.6 L48.0 103.1 L48.2 96.7 L47.6 90.2 L48.3 83.8 L47.7 77.3 L48.3 70.9 L48.0 64.4Z" fill="#000" opacity="0.3" transform="translate(1.2 1.6)"/><path d="M48.0 58.0 L56.0 58.3 L64.0 58.0 L63.7 64.4 L64.2 70.9 L64.2 77.3 L64.0 83.8 L64.3 90.2 L64.3 96.7 L63.8 103.1 L64.1 109.6 L64.0 116.0 L56.0 115.8 L48.0 116.0 L48.3 109.6 L48.0 103.1 L48.2 96.7 L47.6 90.2 L48.3 83.8 L47.7 77.3 L48.3 70.9 L48.0 64.4Z" fill="#b9a89c"/><path d="M48.0 58.0 L56.0 58.3 L64.0 58.0 L63.7 64.4 L64.2 70.9 L64.2 77.3 L64.0 83.8 L64.3 90.2 L64.3 96.7 L63.8 103.1 L64.1 109.6 L64.0 116.0 L56.0 115.8 L48.0 116.0 L48.3 109.6 L48.0 103.1 L48.2 96.7 L47.6 90.2 L48.3 83.8 L47.7 77.3 L48.3 70.9 L48.0 64.4Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk pk--rise" style="--d:2;--fx:0px;--fy:18px;--fr:0deg"><path d="M72.0 76.0 L80.0 76.2 L88.0 76.0 L87.7 82.7 L87.6 89.3 L87.9 96.0 L88.2 102.7 L87.6 109.3 L88.0 116.0 L80.0 115.7 L72.0 116.0 L72.1 109.3 L72.0 102.7 L72.1 96.0 L72.0 89.3 L72.2 82.7Z" fill="#000" opacity="0.3" transform="translate(1.2 1.6)"/><path d="M72.0 76.0 L80.0 76.2 L88.0 76.0 L87.7 82.7 L87.6 89.3 L87.9 96.0 L88.2 102.7 L87.6 109.3 L88.0 116.0 L80.0 115.7 L72.0 116.0 L72.1 109.3 L72.0 102.7 L72.1 96.0 L72.0 89.3 L72.2 82.7Z" fill="#b9a89c"/><path d="M72.0 76.0 L80.0 76.2 L88.0 76.0 L87.7 82.7 L87.6 89.3 L87.9 96.0 L88.2 102.7 L87.6 109.3 L88.0 116.0 L80.0 115.7 L72.0 116.0 L72.1 109.3 L72.0 102.7 L72.1 96.0 L72.0 89.3 L72.2 82.7Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk pk--rise" style="--d:3;--fx:0px;--fy:18px;--fr:0deg"><path d="M96.0 46.0 L104.0 46.4 L112.0 46.0 L112.1 52.4 L112.3 58.7 L111.6 65.1 L111.8 71.5 L111.9 77.8 L111.7 84.2 L111.9 90.5 L112.4 96.9 L111.8 103.3 L111.9 109.6 L112.0 116.0 L104.0 115.7 L96.0 116.0 L95.8 109.6 L96.4 103.3 L96.2 96.9 L95.8 90.5 L96.0 84.2 L95.6 77.8 L95.8 71.5 L96.2 65.1 L95.9 58.7 L95.9 52.4Z" fill="#000" opacity="0.3" transform="translate(1.2 1.6)"/><path d="M96.0 46.0 L104.0 46.4 L112.0 46.0 L112.1 52.4 L112.3 58.7 L111.6 65.1 L111.8 71.5 L111.9 77.8 L111.7 84.2 L111.9 90.5 L112.4 96.9 L111.8 103.3 L111.9 109.6 L112.0 116.0 L104.0 115.7 L96.0 116.0 L95.8 109.6 L96.4 103.3 L96.2 96.9 L95.8 90.5 L96.0 84.2 L95.6 77.8 L95.8 71.5 L96.2 65.1 L95.9 58.7 L95.9 52.4Z" fill="#ea4e65"/><path d="M96.0 46.0 L104.0 46.4 L112.0 46.0 L112.1 52.4 L112.3 58.7 L111.6 65.1 L111.8 71.5 L111.9 77.8 L111.7 84.2 L111.9 90.5 L112.4 96.9 L111.8 103.3 L111.9 109.6 L112.0 116.0 L104.0 115.7 L96.0 116.0 L95.8 109.6 L96.4 103.3 L96.2 96.9 L95.8 90.5 L96.0 84.2 L95.6 77.8 L95.8 71.5 L96.2 65.1 L95.9 58.7 L95.9 52.4Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk pk--rise" style="--d:4;--fx:0px;--fy:18px;--fr:0deg"><path d="M120.0 86.0 L128.0 86.4 L136.0 86.0 L136.3 92.0 L136.2 98.0 L135.7 104.0 L135.7 110.0 L136.0 116.0 L128.0 115.9 L120.0 116.0 L120.1 110.0 L120.3 104.0 L120.4 98.0 L120.3 92.0Z" fill="#000" opacity="0.3" transform="translate(1.2 1.6)"/><path d="M120.0 86.0 L128.0 86.4 L136.0 86.0 L136.3 92.0 L136.2 98.0 L135.7 104.0 L135.7 110.0 L136.0 116.0 L128.0 115.9 L120.0 116.0 L120.1 110.0 L120.3 104.0 L120.4 98.0 L120.3 92.0Z" fill="#b9a89c"/><path d="M120.0 86.0 L128.0 86.4 L136.0 86.0 L136.3 92.0 L136.2 98.0 L135.7 104.0 L135.7 110.0 L136.0 116.0 L128.0 115.9 L120.0 116.0 L120.1 110.0 L120.3 104.0 L120.4 98.0 L120.3 92.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk pk--rise" style="--d:5;--fx:0px;--fy:18px;--fr:0deg"><path d="M144.0 64.0 L152.0 63.8 L160.0 64.0 L159.7 70.5 L160.1 77.0 L159.7 83.5 L160.0 90.0 L160.4 96.5 L160.0 103.0 L159.8 109.5 L160.0 116.0 L152.0 116.1 L144.0 116.0 L144.1 109.5 L144.1 103.0 L143.6 96.5 L144.2 90.0 L144.0 83.5 L144.2 77.0 L143.6 70.5Z" fill="#000" opacity="0.3" transform="translate(1.2 1.6)"/><path d="M144.0 64.0 L152.0 63.8 L160.0 64.0 L159.7 70.5 L160.1 77.0 L159.7 83.5 L160.0 90.0 L160.4 96.5 L160.0 103.0 L159.8 109.5 L160.0 116.0 L152.0 116.1 L144.0 116.0 L144.1 109.5 L144.1 103.0 L143.6 96.5 L144.2 90.0 L144.0 83.5 L144.2 77.0 L143.6 70.5Z" fill="#b9a89c"/><path d="M144.0 64.0 L152.0 63.8 L160.0 64.0 L159.7 70.5 L160.1 77.0 L159.7 83.5 L160.0 90.0 L160.4 96.5 L160.0 103.0 L159.8 109.5 L160.0 116.0 L152.0 116.1 L144.0 116.0 L144.1 109.5 L144.1 103.0 L143.6 96.5 L144.2 90.0 L144.0 83.5 L144.2 77.0 L143.6 70.5Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/></g><g class="pk" style="--d:6;--fx:0px;--fy:6px;--fr:0deg"><path d="M40.0 116.0 L49.1 115.8 L58.3 115.9 L67.4 115.8 L76.6 116.1 L85.7 116.1 L94.9 116.0 L104.0 116.0 L113.1 116.2 L122.3 116.1 L131.4 116.0 L140.6 115.9 L149.7 115.8 L158.9 115.7 L168.0 116.0 L168.0 119.0 L158.9 119.3 L149.7 119.0 L140.6 119.0 L131.4 119.0 L122.3 118.8 L113.1 118.8 L104.0 118.7 L94.9 118.7 L85.7 118.9 L76.6 119.3 L67.4 118.9 L58.3 118.7 L49.1 119.2 L40.0 119.0Z" fill="#1f1f22"/></g><g class="pk" style="--d:7;--fx:46px;--fy:-10px;--fr:18deg"><path d="M186.0 86.0 L194.0 80.0 L200.8 88.2 L207.7 96.3 L214.9 104.1 L222.0 112.0 L214.0 120.0 L206.9 111.6 L199.8 103.2 L192.8 94.6Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M186.0 86.0 L194.0 80.0 L200.8 88.2 L207.7 96.3 L214.9 104.1 L222.0 112.0 L214.0 120.0 L206.9 111.6 L199.8 103.2 L192.8 94.6Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M186.0 86.0 L194.0 80.0 L200.8 88.2 L207.7 96.3 L214.9 104.1 L222.0 112.0 L214.0 120.0 L206.9 111.6 L199.8 103.2 L192.8 94.6Z" fill="#1f1f22"/><path d="M186.0 86.0 L194.0 80.0 L200.8 88.2 L207.7 96.3 L214.9 104.1 L222.0 112.0 L214.0 120.0 L206.9 111.6 L199.8 103.2 L192.8 94.6Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><path d="M196.0 66.0 L195.7 70.7 L193.9 75.4 L192.0 79.8 L189.3 83.6 L185.7 86.9 L181.5 89.2 L177.0 91.3 L172.4 92.1 L167.6 92.0 L162.9 90.9 L158.3 88.9 L154.5 87.0 L150.8 83.3 L147.6 79.9 L146.0 75.4 L144.7 70.7 L143.9 66.0 L144.3 61.3 L146.0 56.5 L148.0 52.3 L150.7 48.5 L154.4 45.6 L158.3 42.4 L162.8 40.9 L167.6 40.2 L172.4 40.0 L177.0 41.2 L181.5 42.7 L185.8 45.3 L188.9 48.3 L192.1 52.3 L194.0 56.6 L195.5 61.2Z M187.8 62.1 L186.7 58.5 L184.8 55.2 L182.2 52.3 L179.3 50.0 L175.7 48.4 L171.9 47.6 L168.1 47.8 L164.4 48.3 L160.7 49.8 L157.4 52.2 L154.9 55.0 L153.2 58.6 L152.0 62.2 L151.5 66.0 L151.9 69.9 L153.2 73.6 L154.8 77.0 L157.5 79.9 L160.7 82.2 L164.3 83.8 L168.1 84.3 L172.0 84.5 L175.7 83.6 L179.3 81.9 L182.5 79.6 L184.8 76.8 L186.7 73.5 L188.2 69.9 L188.4 66.0Z" fill="#000" opacity="0.13" transform="translate(6 7.5)"/><path d="M196.0 66.0 L195.7 70.7 L193.9 75.4 L192.0 79.8 L189.3 83.6 L185.7 86.9 L181.5 89.2 L177.0 91.3 L172.4 92.1 L167.6 92.0 L162.9 90.9 L158.3 88.9 L154.5 87.0 L150.8 83.3 L147.6 79.9 L146.0 75.4 L144.7 70.7 L143.9 66.0 L144.3 61.3 L146.0 56.5 L148.0 52.3 L150.7 48.5 L154.4 45.6 L158.3 42.4 L162.8 40.9 L167.6 40.2 L172.4 40.0 L177.0 41.2 L181.5 42.7 L185.8 45.3 L188.9 48.3 L192.1 52.3 L194.0 56.6 L195.5 61.2Z M187.8 62.1 L186.7 58.5 L184.8 55.2 L182.2 52.3 L179.3 50.0 L175.7 48.4 L171.9 47.6 L168.1 47.8 L164.4 48.3 L160.7 49.8 L157.4 52.2 L154.9 55.0 L153.2 58.6 L152.0 62.2 L151.5 66.0 L151.9 69.9 L153.2 73.6 L154.8 77.0 L157.5 79.9 L160.7 82.2 L164.3 83.8 L168.1 84.3 L172.0 84.5 L175.7 83.6 L179.3 81.9 L182.5 79.6 L184.8 76.8 L186.7 73.5 L188.2 69.9 L188.4 66.0Z" fill="#000" opacity="0.3" transform="translate(2.5 3.2)"/><path d="M196.0 66.0 L195.7 70.7 L193.9 75.4 L192.0 79.8 L189.3 83.6 L185.7 86.9 L181.5 89.2 L177.0 91.3 L172.4 92.1 L167.6 92.0 L162.9 90.9 L158.3 88.9 L154.5 87.0 L150.8 83.3 L147.6 79.9 L146.0 75.4 L144.7 70.7 L143.9 66.0 L144.3 61.3 L146.0 56.5 L148.0 52.3 L150.7 48.5 L154.4 45.6 L158.3 42.4 L162.8 40.9 L167.6 40.2 L172.4 40.0 L177.0 41.2 L181.5 42.7 L185.8 45.3 L188.9 48.3 L192.1 52.3 L194.0 56.6 L195.5 61.2Z M187.8 62.1 L186.7 58.5 L184.8 55.2 L182.2 52.3 L179.3 50.0 L175.7 48.4 L171.9 47.6 L168.1 47.8 L164.4 48.3 L160.7 49.8 L157.4 52.2 L154.9 55.0 L153.2 58.6 L152.0 62.2 L151.5 66.0 L151.9 69.9 L153.2 73.6 L154.8 77.0 L157.5 79.9 L160.7 82.2 L164.3 83.8 L168.1 84.3 L172.0 84.5 L175.7 83.6 L179.3 81.9 L182.5 79.6 L184.8 76.8 L186.7 73.5 L188.2 69.9 L188.4 66.0Z" fill="#ea4e65" fill-rule="evenodd"/><path d="M196.0 66.0 L195.7 70.7 L193.9 75.4 L192.0 79.8 L189.3 83.6 L185.7 86.9 L181.5 89.2 L177.0 91.3 L172.4 92.1 L167.6 92.0 L162.9 90.9 L158.3 88.9 L154.5 87.0 L150.8 83.3 L147.6 79.9 L146.0 75.4 L144.7 70.7 L143.9 66.0 L144.3 61.3 L146.0 56.5 L148.0 52.3 L150.7 48.5 L154.4 45.6 L158.3 42.4 L162.8 40.9 L167.6 40.2 L172.4 40.0 L177.0 41.2 L181.5 42.7 L185.8 45.3 L188.9 48.3 L192.1 52.3 L194.0 56.6 L195.5 61.2Z M187.8 62.1 L186.7 58.5 L184.8 55.2 L182.2 52.3 L179.3 50.0 L175.7 48.4 L171.9 47.6 L168.1 47.8 L164.4 48.3 L160.7 49.8 L157.4 52.2 L154.9 55.0 L153.2 58.6 L152.0 62.2 L151.5 66.0 L151.9 69.9 L153.2 73.6 L154.8 77.0 L157.5 79.9 L160.7 82.2 L164.3 83.8 L168.1 84.3 L172.0 84.5 L175.7 83.6 L179.3 81.9 L182.5 79.6 L184.8 76.8 L186.7 73.5 L188.2 69.9 L188.4 66.0Z" fill="url(#gq-grain)" style="mix-blend-mode:soft-light" opacity="0.75"/><circle cx="170" cy="66" r="18.5" fill="#fff" opacity="0.14"/></g></svg></div>
+        <p class="stance__claim">Research keeps design honest.</p>
+        <div>
+          <p class="stance__why">Testing and journey maps point the work at real problems instead of assumptions.</p>
+          <a class="stance__proof" href="marketing-agency.html" data-case="marketing-agency.html">See the marketing study</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="systems" aria-labelledby="systems-title">
+    <h2 class="section__title" id="systems-title">Systems that keep work consistent at scale</h2>
+    <p class="section__lede">I build the tokens, components and templates that let teams ship without redesigning the same thing twice, and I decide what must stay fixed and what is free to change.</p>
+
+    <div class="systems">
+      <div class="capabilities">
+        <div class="capability">
+          <h3 class="capability__title">Tokens</h3>
+          <p>Named color tokens and a clear type system that hold across iOS, Android and responsive web.</p>
+          <p class="capability__where">Insurance</p>
+        </div>
+        <div class="capability">
+          <h3 class="capability__title">Components and states</h3>
+          <p>Reusable components with defined default, hover, focus and error states, ready for engineering. 100+ components across three systems.</p>
+          <p class="capability__where">Insurance</p>
+        </div>
+        <div class="capability">
+          <h3 class="capability__title">Templates</h3>
+          <p>Locked brand zones and flexible content zones, so print and digital assets stay on brand at volume.</p>
+          <p class="capability__where">Industrial safety, healthcare</p>
+        </div>
+        <div class="capability">
+          <h3 class="capability__title">Shared patterns</h3>
+          <p>One set of layouts and components behind marketing sites, product screens and sales material.</p>
+          <p class="capability__where">Healthcare finance</p>
+        </div>
+      </div>
+
+      <div class="systems__stage">
+        <figure class="tpl" data-template>
+          <p class="tpl__scale"><b>6</b> languages <span aria-hidden="true">·</span> <b>3</b> writing systems <span aria-hidden="true">·</span> <b>2</b> reading directions <span aria-hidden="true">·</span> <b>1</b> component</p>
+          <div class="tpl__controls" role="toolbar" aria-labelledby="tpl-label">
+            <span class="tpl__controls-label mono" id="tpl-label">Language</span>
+            <button class="tpl__lang" type="button" data-lang="zh-Hans" aria-pressed="false" aria-label="Simplified Chinese">ZH</button>
+            <button class="tpl__lang" type="button" data-lang="ar" aria-pressed="false" aria-label="Arabic">AR</button>
+            <button class="tpl__lang" type="button" data-lang="tr" aria-pressed="false" aria-label="Turkish">TR</button>
+            <button class="tpl__lang" type="button" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
+            <button class="tpl__lang" type="button" data-lang="pl" aria-pressed="false" aria-label="Polish">PL</button>
+            <button class="tpl__lang" type="button" data-lang="es" aria-pressed="false" aria-label="Spanish">ES</button>
+          </div>
+          <div class="tpl__sheet">
+            <div class="tpl__zone tpl__zone--locked">
+              <span class="tpl__tag">Locked</span>
+              <p class="tpl__brand">Brand mark</p>
+              <p class="tpl__note">Color, type and grid never change.</p>
+            </div>
+            <div class="tpl__zone tpl__zone--flex" data-flex data-dir="ltr">
+              <span class="tpl__tag">Flexible</span>
+              <span class="tpl__meta" data-meta>English · left to right</span>
+              <p class="tpl__field" data-field lang="en" dir="ltr">Read the instructions before use.</p>
+            </div>
+            <div class="tpl__zone tpl__zone--flex">
+              <span class="tpl__tag">Flexible</span>
+              <div class="tpl__split">
+                <p class="tpl__note">Certification marks and warnings, set by region.</p>
+                <p class="tpl__code" data-code aria-hidden="true">EN</p>
+              </div>
+            </div>
+          </div>
+          <dl class="tpl__specs">
+            <div><dt>Script</dt><dd data-spec="script">Latin</dd></div>
+            <div><dt>Direction</dt><dd data-spec="dir">Left to right</dd></div>
+            <div><dt>Text length</dt><dd data-spec="len">100% of English</dd></div>
+            <div><dt>Component size</dt><dd data-spec="size">Unchanged</dd></div>
+          </dl>
+          <p class="sr-only" role="status" aria-live="polite" data-status></p>
+          <figcaption class="tpl__caption">An illustrative template, not client artwork. Simplified Chinese, Arabic, Turkish, English, Polish and Spanish run through the same component: Arabic flips the reading direction, Chinese brings its own typeface and the Latin languages stretch the line. The brand layer stays fixed and only the content changes, the zone model I used to migrate more than 2,000 assets into 25 languages.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <h2 class="section__title" id="experience-title">Experience</h2>
+    <div class="ledgers">
+      <div>
+        <section class="ledger" aria-labelledby="ledger-exp">
+          <h3 class="ledger__title" id="ledger-exp">Roles, 10+ years</h3>
+          <ul>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Curae Health</p>
+                <p class="ledger__detail">Senior UI/UX Designer, contract</p>
+              </div>
+              <p class="ledger__date">Jan 2022 to Present</p>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Tata Consultancy Services</p>
+                <p class="ledger__detail">UX/CX Lead | Senior UI/UX Designer | Senior Packaging Designer</p>
+              </div>
+              <p class="ledger__date">Jul 2022 to Jul 2026</p>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Hedy &amp; Hopp</p>
+                <p class="ledger__detail">Lead Designer, contract</p>
+              </div>
+              <p class="ledger__date">Jan 2022 to Jan 2023</p>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Token Agency</p>
+                <p class="ledger__detail">Lead UI/UX Designer, Creative Lead</p>
+              </div>
+              <p class="ledger__date">Aug 2017 to Jan 2022</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div>
+        <section class="ledger" aria-labelledby="ledger-edu">
+          <h3 class="ledger__title" id="ledger-edu">Education</h3>
+          <ul>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Universitat Politècnica de Catalunya</p>
+                <p class="ledger__detail">Master's, customer experience</p>
+              </div>
+              <p class="ledger__date">Apr 2023</p>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Universidad Autónoma de Guadalajara</p>
+                <p class="ledger__detail">Bachelor's, design engineering</p>
+              </div>
+              <p class="ledger__date">Dec 2021</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="ledger" aria-labelledby="ledger-cert">
+          <h3 class="ledger__title" id="ledger-cert">Certifications</h3>
+          <ul>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Google</p>
+                <p class="ledger__detail">UX Design Professional Certificate</p>
+              </div>
+              <p class="ledger__date">2022</p>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Microsoft</p>
+                <p class="ledger__detail">Azure, Azure AI and project management</p>
+              </div>
+              <p class="ledger__date">2023</p>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <p class="ledger__org">Adobe Creative Cloud</p>
+                <p class="ledger__detail">Illustrator, Photoshop, Premiere Pro, InDesign</p>
+              </div>
+              <p class="ledger__date">2025</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <dl class="skills">
+      <dt>Product and UX</dt>
+      <dd>Product design, UX strategy, interaction design, information architecture, user flows, wireframing, prototyping, responsive web and mobile.</dd>
+      <dt>Research and CX</dt>
+      <dd>User research, usability testing, journey mapping, service design, customer experience, A/B testing, conversion optimization.</dd>
+      <dt>Systems and leadership</dt>
+      <dd>Design systems, component libraries, reusable patterns, design governance, stakeholder management, team leadership, cross-functional collaboration.</dd>
+      <dt>Creative</dt>
+      <dd>Branding, creative direction, graphic design, marketing design, packaging, visual design, videography, animation.</dd>
+      <dt>Tools</dt>
+      <dd>Figma, FigJam, Adobe Creative Cloud, Jira, Webflow, WordPress.</dd>
+    </dl>
+  </section>
+
+  <section class="section craft" id="craft" aria-labelledby="craft-title">
+    <h2 class="section__title" id="craft-title">Paper and pixels</h2>
+    <p class="section__lede">The desk from the film, made twice: once in cut paper, once in pixel art. Drag the line to compare them.</p>
+    <div class="craft__stage">
+      <div class="diorama" data-diorama>
+        <div class="diorama__paper"><img src="src/art/desk-paper.svg" alt="" width="1920" height="1080" decoding="async"></div>
+        <canvas class="diorama__pixel" data-desk width="192" height="108" aria-hidden="true"></canvas>
+        <span class="diorama__tag diorama__tag--paper" aria-hidden="true">Paper</span>
+        <span class="diorama__tag diorama__tag--pixel" aria-hidden="true">Pixels</span>
+        <div class="diorama__line" aria-hidden="true"><span class="diorama__knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5 4 12l5.5 5.5M14.5 6.5 20 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <input class="diorama__range" id="diorama-split" type="range" min="0" max="100" step="1" value="50" aria-label="Compare the paper and pixel versions" aria-valuetext="50% paper, 50% pixel">
+      </div>
+      <div class="craft__notes">
+        <div>
+          <h3>Cut paper</h3>
+          <p>Every piece is vector, cut with edges that are never quite straight, lit by two shadows and a paper grain. It moves like stop-motion, about twelve drawings a second.</p>
+        </div>
+        <div>
+          <h3>Pixel art</h3>
+          <p>The same room at 192 by 108 pixels, drawn from one sprite sheet and only ever scaled by whole numbers. Both versions run the same loop: the line is typed, then the button is pressed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
+  <div class="night" data-night>
+    <img class="night__paper" src="src/art/night.svg" alt="" width="1440" height="300" loading="lazy" decoding="async">
+    <div class="night__ground" aria-hidden="true"></div>
+    <canvas class="night__walker" data-walker aria-hidden="true" title=""></canvas>
+  </div>
   <div class="footer__inner">
-    <p class="footer__name">Gustavo Quiros</p>
+    <div>
+      <p class="footer__lead">Open to lead and staff design roles.</p>
+      <a class="footer__mail" href="mailto:gustavoquiros9912@gmail.com">gustavoquiros9912@gmail.com</a>
+    </div>
     <ul class="footer__links">
-      <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">linkedin <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
-      <li><a href="mailto:gustavoquiros9912@gmail.com">email <span aria-hidden="true">↗</span></a></li>
-      <li><a href="RESUMEGQ2026.pdf" target="_blank" rel="noopener">resume <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li><a href="mailto:gustavoquiros9912@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/gustavoquiros15/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li><a href="RESUMEGQ2026.pdf" target="_blank" rel="noopener">Resume<span class="sr-only"> (opens in a new tab)</span></a></li>
     </ul>
-    <p class="footer__note">San Diego, California — open to lead and staff design roles.</p>
-    <p class="footer__copy">© <span data-year>2026</span> Gustavo Quiros.</p>
+    <p class="footer__copy">Gustavo Quiros, San Diego, California. © <span data-year>2026</span></p>
   </div>
 </footer>
 
-<script>
-(() => {
-  document.body.classList.add('has-js');
-
-  // Keep the copyright year current.
-  const year = document.querySelector('[data-year]');
-  if (year) year.textContent = new Date().getFullYear();
-
-  // Highlight the nav stop for the section in view (home / work).
-  const nav = document.querySelector('.nav');
-  if (!nav) return;
-  const stops = [...nav.querySelectorAll('a[href^="#"]')]
-    .map((link) => {
-      const section = link.hash.length > 1 && document.querySelector(link.hash);
-      return section ? { link, section, stop: link.closest('li') || link } : null;
-    })
-    .filter(Boolean);
-  if (!stops.length) return;
-
-  let currentStop = null;
-  const spy = () => {
-    const line = nav.getBoundingClientRect().bottom + 1;
-    let current = stops[0];
-    stops.forEach((entry) => {
-      if (entry.section.getBoundingClientRect().top <= line) current = entry;
-    });
-    if (current === currentStop) return;
-    currentStop = current;
-    stops.forEach(({ stop, link }) => {
-      const isCurrent = stop === current.stop;
-      stop.classList.toggle('is-current', isCurrent);
-      link.classList.toggle('is-current', isCurrent);
-      if (isCurrent) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-  };
-
-  let queued = false;
-  const update = () => {
-    if (queued) return;
-    queued = true;
-    requestAnimationFrame(() => { queued = false; spy(); });
-  };
-  addEventListener('scroll', update, { passive: true });
-  addEventListener('resize', update, { passive: true });
-  addEventListener('load', update);
-  addEventListener('pageshow', update);
-  spy();
-})();
-</script>
-<script>
-// Case study gate: checks the password here, then opens the protected work page.
-// work.html is encrypted with StatiCrypt; this uses the same hashing so one
-// password unlocks it, and StatiCrypt's own "remember me" carries over to every case study.
-(() => {
-  const gate = document.querySelector('.gate');
-  const form = document.querySelector('[data-gate-form]');
-  if (!gate || !form) return;
-
-  const PASS_KEY = 'staticrypt_passphrase';
-  const EXP_KEY = 'staticrypt_expiration';
-  const FALLBACK_SALT = 'd1f262da1b9c7b5e397532d4ae2f11a5';
-
-  const input = document.getElementById('gate-password');
-  const remember = document.getElementById('gate-remember');
-  const btn = form.querySelector('button[type="submit"]');
-  const err = document.getElementById('gate-error');
-  const title = gate.querySelector('.gate__title');
-  const text = gate.querySelector('.gate__text');
-  const original = { title: title.textContent, text: text.textContent };
-
-  // Already unlocked on this device? Show a straight link instead of the form.
-  const checkRemembered = () => {
-    let ok = false;
-    try {
-      const saved = localStorage.getItem(PASS_KEY);
-      const exp = parseInt(localStorage.getItem(EXP_KEY) || '0', 10);
-      ok = Boolean(saved && (!exp || exp > Date.now()));
-    } catch (e) {}
-    gate.classList.toggle('is-unlocked', ok);
-    title.textContent = ok ? 'Welcome back.' : original.title;
-    text.textContent = ok ? 'Your case study access is still active on this device.' : original.text;
-  };
-  checkRemembered();
-
-  // Coming back with the Back button: clear the field and re-check access.
-  addEventListener('pageshow', (e) => {
-    if (!e.persisted) return;
-    input.value = '';
-    resetButton();
-    checkRemembered();
-  });
-
-  const enc = new TextEncoder();
-  const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
-  const unhex = (h) => new Uint8Array(h.match(/.{2}/g).map((b) => parseInt(b, 16)));
-  const pbkdf2 = async (pw, salt, iterations, hash) => {
-    const key = await crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveBits']);
-    const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', hash, iterations, salt: enc.encode(salt) }, key, 256);
-    return hex(bits);
-  };
-  const hashPassword = async (pw, salt) => {
-    let h = await pbkdf2(pw, salt, 1000, 'SHA-1');
-    h = await pbkdf2(h, salt, 14000, 'SHA-256');
-    return pbkdf2(h, salt, 585000, 'SHA-256');
-  };
-  const hmac = async (hashed, msg) => {
-    const key = await crypto.subtle.importKey('raw', unhex(hashed), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
-    return hex(await crypto.subtle.sign('HMAC', key, enc.encode(msg)));
-  };
-
-  const showError = (msg) => {
-    err.textContent = '';
-    requestAnimationFrame(() => { err.textContent = msg; }); // re-announced every time
-    input.setAttribute('aria-invalid', 'true');
-    input.focus();
-    input.select();
-  };
-  function resetButton() {
-    btn.disabled = false;
-    btn.textContent = 'Unlock';
-    form.removeAttribute('aria-busy');
-  }
-
-  let busy = false;
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (busy) return;
-    const pw = input.value;
-    err.textContent = '';
-    input.removeAttribute('aria-invalid');
-    if (!pw) return showError('Enter the password to continue.');
-    if (!window.crypto || !crypto.subtle) {
-      location.href = 'work.html'; // work.html asks for the password itself
-      return;
-    }
-
-    busy = true;
-    btn.disabled = true;
-    btn.textContent = 'Checking…';
-    form.setAttribute('aria-busy', 'true');
-
-    try {
-      // Read the encrypted page so a wrong password is caught right here.
-      let salt = FALLBACK_SALT;
-      let signed = null;
-      let reachable = false;
-      try {
-        const res = await fetch('work.html', { cache: 'no-store' });
-        if (res.ok) {
-          reachable = true;
-          const html = await res.text();
-          const s = html.match(/"staticryptSaltUniqueVariableName":"([0-9a-f]+)"/);
-          const m = html.match(/"staticryptEncryptedMsgUniqueVariableName":"([0-9a-f]+)"/);
-          if (s) salt = s[1];
-          if (m) signed = m[1];
-        }
-      } catch (fetchErr) { /* offline or opened from disk: work.html will check it */ }
-
-      if (reachable && !signed) {
-        // work.html isn't the encrypted version: never let anyone through on trust.
-        busy = false;
-        resetButton();
-        return showError('Case studies are temporarily unavailable. Please request access by email.');
-      }
-
-      const hashed = await hashPassword(pw, salt);
-
-      if (signed && (await hmac(hashed, signed.slice(64))) !== signed.slice(0, 64)) {
-        busy = false;
-        resetButton();
-        return showError('That password didn’t work. Check your resume or email, or request access.');
-      }
-
-      // StatiCrypt saves the access itself (only after it decrypts successfully).
-      location.href = 'work.html#staticrypt_pwd=' + hashed + (remember.checked ? '&remember_me' : '');
-    } catch (e3) {
-      busy = false;
-      resetButton();
-      showError('Something went wrong. Please try again.');
-    }
-  });
-})();
-</script>
-<script src="src/js/motion.js" defer></script>
-
+<script src="src/js/gradient.js"></script>
+<script src="src/js/hero-film.js"></script>
+<script src="src/js/craft.js"></script>
+<script src="src/js/gate.js"></script>
+<script src="src/js/systems.js"></script>
+<script src="src/js/site.js"></script>
 </body>
 </html>

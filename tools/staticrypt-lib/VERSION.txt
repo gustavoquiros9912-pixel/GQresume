@@ -1,0 +1,2 @@
+3594426d316af37dcd94f3e0ffb0c9cd6c3c5d9f
+staticrypt 3.5.4 from https://github.com/robinmoisson/staticrypt (MIT), lib/ only

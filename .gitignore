@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 .vercel
 .env*
+
+# never commit the unprotected case studies or build output
+private-sources/
+encrypted-out/
+*.zip

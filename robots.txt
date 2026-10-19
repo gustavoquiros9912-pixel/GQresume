@@ -1,0 +1,12 @@
+# The case studies are password protected and marked noindex; keep crawlers off them entirely.
+User-agent: *
+Allow: /
+Disallow: /work$
+Disallow: /work.html
+Disallow: /industrial-safety
+Disallow: /insurance
+Disallow: /healthcare-finance
+Disallow: /healthcare-platform
+Disallow: /marketing-agency
+
+Sitemap: https://gustavoquiros.com/sitemap.xml

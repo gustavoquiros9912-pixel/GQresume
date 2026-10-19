@@ -1,0 +1,183 @@
+/*
+  craft.css: the paper and pixel layer of the site. Loaded after v3.css and motion.css.
+
+  Two techniques, never mixed inside one piece:
+  - Pixel art is drawn from sprite sheets at whole-number scales only (image-rendering: pixelated). It moves
+    a drawing at a time with steps(). Each sprite changes drawings on its own clock, 8 to 12 times a second.
+  - Cut paper is SVG with edges that are never quite straight, a crisp near shadow, a soft far shadow
+    and a grain tile in soft-light. It moves like stop-motion: keyframes held with steps(1, end), about 12 a second.
+
+  Nothing here animates until html.motion is set (the <head> snippet, only when reduced motion is off) and the
+  piece has scrolled into view (craft.js adds .is-in to [data-craft-in]). Without either, every piece shows its
+  finished drawing. The salmon full stop (.pdot) lives in v3.css and motion.css, since case studies use it too.
+*/
+
+:root {
+  --sprites: url('../art/sprites.png');   /* 304 x 203 atlas: walker, desk designer, objects, locks, pixel type */
+  --icons: url('../art/icons.png');       /* 48 x 108: nine industry icons, four drawings each */
+}
+
+/* ───────── Marquee: a taped strip of paper ───────── */
+.strip { position: relative; margin: 0 -2vw; transform: rotate(-1.2deg); }
+.strip__paper {
+  --strip-edge: polygon(0 7%, 6% 3%, 13% 8%, 21% 2%, 30% 6%, 38% 1%, 47% 7%, 55% 3%, 63% 8%, 72% 2%, 80% 6%, 88% 1%, 95% 6%, 100% 3%,
+    100% 94%, 94% 99%, 86% 93%, 78% 98%, 70% 94%, 61% 99%, 53% 93%, 45% 98%, 36% 92%, 28% 98%, 19% 94%, 11% 99%, 4% 93%, 0 97%);
+  position: relative; overflow: hidden; padding: 20px 0;
+  background: var(--accent) var(--paper-grain) 0 0 / 256px; background-blend-mode: soft-light;
+  clip-path: var(--strip-edge);
+  filter: drop-shadow(0 3px 0 rgba(0, 0, 0, 0.35)) drop-shadow(0 12px 18px rgba(0, 0, 0, 0.35));
+}
+.strip .marquee__track span { color: var(--accent-ink); font-weight: 400; }
+.strip .marquee__track span:nth-child(even) { color: rgba(20, 20, 20, 0.45); }
+.strip__tape {
+  --tape-edge: polygon(3% 0, 97% 4%, 100% 22%, 96% 41%, 100% 63%, 97% 100%, 2% 96%, 0 77%, 4% 55%, 0 33%);
+  position: absolute; top: -10px; width: clamp(64px, 7vw, 108px); height: calc(100% + 20px);
+  background: rgba(239, 229, 214, 0.52) var(--paper-grain) 0 0 / 256px; background-blend-mode: soft-light;
+  clip-path: var(--tape-edge); pointer-events: none;
+}
+.strip__tape--l { left: 6vw; transform: rotate(3deg); }
+.strip__tape--r { right: 7vw; transform: rotate(-4deg); }
+.strip__paper .marquee__track { will-change: transform; }
+
+/* ───────── Industry chips: a pixel icon each ───────── */
+.industries li { display: inline-flex; align-items: center; gap: 10px; }
+.ico {
+  flex: none; width: 24px; height: 24px; display: inline-block;
+  background: var(--icons) 0 calc(var(--r, 0) * -24px) / 96px 216px no-repeat;
+  image-rendering: pixelated;
+}
+
+/* ───────── Case cards: paper grain and a small padlock ───────── */
+.scard { background: var(--card-bg) var(--paper-grain) 0 0 / 256px; background-blend-mode: soft-light; }
+.mlock {
+  display: inline-block; width: 20px; height: 24px; margin-right: 8px; vertical-align: -6px;
+  background: var(--sprites) 0 -344px / 608px 406px no-repeat; image-rendering: pixelated;
+}
+
+/* the project images are bright interfaces: the lock label and the gate keep their contrast over them */
+.scard__media .wcard__lock { background: rgba(16, 16, 16, 0.72); color: var(--text); border-color: rgba(255, 255, 255, 0.14); }
+.gate__covers { opacity: 0.34; filter: blur(18px) saturate(0.9) brightness(0.72); }
+
+/* ───────── The gate's padlock (drawn by craft.js) ───────── */
+.gate__lock { display: block; width: 72px; height: 78px; margin: 0 0 14px; image-rendering: pixelated; }
+
+/* ───────── How I work: a cut-paper picture on each card ───────── */
+.stance__art { display: block; width: min(240px, 62%); margin: -6px 0 -8px -10px; }
+.stance__art .picto { display: block; width: 100%; height: auto; overflow: visible; }
+/* the ruler's segments each turn about their own left edge, so their turns add up into a curve */
+.picto .seg { transform-box: view-box; transform-origin: 0 11px; transform: rotate(calc(var(--bend, -6) * 1deg)); }
+
+/* ───────── Paper and pixels ───────── */
+.craft__stage { margin-top: clamp(32px, 5vw, 64px); }
+.diorama {
+  --split: 50;
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden; isolation: isolate;
+  border-radius: clamp(16px, 2vw, 28px); background: #2b2425;
+  box-shadow: 0 0 0 1px var(--line), 0 40px 90px -40px rgba(0, 0, 0, 0.8);
+  touch-action: pan-y; user-select: none; -webkit-user-select: none;
+}
+.diorama__paper, .diorama__pixel { position: absolute; inset: 0; width: 100%; height: 100%; }
+.diorama__paper svg, .diorama__paper img { display: block; width: 100%; height: 100%; }
+.diorama__pixel { image-rendering: pixelated; clip-path: inset(0 0 0 calc(var(--split) * 1%)); }
+.diorama__line {
+  position: absolute; top: 0; bottom: 0; left: calc(var(--split) * 1%); width: 3px; margin-left: -1.5px;
+  background: var(--text); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 0 26px 4px rgba(241, 239, 236, 0.22); pointer-events: none;
+}
+.diorama__knob {
+  position: absolute; top: 50%; left: 50%; width: 56px; height: 56px; translate: -50% -50%;
+  display: grid; place-items: center; border-radius: 50%; background: var(--text); color: #141414;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45); transition: scale 0.2s var(--ease);
+}
+.diorama__knob svg { width: 28px; height: 28px; }
+.diorama__range {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize;
+  -webkit-appearance: none; appearance: none; background: transparent; z-index: 2;
+}
+.diorama__range::-webkit-slider-thumb { -webkit-appearance: none; width: 64px; height: 100%; cursor: ew-resize; }
+.diorama__range::-moz-range-thumb { width: 64px; height: 100%; border: 0; cursor: ew-resize; }
+.diorama:has(.diorama__range:focus-visible) .diorama__knob { outline: 3px solid var(--accent); outline-offset: 4px; }
+.diorama:hover .diorama__knob, .diorama.is-drag .diorama__knob { scale: 1.08; }
+.diorama__tag {
+  position: absolute; top: 16px; z-index: 1; padding: 6px 12px; border-radius: 999px;
+  font-size: 13px; font-weight: 500; color: var(--text); background: rgba(20, 20, 20, 0.62); pointer-events: none;
+}
+.diorama__tag--paper { left: 16px; }
+.diorama__tag--pixel { right: 16px; }
+.craft__notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 48px); margin-top: 24px; }
+.craft__notes h3 { font-size: clamp(20px, 1.8vw, 24px); font-weight: 400; letter-spacing: -0.02em; }
+.craft__notes p { margin-top: 8px; max-width: 52ch; color: var(--text-soft); }
+@media (max-width: 860px) {
+  .craft__notes { grid-template-columns: 1fr; }
+  .diorama__knob { width: 46px; height: 46px; }
+  .diorama__tag { top: 10px; font-size: 12px; }
+  .diorama__tag--paper { left: 10px; } .diorama__tag--pixel { right: 10px; }
+}
+
+/* ───────── Footer: a paper night, a pixel walker ───────── */
+.night { position: relative; height: clamp(190px, 21vw, 300px); overflow: hidden; background: #1d0d13; }
+.night__paper { position: absolute; inset: 0 0 auto 0; width: 100%; height: calc(100% - 26px); display: block; }
+.night__ground {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 30px;
+  background: #2b1a1e var(--paper-grain) 0 0 / 256px; background-blend-mode: soft-light;
+  clip-path: polygon(0 18%, 9% 8%, 22% 16%, 37% 6%, 52% 14%, 66% 5%, 81% 15%, 93% 7%, 100% 13%, 100% 100%, 0 100%);
+}
+.night__walker { position: absolute; left: 0; right: 0; bottom: 14px; width: 100%; height: 118px; image-rendering: pixelated; cursor: pointer; }
+.footer { margin-top: 0; }
+.night + .footer__inner, .footer .night { margin-top: 0; }
+
+/* print and forced colours: the drawings are decoration */
+@media print { .strip, .night, .craft, .stance__art, .gate__lock { display: none !important; } }
+@media (forced-colors: active) { .strip__tape, .night, .diorama__pixel { display: none; } }
+
+/* the skyline <img> before craft.js inlines it, cropped like the SVG (xMidYMax slice) */
+img.night__paper { object-fit: cover; object-position: 50% 100%; }
+
+/* ═════════ Motion: only with html.motion and only once a piece is in view ═════════ */
+@property --bend { syntax: '<number>'; inherits: true; initial-value: -6; }
+
+/* the strip drops onto the page and the tape is pressed down, at stop-motion speed */
+@keyframes strip-land {
+  0% { opacity: 0; transform: translateY(-44px) rotate(-2.4deg); }
+  17% { opacity: 1; transform: translateY(-26px) rotate(-1.8deg); }
+  34% { transform: translateY(-9px) rotate(-1.1deg); }
+  51% { transform: translateY(4px) rotate(0.4deg); }
+  68% { transform: translateY(-2px) rotate(-0.2deg); }
+  85%, 100% { opacity: 1; transform: none; }
+}
+@keyframes tape-press { 0% { opacity: 0; scale: 1.3; } 25% { opacity: 1; scale: 1.14; } 50% { scale: 0.97; } 75%, 100% { opacity: 1; scale: 1; } }
+.motion .strip[data-craft-in] .strip__paper, .motion .strip[data-craft-in] .strip__tape { opacity: 0; }
+.motion .strip[data-craft-in].is-in .strip__paper { animation: strip-land 0.5s steps(1, end) both; }
+.motion .strip[data-craft-in].is-in .strip__tape--l { animation: tape-press 0.34s steps(1, end) 0.5s both; }
+.motion .strip[data-craft-in].is-in .strip__tape--r { animation: tape-press 0.34s steps(1, end) 0.62s both; }
+
+/* industry icons play twice as the chips arrive and loop under the pointer */
+@keyframes ico-play { from { background-position-x: 0; } to { background-position-x: -96px; } }
+.motion .industries.is-in .ico { animation: ico-play 0.44s steps(4) calc(var(--r) * 70ms + 200ms) 2; }
+@media (hover: hover) { .motion .industries li:hover .ico { animation: ico-play 0.44s steps(4) infinite; } }
+
+/* the small padlock wiggles when you reach for a locked card: whole art pixels only */
+@keyframes mlock-jig { 0%, 100% { translate: 0 0; } 20% { translate: -2px 0; } 40% { translate: 2px 0; } 60% { translate: 0 -2px; } 80% { translate: 2px 0; } }
+@media (hover: hover) { .motion .scard:hover .mlock { animation: mlock-jig 0.36s steps(1, end) 2; } }
+
+/* cut-paper pictograms: each piece is placed by hand, a drawing at a time */
+@keyframes pk-place {
+  0% { opacity: 0; translate: var(--fx) var(--fy); rotate: var(--fr); }
+  17% { opacity: 1; translate: calc(var(--fx) * 0.55) calc(var(--fy) * 0.55); rotate: calc(var(--fr) * 0.5); }
+  34% { translate: calc(var(--fx) * 0.2) calc(var(--fy) * 0.2); rotate: calc(var(--fr) * 0.18); }
+  51% { translate: calc(var(--fx) * -0.06) calc(var(--fy) * -0.07); rotate: calc(var(--fr) * -0.1); }
+  68% { translate: calc(var(--fx) * 0.02) calc(var(--fy) * 0.02); rotate: 0deg; }
+  85%, 100% { opacity: 1; translate: 0 0; rotate: 0deg; }
+}
+@keyframes pk-unfold { 0% { scale: 1 0.05; } 25% { scale: 1 0.5; } 50% { scale: 1 1.12; } 75% { scale: 1 0.96; } 100% { scale: 1 1; } }
+@keyframes pk-rise { 0% { scale: 1 0; } 25% { scale: 1 0.6; } 50% { scale: 1 1.1; } 75%, 100% { scale: 1 1; } }
+@keyframes seg-bend { 0% { --bend: 0; } 17% { --bend: -1.6; } 34% { --bend: -3.8; } 51% { --bend: -7.4; } 68% { --bend: -5.4; } 85%, 100% { --bend: -6; } }
+.picto .pk { transform-box: fill-box; transform-origin: 50% 50%; }
+.picto .pk--unfold { transform-origin: 30% 100%; }
+.picto .pk--rise { transform-origin: 50% 100%; }
+.motion [data-craft-in] .picto .pk { opacity: 0; }
+.motion [data-craft-in].is-in .picto .pk { animation: pk-place 0.5s steps(1, end) calc(var(--d) * 85ms + 150ms) both; }
+.motion [data-craft-in].is-in .picto .pk--unfold { animation: pk-place 0.5s steps(1, end) calc(var(--d) * 85ms + 150ms) both, pk-unfold 0.4s steps(1, end) calc(var(--d) * 85ms + 150ms) both; }
+.motion [data-craft-in].is-in .picto .pk--rise { animation: pk-place 0.5s steps(1, end) calc(var(--d) * 85ms + 150ms) both, pk-rise 0.4s steps(1, end) calc(var(--d) * 85ms + 230ms) both; }
+.motion [data-craft-in] .picto .seg { --bend: 0; }
+.motion [data-craft-in].is-in .picto .seg { animation: seg-bend 0.6s steps(1, end) 0.55s both; }
+@media (hover: hover) { .motion .stance__item:hover .picto .seg { animation: seg-bend 0.6s steps(1, end) both; } }

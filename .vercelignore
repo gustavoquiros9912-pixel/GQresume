@@ -1,0 +1,6 @@
+# Working notes and tools stay in the repository but are never deployed.
+DESIGN.md
+README.md
+tools
+private-sources
+*.zip
